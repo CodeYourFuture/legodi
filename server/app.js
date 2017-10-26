@@ -16,10 +16,6 @@ mongoose.Promise = global.Promise;
 const mongoConnection = process.env.MONGODB_URI || 'mongodb://localhost:27017/legodi';
 
 
-
-
-
-
 var app = express();
 
 // view engine setup
@@ -37,13 +33,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 app.use('/admin', admin);
-
-const nameSchema = new mongoose.Schema({
-  title: String,
-  fullContent: String
-});
-const User = mongoose.model("User", nameSchema);
-
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
