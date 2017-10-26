@@ -16,7 +16,7 @@ var users = require('./routes/users');
 var admin = require('./routes/admin');
 
 var app = express();
-+app.use(cors());
+app.use(cors());
 
 
 
