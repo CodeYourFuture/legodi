@@ -9,6 +9,17 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var admin = require('./routes/admin');
 
+const Product = require('../models/Article');
+const mongoose = require('mongoose');
+
+mongoose.Promise = global.Promise;
+const mongoConnection = process.env.MONGODB_URI || 'mongodb://localhost:27017/legodi';
+
+
+
+
+
+
 var app = express();
 
 // view engine setup
@@ -27,6 +38,13 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/admin', admin);
 
+const nameSchema = new mongoose.Schema({
+  title: String,
+  fullContent: String
+});
+const User = mongoose.model("User", nameSchema);
+
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   var err = new Error('Not Found');
@@ -44,5 +62,14 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
+app.post("/addArticle", (req, res) => {
+  var myData = new User(req.body);
+  myData.save()
+    .then(item => {
+      res.send("Article saved to database");
+    })
+    .catch(err => {
+      res.status(400).send("unable to save to database");
+    });
+});
 module.exports = app;
