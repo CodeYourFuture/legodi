@@ -1,21 +1,26 @@
 import React from 'react';
-
- 
+import 'bootstrap/dist/css/bootstrap.css';
 import { Link } from "react-router-dom";
+import { Nav, NavItem, NavLink } from 'reactstrap';
 
 
 function Menu (){
  
         return (
-        
-                <nav>
-                    <ul>
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/categories">Categories</Link></li>
-                        <li><Link to="/about">About</Link></li>
-                    </ul>
- 
-                </nav>
+            <div>
+             <Nav>
+              <NavItem>
+                <NavLink ><Link to="/">Home</Link></NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink ><Link to="/categories">Categories</Link></NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink ><Link to="/about">About</Link></NavLink>
+              </NavItem>
+              </Nav>
+             
+          </div>
         
         )
     }
