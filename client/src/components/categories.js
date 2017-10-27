@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 
-class Categories extends Component {
-   render() {
-       return (
+function Categories(){
+        return (
            <div className="categories">
               Categories
            </div>)
    }
-}
-
+ 
 export default Categories
+ 
