@@ -3,8 +3,8 @@ import logo from '../../logo.svg';
 import './App.css';
 import { BrowserRouter as Router , Route, Link } from "react-router-dom";
  
-import Home from '../../component/home.js'
-import About from '../../component/about.js'
+import Home from '../../components/home.js'
+import About from '../../components/about.js'
 
 
 class App extends Component {
