@@ -1,18 +1,21 @@
 var express = require('express');
 var router = express.Router();
+<<<<<<< HEAD
 const categoryClient = require("../dbClients/categoriesDB");
+=======
+const articleDB = require('../dbClients/articlesDB')
+>>>>>>> a264cc89dfed0dce057139978b458581d45b290e
 
 /* GET Articles page. */
 router.get('/articles', function (req, res, next) {
-    res.send(
-        [
-            {
-                "title": "Article 1",
-            }, {
-                "title": "Article 2"
-            }
-        ]
-    );
+    const callBack = (error, articles) => {
+        if (error) {
+            res.sendStatus(500);
+        } else {
+            res.json(articles)
+        }
+    };
+    articleDB.listArticles(callBack)
 });
 
 router.get('/categories', function (req, res, next) {

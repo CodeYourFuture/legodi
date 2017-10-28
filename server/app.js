@@ -10,7 +10,7 @@ var router = require('./routes/api');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var admin = require('./routes/admin');
-
+ 
 var app = express();
 app.use(cors());
 
@@ -30,7 +30,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/admin', admin);
 app.use('/api', router);
-
+ 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   var err = new Error('Not Found');
