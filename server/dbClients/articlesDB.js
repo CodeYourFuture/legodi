@@ -7,7 +7,12 @@ mongoose.Promise=global.Promise;
     mongoose.connect(mongoConnection);
     addArticle.create(query).then(callback)
 };
+
+const listArticles = (sucessCallBack) => {
+    mongoose.connect(mongoConnection);
+    addArticle.find({}, sucessCallBack);
+};
  
-module.exports = addNewArticle;
+module.exports = {addNewArticle,listArticles};
  
  

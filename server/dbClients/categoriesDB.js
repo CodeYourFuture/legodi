@@ -9,6 +9,6 @@ const addCategory = (query, callback) => {
     CategoryModel.create(query).then(callback)
 }
 
-module.exports = addCategory;
+module.exports = {addCategory,addCategory};
 
 
