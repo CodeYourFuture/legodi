@@ -8,10 +8,7 @@ router.get('/articles', function (req, res, next) {
         if (error) {
             res.sendStatus(500);
         } else {
-
             res.json(articles)
-
-
         }
     };
     addArticle.listArticles(callBack)
