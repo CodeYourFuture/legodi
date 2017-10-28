@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const addCategory = require('../dbClients/categoriesDB');
-const articleClient = require('../dbClients/articlesDB')
+const articleClient = require('../dbClients/articlesDB');
 
 
 router.get("/", function (req, res, next) {
