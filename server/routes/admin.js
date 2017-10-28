@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const addCategory = require('../dbClients/categoriesDB');
-const addArticle = require('../dbClients/articlesDB')
+const articleClient = require('../dbClients/articlesDB')
 
 
 router.get("/", function (req, res, next) {
@@ -31,7 +31,7 @@ router.post('/article/add', (req, res) => {
         res.redirect('/')
       res.end();
     }
-    addArticle(query, callBack)
+    articleClient.addNewArticle(query, callBack)
 })
 
 module.exports = router;
