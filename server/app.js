@@ -38,8 +38,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 //app.use('/admin', admin);
-app.use('/admin/add/articles',addArticle)
-app.use('/admin/add/articles/addarticle',addArticle)
+ app.use('/admin/add',addArticle)
+
+// app.use('/admin/add/articles',addArticle)
+// app.use('/admin/add/articles/addarticle',addArticle)
 
 app.use('/api', router);
 
