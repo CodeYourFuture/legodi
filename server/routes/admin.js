@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const category = require('../dbClients/categoriesDB');
+const addCategory = require('../dbClients/categoriesDB');
 
 router.get("/", function (req, res, next) {
   res.send('admin');
@@ -16,7 +16,7 @@ router.post('/categories/add', function (req, res, next) {
     res.redirect("/");
     res.end()
   }
-  category(query, callback);
+  addCategory(query, callback);
 });
 
 module.exports = router;
