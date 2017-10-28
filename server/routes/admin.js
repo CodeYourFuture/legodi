@@ -1,18 +1,22 @@
 var express = require('express');
 var router = express.Router();
-const saveCategory = require('../dbClients/categoriesDB');
+const category = require('../dbClients/categoriesDB');
 
 router.get("/", function (req, res, next) {
-  res.render('addCategory');
+  res.send('admin');
 });
 
-router.post('/', function (req, res, next) {
+router.get("/categories/add", function (req, res, next) {
+  res.render('category');
+});
+
+router.post('/categories/add', function (req, res, next) {
   const query = req.body;
   const callback = () => {
     res.redirect("/");
     res.end()
   }
-  saveCategory(query, callback);
+  category(query, callback);
 });
 
 module.exports = router;
