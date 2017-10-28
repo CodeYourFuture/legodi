@@ -36,14 +36,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
-app.use('/admin/categories/add', admin);
-app.use('/admin/categories/add/categoryPosts', admin);
+app.use('/admin', admin);
 app.use('/api', router);
-
-// app.post('/categoryPosts', function (req, res, next) {
-//   console.log(req.body);
-//   res.send("Post data"); m
-// });
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
