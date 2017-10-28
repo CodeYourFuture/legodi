@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const addCategory = require('../dbClients/categoriesDB');
+const categoryClient = require('../dbClients/categoriesDB');
 const articleClient = require('../dbClients/articlesDB')
 
 
@@ -18,7 +18,7 @@ router.post('/categories/add', function (req, res, next) {
     res.redirect("/");
     res.end()
   }
-  addCategory(query, callback);
+  categoryClient.addCategory(query, callback);
 });
 
 router.get('/article/add', (req, res, next) => {
