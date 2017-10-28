@@ -8,4 +8,4 @@ const schema = new Schema({
 
 const Article = mongoose.model('articles', schema);
 
-module.exports = Post;
+module.exports = Article;

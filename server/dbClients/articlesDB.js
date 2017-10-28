@@ -1,10 +1,13 @@
-  const mongoConnection = 'mongodb://localhost:27017/profile';
-     
- const addArticle = (query, sucessCallBack) => {
+const mongoConnection = process.env.MONGODB_URI || 'mongodb://localhost:27017/legodi';
+const addArticle = require('../models/Article');
+const mongoose = require('mongoose')
+mongoose.Promise=global.Promise;
+
+ const addNewArticle = (query, callback) => {
     mongoose.connect(mongoConnection);
-    const newProduct = new Product(query);
-    newProduct.save(query, sucessCallBack);
-    
+    addArticle.create(query).then(callback)
 };
  
-module.exports = {addArticle}
+module.exports = addNewArticle;
+ 
+ 
