@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// create ninja Schema & model
-const addCategorySchema = new Schema({
+// create CategorModel Schema & model
+const CategorySchema = new Schema({
     title: {
         type: String,
     },
@@ -14,6 +14,6 @@ const addCategorySchema = new Schema({
     }
 });
 
-const AddCategory = mongoose.model('addCategories', addCategorySchema);
+const CategoryModel = mongoose.model('category', CategorySchema);
 
-module.exports = AddCategory;
+module.exports = CategoryModel;
