@@ -1,10 +1,6 @@
 var express = require('express');
 var router = express.Router();
-<<<<<<< HEAD
 const categoryClient = require("../dbClients/categoriesDB");
-=======
-const articleDB = require('../dbClients/articlesDB')
->>>>>>> a264cc89dfed0dce057139978b458581d45b290e
 
 /* GET Articles page. */
 router.get('/articles', function (req, res, next) {
