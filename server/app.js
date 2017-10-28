@@ -6,10 +6,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var cors = require('cors');
 
-
-
-
-
 var router = require('./routes/api');
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -17,10 +13,6 @@ var admin = require('./routes/admin');
 
 var app = express();
 app.use(cors());
-
-
-
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -37,7 +29,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 app.use('/admin', admin);
-
 app.use('/api', router);
 
 
