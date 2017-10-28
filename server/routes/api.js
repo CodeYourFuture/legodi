@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const addArticle = require('../dbClients/articlesDB')
+const articleDB = require('../dbClients/articlesDB')
 
 /* GET Articles page. */
 router.get('/articles', function (req, res, next) {
@@ -11,7 +11,7 @@ router.get('/articles', function (req, res, next) {
             res.json(articles)
         }
     };
-    addArticle.listArticles(callBack)
+    articleDB.listArticles(callBack)
 });
 
 module.exports = router;
