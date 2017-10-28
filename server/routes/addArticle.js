@@ -2,12 +2,12 @@ const express = require('express');
 const router = express.Router();
 const addarticle=require('../dbClients/articlesDB')
 
-router.get('/articles', (req, res, next) =>{
+router.get('/add/article', (req, res, next) =>{
   res.render('add-articles');
 });
 
 
-router.post('/articles/addarticle',(req,res)=>{
+router.post('/add/addarticle',(req,res)=>{
    const query=req.body;
    const callBack=(data)=>{
      res.redirect('/')
