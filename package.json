@@ -1,0 +1,23 @@
+{
+  "name": "legodi",
+  "version": "1.0.0",
+  "description": "Scotland Graduation Project - Digital Welcome Pack for refugees #To run the server locally use npm run dev that it will make the server work automatically when happens any change",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm --prefix server run dev && npm --prefix client start",
+    "install": "npm --prefix server install && npm --prefix client install",
+    "test": "npm --prefix server test && npm --prefix client test"
+   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kharazzoro/legodi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kharazzoro/legodi/issues"
+  },
+  "homepage": "https://github.com/kharazzoro/legodi#readme"
+  
+  
+}
