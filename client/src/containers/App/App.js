@@ -6,6 +6,7 @@ import About from '../../components/about.js'
 import Categories from '../../components/categories.js'
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import CategoriesOverview from "../CategoriesOverview/CategoriesOverview"
+ 
 class App extends Component {
   render() {
     return (

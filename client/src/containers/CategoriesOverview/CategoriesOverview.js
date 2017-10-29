@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import CategoryCard from "../../components/CategoryCard"
-import apiClient from '../../helpers/apiClient'
- 
+import CategoryCard from "../../components/CategoryCard";
+import apiClient from '../../apiAxios/apiClient';
 
 class CategoriesOverview extends Component {
  
@@ -20,18 +19,20 @@ class CategoriesOverview extends Component {
                         categoriesListArr:data
                     })
                 })
-                .catch((err) => { })    
+                .catch((err) => { }) 
+                
+          
+             
         }
 
     render() {
       return (
                 <div>
-    {
+               {
                     this.state.categoriesListArr.map((category) => {
                         return (
-                            <CategoryCard  title="khaled"  category={category} fullContent="hello khaled"/>
-                            
-                        )
+                             <CategoryCard category={category} />
+                         )
                     })
                 }
                  </div>
