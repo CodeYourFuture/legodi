@@ -9,6 +9,16 @@ const addCategory = (query, callback) => {
     CategoryModel.create(query).then(callback)
 }
 
-module.exports = addCategory;
+ module.exports = addCategory;
+ const listCategory = (callback) => {
+    mongoose.connect(mongoConnection);
+    CategoryModel.find({}, callback)
+}
 
+module.exports = {
+    addCategory,
+    listCategory
+};
+
+ 
 
