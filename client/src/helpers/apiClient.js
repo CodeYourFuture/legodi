@@ -1,8 +1,8 @@
 import axios from 'axios';
-const apiUrl = process.env.API_URI || 'http://localhost:3000';
+const apiUrl = process.env.API_URI || 'http://localhost:3001';
 
 const apiClient = {
-    getArticles: () => {
+    getCategories: () => {
         return axios.get(`${apiUrl}/api/articles`);
     }
 }
