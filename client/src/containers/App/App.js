@@ -5,8 +5,8 @@ import Menu from '../../components/menu.js'
 import About from '../../components/about.js'
 import Header from '../../components/header.js'
  import { BrowserRouter as Router, Route } from "react-router-dom";
-import CategoriesOverview from "../CategoriesOverview/CategoriesOverview"
-import CategoriesNavOverview from "../CategoriesOverview/categoriesNavOverView"
+import CategoriesOverview from "../../components/Categories/CategoriesOverview/CategoriesOverview"
+import CategoriesNavOverview from "../../components/Categories/CategoriesOverview/categoriesNavOverView"
 
 class App extends Component {
   render() {

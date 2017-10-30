@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import CategoryItem from "../../components/categoryItem";
-import apiClient from '../../apiAxios/apiClient';
+import CategoryItem from "../categoryItem";
+import apiClient from '../../../apiAxios/apiClient';
 import { Nav, NavItem, NavLink } from 'reactstrap';
 
 class CategoriesNavOverview extends Component {
@@ -12,7 +12,6 @@ class CategoriesNavOverview extends Component {
             categoriesListArr: []
         }
     }
-
     componentDidMount() {
         apiClient.getCategories()
             .then(({ data }) => {
@@ -21,9 +20,6 @@ class CategoriesNavOverview extends Component {
                 })
             })
             .catch((err) => { })
-
-
-
     }
 
     render() {
@@ -33,7 +29,7 @@ class CategoriesNavOverview extends Component {
                 {
                     this.state.categoriesListArr.map((category) => {
                         return (
-                           <NavLink> <CategoryItem categoryItem={category} /></NavLink>
+                          <CategoryItem categoryItem={category} /> 
                         )
                     })
                 }
