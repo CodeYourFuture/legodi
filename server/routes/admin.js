@@ -17,6 +17,15 @@ router.get('/categories', function (req, res, next) {
     categoryClient.listCategory(callback);
 });
 
+router.get('/articles', function (req, res, next) {
+  const callback = (error, article) => {
+     res.render("admin-list-articles",{
+      article
+     }) 
+    }
+    articleClient.listArticles(callback);
+});
+
 router.get("/categories/add", function (req, res, next) {
   res.render('category');
 });
