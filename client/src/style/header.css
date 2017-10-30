@@ -18,15 +18,4 @@ header{
     
     
 }
-
-@media (max-width: 600px) { 
-    
-    header{
-        background-image: 
-        linear-gradient(
-                rgba(3, 2, 2, 0.541), 
-                rgba(5, 4, 4, 0.589)
-              ),url("../images/legodiglas.jpg");
-            }
-            
-}
+ 
