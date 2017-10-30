@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CategoryItem from "../categoryItem";
-import apiClient from '../../../Helpers/apiClient';
+import apiClient from '../../../helpers/apiClient';
 import { Nav, NavItem, NavLink } from 'reactstrap';
 
 class CategoriesNavOverview extends Component {

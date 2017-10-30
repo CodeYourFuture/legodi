@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CategoryCard from "../CategoryCard";
-import apiClient from '../../../Helpers/apiClient';
+import apiClient from '../../../helpers/apiClient';
 
 class CategoriesOverview extends Component {
  

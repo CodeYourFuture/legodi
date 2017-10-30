@@ -4,7 +4,7 @@ header{
     linear-gradient(
             rgba(3, 2, 2, 0.541), 
             rgba(5, 4, 4, 0.589)
-          ),url("../headerImages/pplmakeglasgow.jpg");
+          ),url("./headerImages/pplmakeglasgow.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 300px;
