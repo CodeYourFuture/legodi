@@ -10,7 +10,7 @@ function Menu (){
             <div>
              <Nav>
               <NavItem>
-                <NavLink ><Link to="/">Categories Overview</Link></NavLink>
+                <NavLink ><Link to="/">Home</Link></NavLink>
               </NavItem>
               <NavItem>
                 <NavLink ><Link to="/categories">Categories</Link></NavLink>
