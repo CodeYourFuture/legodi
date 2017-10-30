@@ -2,10 +2,19 @@ var express = require('express');
 var router = express.Router();
 const categoryClient = require('../dbClients/categoriesDB');
 const articleClient = require('../dbClients/articlesDB')
-
+ 
 
 router.get("/", function (req, res, next) {
   res.send('admin');
+});
+
+router.get('/categories', function (req, res, next) {
+  const callback = (error, category) => {
+     res.render("admin-list-categories",{
+      category
+     }) 
+    }
+    categoryClient.listCategory(callback);
 });
 
 router.get("/categories/add", function (req, res, next) {
