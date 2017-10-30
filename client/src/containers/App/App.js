@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import "../../style/header.css"
-import Menu from '../../components/menu.js'
-import About from '../../components/about.js'
-import Header from '../../components/header.js'
- import { BrowserRouter as Router, Route } from "react-router-dom";
+import Menu from '../../components/Menu/menu.js'
+import About from '../../components/About/about.js'
+import Header from '../../components/Header/header.js'
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import CategoriesOverview from "../../components/Categories/CategoriesOverview/CategoriesOverview"
 import CategoriesNavOverview from "../../components/Categories/CategoriesOverview/categoriesNavOverView"
 
