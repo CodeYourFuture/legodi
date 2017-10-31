@@ -1,8 +1,7 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 const categoryClient = require('../dbClients/categoriesDB');
 const articleClient = require('../dbClients/articlesDB')
- 
 
 router.get("/", function (req, res, next) {
   res.send('admin');
@@ -18,9 +17,9 @@ router.get('/categories', function (req, res, next) {
 });
 
 router.get('/articles', function (req, res, next) {
-  const callback = (error, article) => {
+  const callback = (error, articles) => {
      res.render("admin-list-articles",{
-      article
+      articles:articles
      }) 
     }
     articleClient.listArticles(callback);
