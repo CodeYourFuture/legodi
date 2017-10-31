@@ -3,16 +3,27 @@ const Article = require('../models/Article');
 const mongoose = require('mongoose')
 mongoose.Promise=global.Promise;
 
+
+
  const addNewArticle = (query, callback) => {
     mongoose.connect(mongoConnection);
     Article.create(query).then(callback)
+
+  
+
+
 };
 
-const listArticles = (sucessCallBack) => {
+const findArticles = (query,sucessCallBack) => {
     mongoose.connect(mongoConnection);
-    Article.find({}, sucessCallBack);
+    Article.find(query, sucessCallBack);
 };
  
-module.exports = {addNewArticle,listArticles};
+const editArticle = (oldArticle,query,upsertOption,sucessCallBack) => {
+    mongoose.connect(mongoConnection);
+    Article.update(oldArticle,query,{ upsert: upsertOption },sucessCallBack);
+};
+ 
+module.exports = {addNewArticle,findArticles,editArticle};
  
  

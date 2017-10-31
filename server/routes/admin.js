@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const categoryClient = require('../dbClients/categoriesDB');
 const articleClient = require('../dbClients/articlesDB')
+const ObjectId = require('mongodb').ObjectID;
 
 router.get("/", function (req, res, next) {
   res.send('admin');
@@ -9,20 +10,48 @@ router.get("/", function (req, res, next) {
 
 router.get('/categories', function (req, res, next) {
   const callback = (error, category) => {
-     res.render("admin-list-categories",{
+    res.render("admin-list-categories", {
       category
-     }) 
-    }
-    categoryClient.listCategory(callback);
+    })
+  }
+  categoryClient.listCategory(callback);
 });
 
 router.get('/articles', function (req, res, next) {
   const callback = (error, articles) => {
-     res.render("admin-list-articles",{
-      articles:articles
-     }) 
+    res.render("admin-list-articles", {
+      articles: articles
+    })
+  }
+  articleClient.findArticles({}, callback);
+});
+
+router.get('/articles/edit/:articleId', (req, res) => {
+  let articleId = req.params.articleId;
+  const callback = (error, article) => {
+    res.render("admin-edit-article", {
+      article: article[0]
+    })
+  }
+  articleClient.findArticles({ "_id": ObjectId(articleId) }, callback);
+})
+
+router.post('/articles/edit/:articleId', function (req, res, next) {
+  let articleId = req.params.articleId;
+  const query = req.body;
+  const callback = (error, article) => {
+// we use find articles function to show us list of all articles after update
+    const callbacktwo = (error, articles) => {
+      res.render("admin-list-articles", {
+        articles: articles
+      })
     }
-    articleClient.listArticles(callback);
+    articleClient.findArticles({}, callbacktwo);
+
+  }
+
+  articleClient.editArticle({ "_id": ObjectId(articleId) }, query, true, callback);
+
 });
 
 router.get("/categories/add", function (req, res, next) {
@@ -38,17 +67,18 @@ router.post('/categories/add', function (req, res, next) {
   categoryClient.addCategory(query, callback);
 });
 
+
 router.get('/article/add', (req, res, next) => {
-     res.render('add-articles');
-  });
+  res.render('add-articles');
+});
 
 router.post('/article/add', (req, res) => {
   const query = req.body;
-    const callBack = (data) => {
-        res.redirect('/')
-      res.end();
-    }
-    articleClient.addNewArticle(query, callBack)
+  const callBack = (data) => {
+    res.redirect('/')
+    res.end();
+  }
+  articleClient.addNewArticle(query, callBack)
 })
 
 module.exports = router;
