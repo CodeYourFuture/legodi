@@ -1,4 +1,23 @@
 <div class="container">
+ ADMIN-Edit-Category
+  <div class="row justify-content-md-center">
+
+
+    {{#each article}}
+
+        <div class="card" style="width: 20rem;">
+        <div class="card-block">
+            <h4 class="card-title">article:{{this.title}}</h4>
+            <p class="card-text">{{this.fullContent}}</p>
+        </div>
+        </div>
+
+
+{{/each}}
+    </div>
+        <a href="article/add"><button class="bg-info"> Add New article</button></a>
+</div>
+
     <div class="row justify-content-md-center">
         <div class="card" style="width: 20rem;">
             {{#each articles}}
@@ -13,3 +32,4 @@
         <button class="bg-info"> Add New article</button>
     </a>
 </div>
+ master

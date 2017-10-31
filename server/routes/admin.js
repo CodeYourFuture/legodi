@@ -38,6 +38,21 @@ router.post('/categories/add', function (req, res, next) {
   categoryClient.addCategory(query, callback);
 });
 
+
+router.get("/categories/edit/:id", function (req, res, next) {
+  // Query database for req.param('id') item
+  // replace values below
+  var categoryObj = {
+    id:req.param('id'),
+    title:"title",
+    description:"description",
+    shortDescription:"shortDescription"
+  } 
+  res.render('category', categoryObj);
+});
+
+
+
 router.get('/article/add', (req, res, next) => {
      res.render('add-articles');
   });
