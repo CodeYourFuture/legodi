@@ -2,6 +2,13 @@
     <h4>Title</h4>
     <input type="title" name="title" />
     <br/>
+    <h4> Categories:</h4>
+    <select>
+        <option value="null" selected>Choose a Category</option>
+        {{#each category}}
+        <option value={{ this.title }} name="categoryTitle">{{ this.title }}</option>
+        {{/each}}
+    </select>
     <h4> Full Content</h4>
     <br/>
     <textarea name="fullContent" id="" cols="30" rows="10">
