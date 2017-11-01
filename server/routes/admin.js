@@ -30,26 +30,20 @@ router.get('/categories/edit/:categoryId', (req, res) => {
   let categoryId = req.params.categoryId;
   const callback = (error, category) => {
     res.render("admin-edit-category", {
-      category: category[0]
+      category: category
     })
   }
-  categoryClient.findCategories({ "_id": ObjectId(categoryId) }, callback);
+  categoryClient.findCategoryById(categoryId, callback);
 })
 router.post('/categories/edit/:categoryId', function (req, res, next) {
   let categoryId = req.params.categoryId;
   const query = req.body;
-  console.log(query)
-  
+   
   const callback = (error, category) => {
 // we use find articles function to show us list of all articles after update
-    const callbacktwo = (error, category) => {
-      res.render("admin-list-categories", {
-        category: category
-      })
-    }
-    categoryClient.findCategories({}, callbacktwo);
-  }
-  categoryClient.editCategory({ "_id": ObjectId(categoryId) }, query, true, callback);
+ res.redirect('/')
+   }
+  categoryClient.editCategory(categoryId, query,true, callback);
 
 });
 
