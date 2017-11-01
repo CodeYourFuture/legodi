@@ -12,12 +12,12 @@ router.get('/articles', function (req, res, next) {
             res.json(articles)
         }
     };
-    articleClient.listArticles(callBack)
+    articleClient.findArticles(callBack)
 });
 
 router.get('/categories', function (req, res, next) {
     const callback = (error, data) => { res.json(data) }
-    categoryClient.listCategory(callback);
+    categoryClient.findCategories(callback);
 });
 
 module.exports = router;

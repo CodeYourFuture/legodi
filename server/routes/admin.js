@@ -14,7 +14,7 @@ router.get('/categories', function (req, res, next) {
       category
     })
   }
-  categoryClient.listCategory(callback);
+  categoryClient.findCategories({},callback);
 });
 
 router.get('/articles', function (req, res, next) {
@@ -45,12 +45,35 @@ router.post('/articles/edit/:articleId', function (req, res, next) {
       res.render("admin-list-articles", {
         articles: articles
       })
-    }
+    } 
     articleClient.findArticles({}, callbacktwo);
-
   }
-
   articleClient.editArticle({ "_id": ObjectId(articleId) }, query, true, callback);
+
+});
+ 
+router.get('/categories/edit/:categoryId', (req, res) => {
+  let categoryId = req.params.categoryId;
+  const callback = (error, category) => {
+    res.render("admin-edit-category", {
+      category: category[0]
+    })
+  }
+  categoryClient.findCategories({ "_id": ObjectId(categoryId) }, callback);
+})
+router.post('/categories/edit/:categoryId', function (req, res, next) {
+  let categoryId = req.params.categoryId;
+  const query = req.body;
+  const callback = (error, category) => {
+// we use find articles function to show us list of all articles after update
+    const callbacktwo = (error, category) => {
+      res.render("admin-list-categories", {
+        category: category
+      })
+    }
+    categoryClient.findCategories({}, callbacktwo);
+  }
+  categoryClient.editCategory({ "_id": ObjectId(categoryId) }, query, true, callback);
 
 });
 
