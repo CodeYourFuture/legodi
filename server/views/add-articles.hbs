@@ -5,8 +5,8 @@
     <h4> Categories:</h4>
     <select>
         <option value="null" selected>Choose a Category</option>
-        {{#each category}}
-        <option value={{ this.title }} name="categoryTitle">{{ this.title }}</option>
+        {{#each categories}}
+        <option value={{ this._id}} name="categoryTitle">{{ this.title }}</option>
         {{/each}}
     </select>
     <h4> Full Content</h4>
