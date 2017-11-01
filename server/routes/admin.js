@@ -38,27 +38,6 @@ router.post('/categories/add', function (req, res, next) {
   categoryClint.categoryClint(query, callback);
 });
 
-/*===========================
-        Add article
-===========================*/
-router.get('/articles/add', (req, res, next) => {
-  const callback = (error, category) => {
-    res.render('add-articles', {
-      category
-    })
-  }
-  categoryClient.listCategory(callback);
-});
-
-router.post('/articles/add', (req, res) => {
-  const query = req.body;
-  const callBack = (data) => {
-    res.redirect('/')
-    res.end();
-  }
-  articleClient.addNewArticle(query, callBack)
-})
-
 router.get('/article/add', (req, res, next) => {
      res.render('add-articles');
   });
