@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardText, CardBody,CardTitle, Button } from 'reactstrap';
-function CategoryCard(props){       
+function CategoryCard(props){ 
+if(props.category.hideCategory!="on"){
 return (
         <div>
           <Card>
@@ -13,7 +14,10 @@ return (
           </Card>
         </div>
       );
+   }else{
+     return(<div></div>)
    }
+  }
  
 export default CategoryCard
  

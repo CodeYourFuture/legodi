@@ -1,7 +1,6 @@
-<form method="post">
-    
-    <input name="hideCategory" type="checkbox" />Hide
-  
+<form method="post">  
+    <input type="radio" name="hideCategory" value="on"> hide<br>
+  <input type="radio" name="hideCategory" value="off"> show<br>
   <p>Categoru Title</p>
   <input name="title" value={{this.category.title}} />
   <br/>
@@ -9,9 +8,6 @@
   <p>Edit Discreption</p>
   <input name="description" value={{this.category.description}}>
   <input name="shortDescription" value={{this.category.shortDescription}}>
-
-
+  <button class="btn bg-danger">Edit category</button>
 </form>
-<br/>
-<br/>
-<button class="btn bg-danger">Edit category</button>
+ 

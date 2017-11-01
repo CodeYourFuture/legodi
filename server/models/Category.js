@@ -13,8 +13,8 @@ const CategorySchema = new Schema({
         type: String
     },
     hideCategory: {
-        type: Boolean,
-        default: true,
+        type: String,
+        default: 'off',
     }
 });
 
