@@ -5,11 +5,7 @@ const { Schema } = mongoose;
 const schema = new Schema({
     title: String,
     fullContent: String,
-    postedBy: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: CategoryModel
-    },
-    categoryName: [{
+    categoryId: [{
         text: String,
         postedBy: {
             type: mongoose.Schema.Types.ObjectId,
