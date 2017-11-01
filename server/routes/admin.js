@@ -8,15 +8,6 @@ router.get("/", function (req, res, next) {
   res.send('admin');
 });
 
-router.get('/categories', function (req, res, next) {
-  const callback = (error, category) => {
-    res.render("admin-list-categories", {
-      category
-    })
-  }
-  categoryClient.findCategories({},callback);
-});
-
 router.get('/articles', function (req, res, next) {
   const callback = (error, articles) => {
     res.render("admin-list-articles", {
@@ -25,7 +16,61 @@ router.get('/articles', function (req, res, next) {
   }
   articleClient.findArticles({}, callback);
 });
- 
+
+router.get('/articles/edit/:articleId', (req, res) => {
+  let articleId = req.params.articleId;
+  const callback = (error, article) => {
+    res.render("admin-edit-article", {
+      article: article
+    })
+  }
+  articleClient.findArticleById(articleId, callback);
+})
+
+router.post('/articles/edit/:articleId', function (req, res, next) {
+  let articleId = req.params.articleId;
+  const query = req.body;
+
+  const callback = (error, article) => {
+    res.redirect('/')
+  }
+  articleClient.editArticle(articleId, query, true, callback);
+
+});
+
+router.get('/article/add', (req, res, next) => {
+  res.render('add-articles');
+});
+
+router.put('/article/add', (req, res) => {
+  const query = req.body;
+  const callBack = (data) => {
+    res.redirect('/')
+  }
+  articleClient.addArticle(query, callBack)
+})
+
+router.get('/categories', function (req, res, next) {
+  const callback = (error, category) => {
+    res.render("admin-list-categories", {
+      category
+    })
+  }
+  categoryClient.findCategories({}, callback);
+});
+
+router.get("/categories/add", function (req, res, next) {
+  res.render('category');
+});
+
+router.put('/categories/add', function (req, res, next) {
+  const query = req.body;
+  const callback = () => {
+    res.redirect("/");
+  }
+  categoryClient.addCategory(query, callback);
+});
+
 router.get('/categories/edit/:categoryId', (req, res) => {
   let categoryId = req.params.categoryId;
   const callback = (error, category) => {
@@ -35,46 +80,17 @@ router.get('/categories/edit/:categoryId', (req, res) => {
   }
   categoryClient.findCategoryById(categoryId, callback);
 })
+
 router.post('/categories/edit/:categoryId', function (req, res, next) {
   let categoryId = req.params.categoryId;
   const query = req.body;
-   
+
   const callback = (error, category) => {
-// we use find articles function to show us list of all articles after update
- res.redirect('/')
-   }
-  categoryClient.editCategory(categoryId, query,true, callback);
-
-});
-
-router.get("/categories/add", function (req, res, next) {
-  res.render('category');
-});
-
-router.post('/categories/add', function (req, res, next) {
-  const query = req.body;
-  const callback = () => {
-    res.redirect("/");
-    res.end()
-  }
-  categoryClient.addCategory(query, callback);
-});
-
-
-router.get('/article/add', (req, res, next) => {
-  res.render('add-articles');
-});
-
-router.post('/article/add', (req, res) => {
-  const query = req.body;
-  const callBack = (data) => {
     res.redirect('/')
-    res.end();
   }
-  articleClient.addNewArticle(query, callBack)
-})
+
+  categoryClient.editCategory(categoryId, query, true, callback);
+
+});
 
 module.exports = router;
-
-
-

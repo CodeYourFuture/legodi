@@ -1,4 +1,5 @@
-<h2>Category: {{this.category.title}}</h2>
+<h3>Category: {{this.category.title}}</h3>
+
 <form method="post">  
     <input type="radio" name="hideCategory" value="on"> hide<br>
   <input type="radio" name="hideCategory" value="off"> show<br>
@@ -6,9 +7,12 @@
   <input name="title" value={{this.category.title}} />
   <br/>
   <br/>
-  <p>Edit Discreption</p>
-  <input name="description" value={{this.category.description}}>
-  <input name="shortDescription" value={{this.category.shortDescription}}>
-  <button class="btn bg-danger">Edit category</button>
+  <p>Edit short Description:</p>
+    <textarea name="shortDescription" value=>{{this.category.shortDescription}}</textarea>
+  </br></br>
+    <p>Edit Description:</p>
+    <textarea name="description" > {{this.category.description}}</textarea>
+    </br></br>
+  <button class="btn bg-danger">Update category</button>
 </form>
  

@@ -2,20 +2,27 @@ const mongoConnection = process.env.MONGODB_URI || 'mongodb://localhost:27017/le
 const Article = require('../models/Article');
 const mongoose = require('mongoose')
 mongoose.Promise = global.Promise;
+const ObjectId = require('mongodb').ObjectID;
+mongoose.connect(mongoConnection);
 
-const addNewArticle = (query, callback) => {
-    mongoose.connect(mongoConnection);
-    Article.create(query).then(callback)
+const addArticle = (query, callback) => {
+     Article.create(query).then(callback)
 };
-
 const findArticles = (query, sucessCallBack) => {
-    mongoose.connect(mongoConnection);
     Article.find(query, sucessCallBack);
 };
- 
+const findArticleById = (id, callback) => {
+     Article.findById(id).exec(callback)
+};
+
+const editArticle = (articleId, query, upsertOption, sucessCallBack) => {
+     Article.update({"_id":ObjectId(articleId)}, query,{upsert:upsertOption}, sucessCallBack);
+};
 
 module.exports = {
-    addNewArticle,
-    findArticles
+    addArticle,
+    findArticles,
+    findArticleById,
+    editArticle
 };
 

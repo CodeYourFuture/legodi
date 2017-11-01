@@ -2,10 +2,12 @@
     <div class="row justify-content-md-center">
         <div class="card" style="width: 20rem;">
             {{#each articles}}
-           <div class="card-block">
-                <h4 class="card-title">article:{{this.title}}</h4>
-                <p class="card-text">{{this.fullContent}}</p>
-            </div> 
+            <a href="/admin/articles/edit/{{this._id}}">
+                <div class="card-block">
+                    <h4 class="card-title">article:{{this.title}}</h4>
+                    <p class="card-text">{{this.fullContent}}</p>
+                </div>
+            </a>
             {{/each}}
         </div>
     </div>

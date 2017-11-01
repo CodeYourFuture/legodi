@@ -1,5 +1,5 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 const categoryClient = require("../dbClients/categoriesDB");
 const articleClient = require('../dbClients/articlesDB')
 
