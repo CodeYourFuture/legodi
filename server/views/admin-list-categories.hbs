@@ -1,12 +1,7 @@
 
 <div class="container">
   <div class="row justify-content-md-center">
-
-     
-
-
     {{#each category}}
-
         <div class="card" style="width: 20rem;">
         <div class="card-block">
             <h4 class="card-title">Category:{{this.title}}</h4>
@@ -14,11 +9,8 @@
             <p class="card-text">{{this.shortDescription}}</p>
         </div>
         </div>
-
-
 {{/each}}
     </div>
         <a href="categories/add"><button class="bg-info"> Add New category</button></a>
-
 </div>
 

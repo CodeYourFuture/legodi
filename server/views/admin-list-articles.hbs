@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="card" style="width: 20rem;">
+            {{#each articles}}
+            <div class="card-block">
+                <h4 class="card-title">article:{{this.title}}</h4>
+                <p class="card-text">{{this.fullContent}}</p>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    <a href="article/add">
+        <button class="bg-info"> Add New article</button>
+    </a>
+</div>
