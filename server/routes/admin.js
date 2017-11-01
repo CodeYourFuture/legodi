@@ -1,5 +1,5 @@
-const express = require('express');
-const router = express.Router();
+var express = require('express');
+var router = express.Router();
 const categoryClient = require('../dbClients/categoriesDB');
 const articleClient = require('../dbClients/articlesDB')
 
@@ -35,8 +35,29 @@ router.post('/categories/add', function (req, res, next) {
     res.redirect("/");
     res.end()
   }
-  categoryClient.addCategory(query, callback);
+  categoryClint.categoryClint(query, callback);
 });
+
+/*===========================
+        Add article
+===========================*/
+router.get('/articles/add', (req, res, next) => {
+  const callback = (error, category) => {
+    res.render('add-articles', {
+      category
+    })
+  }
+  categoryClient.listCategory(callback);
+});
+
+router.post('/articles/add', (req, res) => {
+  const query = req.body;
+  const callBack = (data) => {
+    res.redirect('/')
+    res.end();
+  }
+  articleClient.addNewArticle(query, callBack)
+})
 
 router.get('/article/add', (req, res, next) => {
      res.render('add-articles');
