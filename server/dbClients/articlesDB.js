@@ -12,15 +12,10 @@ const findArticles = (query, sucessCallBack) => {
     mongoose.connect(mongoConnection);
     Article.find(query, sucessCallBack);
 };
-
-const editArticle = (oldArticle, query, upsertOption, sucessCallBack) => {
-    mongoose.connect(mongoConnection);
-    Article.update(oldArticle, query, { upsert: upsertOption }, sucessCallBack);
-};
+ 
 
 module.exports = {
     addNewArticle,
-    findArticles,
-    editArticle
+    findArticles
 };
 

@@ -25,32 +25,6 @@ router.get('/articles', function (req, res, next) {
   }
   articleClient.findArticles({}, callback);
 });
-
-router.get('/articles/edit/:articleId', (req, res) => {
-  let articleId = req.params.articleId;
-  const callback = (error, article) => {
-    res.render("admin-edit-article", {
-      article: article[0]
-    })
-  }
-  articleClient.findArticles({ "_id": ObjectId(articleId) }, callback);
-})
-
-router.post('/articles/edit/:articleId', function (req, res, next) {
-  let articleId = req.params.articleId;
-  const query = req.body;
-  const callback = (error, article) => {
-// we use find articles function to show us list of all articles after update
-    const callbacktwo = (error, articles) => {
-      res.render("admin-list-articles", {
-        articles: articles
-      })
-    } 
-    articleClient.findArticles({}, callbacktwo);
-  }
-  articleClient.editArticle({ "_id": ObjectId(articleId) }, query, true, callback);
-
-});
  
 router.get('/categories/edit/:categoryId', (req, res) => {
   let categoryId = req.params.categoryId;
