@@ -1,6 +1,6 @@
 <div class="container">
-    
-    <div class="row justify-content-md-center">
+     
+      <div class="row justify-content-md-center">
         {{#each category}}
         {{#if this.hideCategory}}
         <a href="/admin/categories/edit/{{this._id}}">
@@ -24,6 +24,13 @@
                 </div>
             </div>
         </a>
-        {{/if}}
+         {{/if}}
         {{/each}} 
 </div>
+     </div>
+    <a href="categories/add">
+        <button class="bg-info"> Add New category</button>
+    </a>
+</div>
+
+ 

@@ -3,6 +3,7 @@ const router = express.Router();
 const categoryClient = require('../dbClients/categoriesDB');
 const articleClient = require('../dbClients/articlesDB')
 const ObjectId = require('mongodb').ObjectID;
+ 
 
 router.get("/", function (req, res, next) {
   res.send('admin');
@@ -57,6 +58,15 @@ router.get('/categories', function (req, res, next) {
     })
   }
   categoryClient.findCategories({}, callback);
+});
+
+router.get('/articles', function (req, res, next) {
+  const callback = (error, articles) => {
+     res.render("admin-list-articles",{
+      articles:articles
+     }) 
+    }
+    articleClient.listArticles(callback);
 });
 
 router.get("/categories/add", function (req, res, next) {
