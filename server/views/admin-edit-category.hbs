@@ -1,9 +1,14 @@
 <h3>Category: {{this.category.title}}</h3>
 
 <form method="post">  
-    <input type="radio" name="hideCategory" value="true"> hide<br>
-  <input type="radio" name="hideCategory" value="false"> show<br>
-  <p>Categoru Title</p>
+  {{#if this.category.visable}}
+    <input type="radio" name="visable" value="true" checked="true"> Visible<br>
+     <input type="radio" name="visable" value="false"> Hidden<br>
+  {{else}}
+    <input type="radio" name="visable" value="true"  > Visible<br>
+     <input type="radio" name="visable" value="false"  checked="true"> Hidden<br>
+     {{/if}}
+   <p>Category Title</p>
   <input name="title" value={{this.category.title}} />
   <br/>
   <br/>

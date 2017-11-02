@@ -39,11 +39,11 @@ router.post('/articles/edit/:articleId', function (req, res, next) {
 
 });
 
-router.get('/article/add', (req, res, next) => {
-  res.render('add-articles');
+router.get('/articles/add', (req, res, next) => {
+  res.render('admin-add-article');
 });
 
-router.put('/article/add', (req, res) => {
+router.post('/articles/add', (req, res) => {
   const query = req.body;
   const callBack = (data) => {
     res.redirect('/')
@@ -70,10 +70,10 @@ router.get('/articles', function (req, res, next) {
 });
 
 router.get("/categories/add", function (req, res, next) {
-  res.render('category');
+  res.render('admin-add-category');
 });
 
-router.put('/categories/add', function (req, res, next) {
+router.post('/categories/add', function (req, res, next) {
   const query = req.body;
   const callback = () => {
     res.redirect("/");
