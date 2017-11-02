@@ -3,10 +3,10 @@
     <input type="title" name="title" />
     <br/>
     <h4> Categories:</h4>
-    <select>
+    <select name="category">
         <option value="null" selected>Choose a Category</option>
         {{#each categories}}
-        <option value={{ this._id}} name="categoryTitle">{{ this.title }}</option>
+            <option value={{this._id}}>{{ this.title }}</option>
         {{/each}}
     </select>
     <h4> Full Content</h4>
