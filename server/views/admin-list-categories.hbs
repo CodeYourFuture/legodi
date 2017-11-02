@@ -1,0 +1,47 @@
+    <a  href="categories/add">
+        <button class="btn btn-success addNewArticle"> Add New category</button>
+    </a>
+</div>
+
+ 
+ <table class="table table-bordered table-danger">
+  <thead class="thead-inverse">
+    <tr>
+       <th>ID</th> 
+      <th>Title</th>
+      <th>Short content</th>
+        <th>Visible</th>
+      <th>Update</th>
+
+    </tr>
+  </thead>
+  <tbody>
+     {{#each category}}
+
+    {{#if this.visible}}
+
+    <tr>
+      
+      <th scope="row">{{this._id}}</th>
+      <td> {{this.title}}</td>
+      <td>{{this.shortDescription}} </td>
+      <td>{{this.visible}} </td>
+
+      <td><a href="/admin/categories/edit/{{this._id}}"><button class="btn btn-info">Edit</button> </a> </td>
+        
+     </tr> 
+      {{else}}
+      <tr>
+      
+      <th scope="row">{{this._id}}</th>
+      <td> {{this.title}}</td>
+      <td> <strike>hide</strike></td>
+    <td>{{this.visible}} </td>
+      <td><a href="/admin/categories/edit/{{this._id}}"><button class="btn btn-info">Edit</button> </a> </td>
+        
+     </tr> 
+        {{/if}}
+      {{/each}}
+  </tbody>
+</table>
+ 

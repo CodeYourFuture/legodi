@@ -16,6 +16,9 @@ function Menu (){
                 <NavLink ><Link to="/categories">Categories</Link></NavLink>
               </NavItem>
               <NavItem>
+                <NavLink ><Link to="/articles">Articles</Link></NavLink>
+              </NavItem>
+              <NavItem>
                 <NavLink ><Link to="/about">About</Link></NavLink>
               </NavItem>
               </Nav>

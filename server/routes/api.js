@@ -1,7 +1,7 @@
-var express = require('express');
-var router = express.Router();
-const categoryDB = require("../dbClients/categoriesDB");
-const articleDB = require('../dbClients/articlesDB')
+const express = require('express');
+const router = express.Router();
+const categoryClient = require("../dbClients/categoriesDB");
+const articleClient = require('../dbClients/articlesDB')
 
 /* GET Articles page. */
 router.get('/articles', function (req, res, next) {
@@ -12,12 +12,12 @@ router.get('/articles', function (req, res, next) {
             res.json(articles)
         }
     };
-    articleDB.listArticles(callBack)
+    articleClient.findArticles({},callBack)
 });
 
 router.get('/categories', function (req, res, next) {
     const callback = (error, data) => { res.json(data) }
-    categoryDB.listCategory(callback);
+    categoryClient.findCategories({'visible':true},callback);
 });
 
 module.exports = router;

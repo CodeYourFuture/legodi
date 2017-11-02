@@ -1,27 +1,28 @@
 import React, { Component } from 'react';
 import './App.css';
-import Menu from '../../components/menu.js'
-import Home from '../../components/home.js'
-import About from '../../components/about.js'
-import Categories from '../../components/categories.js'
+import Menu from '../../components/Menu/menu.js'
+import About from '../../components/About/about.js'
+import Header from '../../components/Header/header.js'
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import CategoriesOverview from "../../components/Categories/CategoriesOverview/CategoriesOverview"
+import CategoriesNavOverview from "../../components/Categories/CategoriesOverview/categoriesNavOverView"
+import SingleArticle from "../../containers/SingleArticle/SingleArticle";
 
 class App extends Component {
   render() {
     return (
-
       <Router>
         <div>
-          <Menu />
-
+           <Header headerTitle={"Legodi"}
+            headerDesc={"Digital Welcome Pack For Refugee in Glasgow"} />
+          <Menu   />
           <hr />
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={CategoriesNavOverview} />
           <Route path="/about" component={About} />
-          <Route path="/categories" component={Categories} />
+          <Route path="/categories" component={CategoriesOverview} /> 
+          <Route path="/articles/:articleId" component={SingleArticle} />
         </div>
       </Router>
-
-
     );
   }
 }
