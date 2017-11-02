@@ -7,6 +7,9 @@ router.get("/", function (req, res, next) {
   res.send('admin');
 });
 
+/*===========================
+        Add Category
+===========================*/
 router.get('/categories', function (req, res, next) {
   const callback = (error, category) => {
      res.render("admin-list-categories",{
@@ -54,7 +57,6 @@ router.post('/articles/add', (req, res) => {
   const query = req.body;
   const callBack = (data) => {
     res.redirect('/')
-    res.end();
   }
   articleClient.addNewArticle(query, callBack)
 })
