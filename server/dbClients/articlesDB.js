@@ -10,7 +10,7 @@ mongoose.Promise=global.Promise;
 
 const listArticles = (sucessCallBack) => {
     mongoose.connect(mongoConnection);
-    Article.find({}, sucessCallBack);
+    Article.find({}).populate('category').exec(sucessCallBack);
 };
  
 module.exports = {addNewArticle,listArticles};
