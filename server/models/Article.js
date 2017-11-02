@@ -5,15 +5,12 @@ const { Schema } = mongoose;
 const schema = new Schema({
     title: String,
     fullContent: String,
-    categoryId: [{
-        text: String,
-        postedBy: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: CategoryModel
-        }
-    }]
+    category: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'category'
+    }
 });
 
-const Article = mongoose.model('articles', schema);
+const Article = mongoose.model('article', schema);
 
 module.exports = Article;
