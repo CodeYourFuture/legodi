@@ -1,7 +1,20 @@
 <div class="container">
-    </a>
+    
     <div class="row justify-content-md-center">
         {{#each category}}
+        {{#if this.hideCategory}}
+        <a href="/admin/categories/edit/{{this._id}}">
+            <div class="text-danger card bg-success" style="width: 20rem;">
+                <div class="card-block">
+                            <p>This category is hide </p>
+
+                    <h4 class="card-title">Category:{{this.title}}</h4>
+                    <p class="card-text">{{this.description}}</p>
+                    <p class="card-text">{{this.shortDescription}}</p>
+                </div>
+            </div>
+        </a>
+        {{else}}
         <a href="/admin/categories/edit/{{this._id}}">
             <div class="card" style="width: 20rem;">
                 <div class="card-block">
@@ -11,9 +24,6 @@
                 </div>
             </div>
         </a>
-        {{/each}}
-    </div>
-    <a href="categories/add">
-        <button class="bg-info"> Add New category</button>
-    </a>
+        {{/if}}
+        {{/each}} 
 </div>
