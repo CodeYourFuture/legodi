@@ -36,7 +36,6 @@ router.post('/articles/edit/:articleId', function (req, res, next) {
     res.redirect('/')
   }
   articleClient.editArticle(articleId, query, true, callback);
-
 });
 
 router.get('/articles/add', (req, res, next) => {
@@ -59,16 +58,6 @@ router.get('/categories', function (req, res, next) {
   }
   categoryClient.findCategories({}, callback);
 });
-
-router.get('/articles', function (req, res, next) {
-  const callback = (error, articles) => {
-     res.render("admin-list-articles",{
-      articles:articles
-     }) 
-    }
-    articleClient.listArticles(callback);
-});
-
 router.get("/categories/add", function (req, res, next) {
   res.render('admin-add-category');
 });

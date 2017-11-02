@@ -1,17 +1,30 @@
-<div class="container">
-    <div class="row justify-content-md-center">
-        <div class="card" style="width: 20rem;">
-            {{#each articles}}
-             <a href="/admin/articles/edit/{{this._id}}">
-                <div class="card-block">
-                    <h4 class="card-title">article:{{this.title}}</h4>
-                    <p class="card-text">{{this.fullContent}}</p>
-                </div>
-            </a>
-            {{/each}}
-        </div>
-    </div>
-    <a href="articles/add">
-        <button class="bg-info"> Add New article</button>
+
+    <a class="addNewArticle" href="articles/add">
+        <button class="btn btn-success addNewArticle"> Add New article</button>
     </a>
-</div>
+ 
+
+ <table class="table table-bordered table-danger">
+  <thead class="thead-inverse">
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Update</th>
+
+    </tr>
+  </thead>
+  <tbody>
+     {{#each articles}}
+    <tr>
+      
+      <th scope="row">{{this._id}}</th>
+      <td> {{this.title}}</td>
+      <td>{{this.fullContent}} </td>
+      <td><a href="/admin/articles/edit/{{this._id}}"><button class="btn btn-info">Edit</button> </a> </td>
+        
+     </tr>  
+     {{/each}}
+  </tbody>
+</table>
+ 
