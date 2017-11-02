@@ -11,6 +11,10 @@ const CategorySchema = new Schema({
     },
     shortDescription: {
         type: String
+    },
+    visible: {
+        type: Boolean,
+        default: true,
     }
 });
 

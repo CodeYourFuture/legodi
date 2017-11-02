@@ -6,3 +6,18 @@ body {
 a {
   color: #00B7FF;
 }
+nav#serverNav{
+  margin-bottom: 20px;
+  padding-bottom: .53rem;
+  
+ }
+ button,.navbar-toggler{
+   margin-top:-5px;
+  }
+  .addNewArticle{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .visHid{
+    margin: 4px;
+  }
