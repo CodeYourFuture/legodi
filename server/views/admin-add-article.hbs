@@ -1,22 +1,24 @@
 <form method="post" >
     <div class="form-group has-success">
-      <h5 class="text-success" >Title:</h5>
-     <input  class="form-control form-control-success" id="inputSuccess1" name="title"/>
-    <br/>
-    <h4> Categories:</h4>
-    <select name="category">
-        <option value="null" selected>Choose a Category</option>
-        {{#each categories}}
-        <option value={{this._id}}>{{ this.title }}</option>
-        {{/each}}
-    </select>
-     <h5 class="text-success" >Full Content:</h5>
-   
-    <textarea  class="form-control form-control-success" id="inputSuccess1" name="fullContent" >
-    </textarea>
-    <br/>
-    <button class="btn bg-success"type="submit">New Article</button>
+        <h5 class="text-success" >Title:</h5>
+        <input  class="form-control" id="inputSuccess1" name="title"/>
     </div>
+    <div class="form-group has-success">
+        <h4> Categories:</h4>
+        <select name="category" class="form-control">
+            <option value="null" selected>Choose a Category</option>
+            {{#each categories}}
+            <option value={{this._id}}>{{ this.title }}</option>
+            {{/each}}
+        </select>
+    </div>
+    <div class="form-group has-success">
+        <h5 class="text-success">Full Content:</h5>
+        <textarea class="form-control" id="inputSuccess1" name="fullContent">
+        </textarea>
+    </div>
+    <button class="btn bg-success"type="submit">New Article</button>
+    
 </form>
  
  
