@@ -1,23 +1,31 @@
-<h3>Category: {{this.category.title}}</h3>
+<br/><h2 class="text-info">Category: {{this.category.title}}</h2><br/>
 
 <form method="post">  
+    <div class="form-group has-success">
   {{#if this.category.visible}}
-    <input type="radio" name="visible" value="true" checked="true"> Visible<br>
-     <input type="radio" name="visible" value="false"> Hidden<br>
+    <input type="radio" name="visible" value="true" checked="true"> <label  class="visHid text-success">Visible</label><br>
+     <input type="radio" name="visible" value="false"> <label  class="visHid text-success">Hidden</label><br>
   {{else}}
-    <input type="radio" name="visible" value="true"  > Visible<br>
-     <input type="radio" name="visible" value="false"  checked="true"> Hidden<br>
+    <input type="radio" name="visible" value="true"  ><label  class="visHid text-success">Visible</label><br>
+     <input type="radio" name="visible" value="false"  checked="true"><label  class="visHid text-success">Hidden</label><br>
      {{/if}}
-   <p>Category Title</p>
-  <input name="title" value={{this.category.title}} />
+   <h5 class="text-success" >Category Title:</h5>
+   <textarea  class="form-control form-control-success" id="inputSuccess1" name="title">
+     {{this.category.title}}
+    </textarea>
   <br/>
   <br/>
-  <p>Edit short Description:</p>
-    <textarea name="shortDescription" value=>{{this.category.shortDescription}}</textarea>
+     <h5 class="text-success" >Edit short Description:</h5>
+   <textarea  class="form-control form-control-success" id="inputSuccess1" name="shortDescription">
+     {{this.category.shortDescription}}
+    </textarea>
   </br></br>
-    <p>Edit Description:</p>
-    <textarea name="description" > {{this.category.description}}</textarea>
+      <h5 class="text-success" >Edit Description:</h5>
+   <textarea  class="form-control form-control-success" id="inputSuccess1" name="description">
+     {{this.category.description}}
+    </textarea>
     </br></br>
-  <button class="btn bg-danger">Update category</button>
+  <button class="btn bg-success">Update category</button>
+  </div>
 </form>
  
