@@ -29,7 +29,7 @@ router.post('/categories/add', function (req, res, next) {
   const callback = () => {
     res.redirect("/");
   }
-  categoryClint.addCategory(query, callback);
+  categoryClient.addCategory(query, callback);
 });
 
 router.get('/categories/edit/:categoryId', (req, res) => {
