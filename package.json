@@ -10,14 +10,14 @@
    },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kharazzoro/legodi.git"
+    "url": "https://github.com/CodeYourFuture/legodi.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kharazzoro/legodi/issues"
+    "url": "https://github.com/CodeYourFuture/legodi/issues"
   },
-  "homepage": "https://github.com/kharazzoro/legodi#readme"
+  "homepage": "https://github.com/CodeYourFuture/legodi#readme"
   
   
 }
