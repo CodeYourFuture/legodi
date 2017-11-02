@@ -3,7 +3,7 @@ const router = express.Router();
 const categoryClient = require('../dbClients/categoriesDB');
 const articleClient = require('../dbClients/articlesDB')
 const ObjectId = require('mongodb').ObjectID;
- 
+
 
 router.get("/", function (req, res, next) {
   res.send('admin');

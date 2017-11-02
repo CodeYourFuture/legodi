@@ -6,17 +6,17 @@ const ObjectId = require('mongodb').ObjectID;
 mongoose.connect(mongoConnection);
 
 const addArticle = (query, callback) => {
-     Article.create(query).then(callback)
+    Article.create(query).then(callback)
 };
 const findArticles = (query, sucessCallBack) => {
     Article.find(query, sucessCallBack);
 };
 const findArticleById = (id, callback) => {
-     Article.findById(id).exec(callback)
+    Article.findById(id).exec(callback)
 };
 
 const editArticle = (articleId, query, upsertOption, sucessCallBack) => {
-     Article.update({"_id":ObjectId(articleId)}, query,{upsert:upsertOption}, sucessCallBack);
+    Article.update({ "_id": ObjectId(articleId) }, query, { upsert: upsertOption }, sucessCallBack);
 };
 
 module.exports = {

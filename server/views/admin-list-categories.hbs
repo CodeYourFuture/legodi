@@ -1,47 +1,64 @@
-    <a  href="categories/add">
-        <button class="btn btn-success addNewArticle"> Add New category</button>
-    </a>
+<a href="categories/add">
+  <button class="btn mb-3"> Add New category</button>
+</a>
 </div>
 
- 
- <table class="table table-bordered table-danger">
+<table class="table table-bordered ">
   <thead class="thead-inverse">
     <tr>
-       <th>ID</th> 
-      <th>Title</th>
-      <th>Short content</th>
-        <th>Visible</th>
-      <th>Update</th>
+      <th class="text-center">ID</th>
+      <th class="text-center">Title</th>
+      <th class="text-center">Short content</th>
+      <th class="text-center">Visible</th>
+      <th class="text-center">Update</th>
 
     </tr>
   </thead>
   <tbody>
-     {{#each category}}
-
-    {{#if this.visible}}
+    {{#each category}} {{#if this.visible}}
 
     <tr>
-      
-      <th scope="row">{{this._id}}</th>
-      <td> {{this.title}}</td>
-      <td>{{this.shortDescription}} </td>
-      <td>{{this.visible}} </td>
 
-      <td><a href="/admin/categories/edit/{{this._id}}"><button class="btn btn-info">Edit</button> </a> </td>
-        
-     </tr> 
-      {{else}}
-      <tr>
-      
-      <th scope="row">{{this._id}}</th>
-      <td> {{this.title}}</td>
-      <td> <strike>hide</strike></td>
-    <td>{{this.visible}} </td>
-      <td><a href="/admin/categories/edit/{{this._id}}"><button class="btn btn-info">Edit</button> </a> </td>
-        
-     </tr> 
-        {{/if}}
-      {{/each}}
+      <th class="align-middle p-4" scope="row">{{this._id}}</th>
+      <td class="align-middle p-4">
+        <h4> {{this.title}}</h4>
+      </td>
+      <td class="align-middle p-4">
+        <h4>{{this.shortDescription}}</h4>
+      </td>
+      <td class="align-middle p-4">
+        <h4>&#x2714;</h4>
+      </td>
+
+      <td class="align-middle">
+        <a href="/admin/categories/edit/{{this._id}}">
+          <button class="btn btn-info">Edit</button>
+        </a>
+      </td>
+
+    </tr>
+    {{else}}
+    <tr>
+
+      <th class="align-middle p-4" scope="row">{{this._id}}</th>
+      <td class="align-middle p-4">
+        <h4>{{this.title}}</h4>
+      </td>
+      <td class="align-middle p-4">
+        <strike>
+          <h4>Hide</h4>
+        </strike>
+      </td>
+      <td class="align-middle p-4 ">
+        <h4>&#x2716;</h4>
+      </td>
+      <td class="align-middle ">
+        <a href="/admin/categories/edit/{{this._id}}">
+          <button class="btn btn-info">Edit</button>
+        </a>
+      </td>
+
+    </tr>
+    {{/if}} {{/each}}
   </tbody>
 </table>
- 
