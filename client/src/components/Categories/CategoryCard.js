@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardText, CardBody,CardTitle, Button } from 'reactstrap';
-function CategoryCard(props){       
-return (
+function CategoryCard(props){ 
+ return (
         <div>
           <Card>
             <CardBody>
@@ -13,7 +13,7 @@ return (
           </Card>
         </div>
       );
-   }
+  }
  
 export default CategoryCard
  
