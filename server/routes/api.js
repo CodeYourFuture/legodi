@@ -17,7 +17,7 @@ router.get('/articles', function (req, res, next) {
 
 router.get('/categories', function (req, res, next) {
     const callback = (error, data) => { res.json(data) }
-    categoryClient.findCategories({'visable':true},callback);
+    categoryClient.findCategories({'visible':true},callback);
 });
 
 module.exports = router;

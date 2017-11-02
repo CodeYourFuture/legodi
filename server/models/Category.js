@@ -12,7 +12,7 @@ const CategorySchema = new Schema({
     shortDescription: {
         type: String
     },
-    visable: {
+    visible: {
         type: Boolean,
         default: true,
     }
