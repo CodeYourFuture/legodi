@@ -1,7 +1,7 @@
 {
   "name": "legodi",
   "version": "1.0.0",
-  "description": "Scotland Graduation Project - Digital Welcome Pack for refugees #To run the server locally use npm run dev that it will make the server work automatically when happens any change",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "npm --prefix server run dev && npm --prefix client start",
