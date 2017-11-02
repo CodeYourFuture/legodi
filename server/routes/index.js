@@ -6,7 +6,7 @@ const articleClient = require('../dbClients/articlesDB')
  
 router.get('/', function (req, res, next) {
   const callback = (error, articles) => {
-     res.render("admin-list-articles",{
+     res.render("index",{
       articles:articles
      }) 
     }
