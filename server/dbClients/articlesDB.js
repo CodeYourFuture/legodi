@@ -8,11 +8,18 @@ mongoose.connect(mongoConnection);
 const addArticle = (query, callback) => {
      Article.create(query).then(callback)
 };
+
 const findArticles = (query, sucessCallBack) => {
     Article.find(query, sucessCallBack);
 };
+
 const findArticleById = (id, callback) => {
      Article.findById(id).exec(callback)
+};
+
+const listArticles = (sucessCallBack) => {
+    mongoose.connect(mongoConnection);
+    Article.find({}).populate('category').exec(sucessCallBack);
 };
 
 const editArticle = (articleId, query, upsertOption, sucessCallBack) => {
