@@ -1,16 +1,16 @@
 
     <a class="addNewArticle" href="articles/add">
-        <button class="btn btn-success addNewArticle"> Add New article</button>
+        <button class="btn mb-3"> Add New article</button>
     </a>
  
 
- <table class="table table-bordered table-danger">
+ <table class="table table-bordered">
   <thead class="thead-inverse">
     <tr>
-      <th>ID</th>
-      <th>Title</th>
-      <th>Content</th>
-      <th>Update</th>
+      <th class="text-center">ID</th>
+      <th class="text-center">Title</th>
+      <th class="text-center">Content</th>
+      <th class="text-center">Update</th>
 
     </tr>
   </thead>
@@ -18,10 +18,10 @@
      {{#each articles}}
     <tr>
       
-      <th scope="row">{{this._id}}</th>
-      <td> {{this.title}}</td>
-      <td>{{this.fullContent}} </td>
-      <td><a href="/admin/articles/edit/{{this._id}}"><button class="btn btn-info">Edit</button> </a> </td>
+      <th scope="row" class="align-middle p-4"><h4>{{this._id}}</h4></th>
+      <td class="align-middle p-4"> <h4>{{this.title}}</h4></td>
+      <td class="align-middle p-4"><h4>{{this.fullContent}} </h4></td>
+      <td class="align-middle p-4 text-center"><a href="/admin/articles/edit/{{this._id}}"><button class="btn">Edit</button> </a> </td>
         
      </tr>  
      {{/each}}
