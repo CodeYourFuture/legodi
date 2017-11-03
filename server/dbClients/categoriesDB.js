@@ -26,6 +26,3 @@ module.exports = {
     editCategory,
     findCategoryById
 };
-
-
-
