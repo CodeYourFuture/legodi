@@ -5,18 +5,15 @@
       <th class="text-center">Title</th>
       <th class="text-center">Content</th>
       <th class="text-center">Update</th>
-
     </tr>
   </thead>
   <tbody>
      {{#each articles}}
     <tr>
-      
       <th scope="row" class="align-middle p-4"><h4>{{this._id}}</h4></th>
       <td class="align-middle p-4"> <h4>{{this.title}}</h4></td>
       <td class="align-middle p-4"><h4>{{this.fullContent}} </h4></td>
       <td class="align-middle p-4 text-center"><a href="/admin/articles/edit/{{this._id}}"><button class="btn">Edit</button> </a> </td>
-        
      </tr>  
      {{/each}}
   </tbody>

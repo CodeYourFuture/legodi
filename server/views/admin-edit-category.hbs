@@ -1,31 +1,35 @@
-<br/><h2 class="text-info">Category: {{this.category.title}}</h2><br/>
+<h2 class="text-info mb-5">Category Name: {{this.category.title}}</h2>
 
-<form method="post">  
-    <div class="form-group has-success">
-  {{#if this.category.visible}}
-    <input type="radio" name="visible" value="true" checked="true"> <label  class="visHid text-success">Visible</label><br>
-     <input type="radio" name="visible" value="false"> <label  class="visHid text-success">Hidden</label><br>
-  {{else}}
-    <input type="radio" name="visible" value="true"  ><label  class="visHid text-success">Visible</label><br>
-     <input type="radio" name="visible" value="false"  checked="true"><label  class="visHid text-success">Hidden</label><br>
-     {{/if}}
-   <h5 class="text-success" >Category Title:</h5>
-   <textarea  class="form-control form-control-success" id="inputSuccess1" name="title">
-     {{this.category.title}}
-    </textarea>
-  <br/>
-  <br/>
-     <h5 class="text-success" >Edit short Description:</h5>
-   <textarea  class="form-control form-control-success" id="inputSuccess1" name="shortDescription">
-     {{this.category.shortDescription}}
-    </textarea>
-  </br></br>
-      <h5 class="text-success" >Edit Description:</h5>
-   <textarea  class="form-control form-control-success" id="inputSuccess1" name="description">
-     {{this.category.description}}
-    </textarea>
-    </br></br>
-  <button class="btn bg-success">Update category</button>
+<form method="post">
+  <div class="form-group has-success">
+    {{#if this.category.visible}}
+    <div class="mb-3">
+      <input type="radio" name="visible" value="true" checked="true">
+      <label class="visHid text-success">Visible</label>
+      <input type="radio" name="visible" value="false">
+      <label class="visHid text-success">Hidden</label>
+    </div>
+    {{else}}
+    <div class="mb-3">
+      <input type="radio" name="visible" value="true">
+      <label class="visHid text-success">Visible</label>
+      <input type="radio" name="visible" value="false" checked="true">
+      <label class="visHid text-success">Hidden</label>
+    </div>
+    {{/if}}
+  </div>
+
+  <div class="form-group has-success">
+    <label class="text-success">Category Title:</label>
+    <input class="mb-3" name="title" value={{this.category.title}}>
+  </div>
+  <div class="form-group has-success">
+    <label class="text-success">Edit short Description:</label>
+    <textarea rows="4" cols="50" class="form-control form-control-success mb-3" id="inputSuccess1" name="shortDescription">{{this.category.shortDescription}}</textarea>
+  </div>
+  <div class="form-group has-success">
+    <label class="text-success">Edit Description:</label>
+    <textarea rows="4" cols="50" class="form-control form-control-success mb-3" id="inputSuccess1" name="description">{{this.category.description}}</textarea>
+    <button class="btn bg-success">Update category</button>
   </div>
 </form>
- 
