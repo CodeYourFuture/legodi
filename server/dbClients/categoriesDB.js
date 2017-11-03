@@ -17,7 +17,7 @@ const findCategoryById = (id, callback) => {
 }
 
 const editCategory = (CategoryId, query, upsertOption, sucessCallBack) => {
-    CategoryModel.update({"_id":ObjectId(CategoryId)}, query,{upsert:upsertOption}, sucessCallBack);
+    CategoryModel.update({ "_id": ObjectId(CategoryId) }, query, { upsert: upsertOption }, sucessCallBack);
 };
 
 module.exports = {
