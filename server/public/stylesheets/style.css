@@ -2,12 +2,9 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
- 
 nav#serverNav{
   margin-bottom: 20px;
   padding-bottom: .53rem;
-  
  }
  button,.navbar-toggler{
    margin-top:-5px;
@@ -16,4 +13,3 @@ nav#serverNav{
     margin-top: 20px;
     margin-bottom: 20px;
   }
-  

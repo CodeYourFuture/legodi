@@ -1,6 +1,5 @@
-<a class="addNewArticle" href="articles/add">
-        <button class="btn mb-3"> Add New article</button>
-    </a> 
+ 
+<a href="/admin/articles/add" class="btn btn-primary btn-lg active  mb-3" role="button" aria-pressed="true">Add New article</a>
 
  <table class="table table-bordered">
   <thead class="thead-inverse">
@@ -9,18 +8,15 @@
       <th class="text-center">Title</th>
       <th class="text-center">Content</th>
       <th class="text-center">Update</th>
-
     </tr>
   </thead>
   <tbody>
      {{#each articles}}
-    <tr>
-      
+      <tr>      
       <th scope="row" class="align-middle p-4">{{this._id}}</th>
       <td class="align-middle p-4"> <h4>{{this.title}}</h4></td>
       <td class="align-middle p-4"><h4>{{this.fullContent}} </h4></td>
-      <td class="align-middle p-4 text-center"><a href="/admin/articles/edit/{{this._id}}"><button class="btn">Edit</button> </a> </td>
-        
+      <td class="align-middle p-4 text-center"><a href="/admin/articles/edit/{{this._id}}"><button class="btn">Edit</button> </a> </td> 
      </tr>  
      {{/each}}
   </tbody>

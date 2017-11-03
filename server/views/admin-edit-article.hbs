@@ -1,12 +1,16 @@
- <h2 class="text-info">Article: {{this.article.title}}</h2>
-<form method="post">  
+<form method="post">
+  
+     <div class="form-group row has-success">
+  <label for="example-text-input text-success " class="col-12 col-form-label">Aticle Title:</label>
+  <div class="col-lg-6 col-md-8 col-sm-9 col-xs-9 ">
+    <input class="form-control" type="text" name="title" value={{this.article.title}} id="example-text-input">
+  </div>
+  </div>
+ 
   <div class="form-group has-success">
- <h5 class="text-success" >Aticle Title:</h5>
- <input class="mb-3" name="title" value={{this.article.title}}>
-     <h5 class="text-success" >Aticle Discreption:</h5>
-    <textarea class="form-control form-control-success mb-3"   name="fullContent">{{this.article.fullContent}} 
+    <label class="text-success">Aticle Discreption:</label>
+    <textarea class="form-control form-control-success mb-3" name="fullContent">{{this.article.fullContent}} 
     </textarea>
-     
-    <button class="btn bg-success">Update Aticle</button>
-   </div>
-</form> 
+      <button class="btn bg-success">Update Aticle</button>
+  </div>
+</form>
