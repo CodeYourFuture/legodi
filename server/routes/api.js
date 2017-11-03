@@ -12,12 +12,12 @@ router.get('/articles', function (req, res, next) {
             res.json(articles)
         }
     };
-    articleClient.findArticles({},callBack)
+    articleClient.findArticles({}, callBack)
 });
 
 router.get('/categories', function (req, res, next) {
     const callback = (error, data) => { res.json(data) }
-    categoryClient.findCategories({'visible':true},callback);
+    categoryClient.findCategories({ 'visible': true }, callback);
 });
 
 module.exports = router;
