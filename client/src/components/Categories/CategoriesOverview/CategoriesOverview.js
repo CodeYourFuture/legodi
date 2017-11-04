@@ -3,41 +3,32 @@ import CategoryCard from "../CategoryCard";
 import apiClient from '../../../helpers/apiClient';
 
 class CategoriesOverview extends Component {
- 
-    constructor(){
-
-            super();
-            this.state={
-                categoriesListArr:[]
-            }
+    constructor() {
+        super();
+        this.state = {
+            categoriesList: []
         }
-         
-        componentDidMount() {
-            apiClient.getCategories()
-                .then(({ data }) => {
-                     this.setState({
-                        categoriesListArr:data
-                    })
+    }
+    componentDidMount() {
+        apiClient.getCategories()
+            .then(({ data }) => {
+                this.setState({
+                    categoriesList: data
                 })
-                .catch((err) => { }) 
-                
-          
-             
-        }
-
+            })
+    }
     render() {
-      return (
-                <div>
-               {
-                    this.state.categoriesListArr.map((category) => {
+        return (
+            <div>
+                {
+                    this.state.categoriesList.map((category) => {
                         return (
-                             <CategoryCard category={category} />
-                         )
+                            <CategoryCard category={category} />
+                        )
                     })
                 }
-                 </div>
-            )
-    
-    }}
-
+            </div>
+        )
+    }
+}
 export default CategoriesOverview

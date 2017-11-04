@@ -7,6 +7,10 @@ const apiClient = {
     },
     getArticles: () => {
         return axios.get(`${apiUrl}/api/articles`);
+    },
+    getSingleArticle: (articleId) => {
+
+        return axios.get(`${apiUrl}/api/articles/${articleId}`);
     }
 }
 

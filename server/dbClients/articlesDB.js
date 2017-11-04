@@ -10,16 +10,11 @@ const addArticle = (query, callback) => {
 };
 
 const findArticles = (query, sucessCallBack) => {
-    Article.find(query, sucessCallBack);
+    Article.find(query).populate('category').exec(sucessCallBack);    
 };
 
 const findArticleById = (id, callback) => {
      Article.findById(id).exec(callback)
-};
-
-const listArticles = (sucessCallBack) => {
-    mongoose.connect(mongoConnection);
-    Article.find({}).populate('category').exec(sucessCallBack);
 };
 
 const editArticle = (articleId, query, upsertOption, sucessCallBack) => {
@@ -32,4 +27,3 @@ module.exports = {
     findArticleById,
     editArticle
 };
-
