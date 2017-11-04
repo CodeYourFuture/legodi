@@ -7,14 +7,14 @@ class CategoriesNavOverview extends Component {
     constructor() {
         super();
         this.state = {
-            categoriesListArr: []
+            categoriesList: []
         }
     }
     componentDidMount() {
         apiClient.getCategories()
             .then(({ data }) => {
                 this.setState({
-                    categoriesListArr: data
+                    categoriesList: data
                 })
             })
     }
@@ -22,7 +22,7 @@ class CategoriesNavOverview extends Component {
         return (
             <Nav pills>
                 {
-                    this.state.categoriesListArr.map((category) => {
+                    this.state.categoriesList.map((category) => {
                         return (
                             <CategoryItem categoryItem={category} />
                         )

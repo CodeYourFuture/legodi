@@ -6,14 +6,14 @@ class CategoriesOverview extends Component {
     constructor() {
         super();
         this.state = {
-            categoriesListArr: []
+            categoriesList: []
         }
     }
     componentDidMount() {
         apiClient.getCategories()
             .then(({ data }) => {
                 this.setState({
-                    categoriesListArr: data
+                    categoriesList: data
                 })
             })
     }
@@ -21,7 +21,7 @@ class CategoriesOverview extends Component {
         return (
             <div>
                 {
-                    this.state.categoriesListArr.map((category) => {
+                    this.state.categoriesList.map((category) => {
                         return (
                             <CategoryCard category={category} />
                         )

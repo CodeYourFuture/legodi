@@ -8,6 +8,7 @@ const ObjectId = require('mongodb').ObjectID;
 router.get('/articles', function (req, res, next) {
     const callBack = (error, articles) => {
         if (error) {
+            console.error(error)            
             res.sendStatus(500);
         } else {
             res.json(articles)
@@ -20,6 +21,7 @@ router.get('/articles/:articleId', function (req, res, next) {
     const articleId = req.params.articleId;    
     const callBack = (error, singleArticles) => {
         if (error) {
+            console.error(error)
             res.sendStatus(500);
         } else {
             res.json(singleArticles)
