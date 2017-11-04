@@ -4,9 +4,7 @@ import apiClient from '../../../helpers/apiClient';
 import { Nav } from 'reactstrap';
 
 class CategoriesNavOverview extends Component {
-
     constructor() {
-
         super();
         this.state = {
             categoriesListArr: []
@@ -19,13 +17,10 @@ class CategoriesNavOverview extends Component {
                     categoriesListArr: data
                 })
             })
-            .catch((err) => { })
     }
-
     render() {
         return (
             <Nav pills>
-
                 {
                     this.state.categoriesListArr.map((category) => {
                         return (
@@ -33,12 +28,8 @@ class CategoriesNavOverview extends Component {
                         )
                     })
                 }
-
-
             </Nav>
-
         )
-
     }
 }
 

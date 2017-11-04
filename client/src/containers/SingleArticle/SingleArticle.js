@@ -15,7 +15,6 @@ class SingleArticle extends Component {
 
     apiClient.getSingleArticle(articleId)
       .then(({ data }) => {
-
         this.setState({
           article: data
         })
@@ -27,8 +26,8 @@ class SingleArticle extends Component {
 
     return (
       <div className="SingleArticle">
-        <h1> Title: {this.state.article.title}</h1>
-        <h3>Description: {this.state.article.fullContent}</h3>
+        <h1>Title:{this.state.article.title}</h1>
+        <h3>Description:{this.state.article.fullContent}</h3>
       </div>
     )
 

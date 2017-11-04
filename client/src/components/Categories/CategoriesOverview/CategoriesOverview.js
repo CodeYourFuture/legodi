@@ -3,15 +3,12 @@ import CategoryCard from "../CategoryCard";
 import apiClient from '../../../helpers/apiClient';
 
 class CategoriesOverview extends Component {
-
     constructor() {
-
         super();
         this.state = {
             categoriesListArr: []
         }
     }
-
     componentDidMount() {
         apiClient.getCategories()
             .then(({ data }) => {
@@ -19,9 +16,7 @@ class CategoriesOverview extends Component {
                     categoriesListArr: data
                 })
             })
-            .catch((err) => { })
     }
-
     render() {
         return (
             <div>
@@ -34,8 +29,6 @@ class CategoriesOverview extends Component {
                 }
             </div>
         )
-
     }
 }
-
 export default CategoriesOverview
