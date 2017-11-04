@@ -2,12 +2,7 @@ var express = require('express');
 var router = express.Router();
 const categoryClient = require('../../../dbClients/categoriesDB');
 const articleClient = require('../../../dbClients/articlesDB');
-const ObjectId = require('mongodb').ObjectID;
 
-
-/*===========================
-        Add article
-===========================*/
 router.get('/', function (req, res, next) {
     const callback = (error, articles) => {
         res.render("admin-list-articles", {
@@ -35,7 +30,7 @@ router.post('/add', (req, res) => {
 });
 
 router.get('/edit/:articleId', (req, res) => {
-    let articleId = req.params.articleId;
+    const {articleId} = req.params;
     const callback = (error, article) => {
         res.render("admin-edit-article", {
             article: article
@@ -45,7 +40,7 @@ router.get('/edit/:articleId', (req, res) => {
 })
 
 router.post('/edit/:articleId', function (req, res, next) {
-    let articleId = req.params.articleId;
+    const {articleId} = req.params;
     const query = req.body;
 
     const callback = (error, article) => {

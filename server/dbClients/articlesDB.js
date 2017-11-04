@@ -1,4 +1,4 @@
-const connection =require('./connection')
+require('./connection')
 const Article = require('../models/Article');
 const mongoose = require('mongoose')
 const ObjectId = require('mongodb').ObjectID;
