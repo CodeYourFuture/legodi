@@ -1,10 +1,8 @@
-const mongoConnection = process.env.MONGODB_URI || 'mongodb://localhost:27017/legodi';
+require('./connection')
 const Article = require('../models/Article');
 const mongoose = require('mongoose')
-mongoose.Promise = global.Promise;
 const ObjectId = require('mongodb').ObjectID;
-mongoose.connect(mongoConnection);
-
+ 
 const addArticle = (query, callback) => {
      Article.create(query).then(callback)
 };

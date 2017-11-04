@@ -27,7 +27,7 @@ router.post('/add', function (req, res, next) {
 });
 
 router.get('/edit/:categoryId', (req, res) => {
-    let categoryId = req.params.categoryId;
+    const {categoryId} = req.params;
     const callback = (error, category) => {
         res.render("admin-edit-category", {
             category: category
@@ -37,7 +37,7 @@ router.get('/edit/:categoryId', (req, res) => {
 });
 
 router.post('/edit/:categoryId', function (req, res, next) {
-    let categoryId = req.params.categoryId;
+    const {categoryId} = req.params;
     const query = req.body;
 
     const callback = (error, category) => {
