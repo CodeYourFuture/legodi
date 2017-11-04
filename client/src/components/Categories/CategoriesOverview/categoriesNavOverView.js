@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CategoryItem from "../categoryItem";
 import apiClient from '../../../helpers/apiClient';
-import { Nav} from 'reactstrap';
+import { Nav } from 'reactstrap';
 
 class CategoriesNavOverview extends Component {
 
@@ -25,11 +25,11 @@ class CategoriesNavOverview extends Component {
     render() {
         return (
             <Nav pills>
-                
+
                 {
                     this.state.categoriesListArr.map((category) => {
                         return (
-                          <CategoryItem categoryItem={category} /> 
+                            <CategoryItem categoryItem={category} />
                         )
                     })
                 }
