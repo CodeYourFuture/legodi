@@ -21,15 +21,16 @@ class SingleCategory extends Component {
     }
 
     render() {
-        const categoryId = this.props.match.params;
+        const { categoryId } = this.props.match.params;
         return (
             <div className="SingleCategory">
                 {this.state.articles.map(article => {
-                    if (article.category === categoryId) {
+                    if (article.category._id === categoryId) {
                         return <div>
-                                <h4>{article.title}</h4>
-                                <a className="btn btn-info btn-sm" href={"/articles/" + article._id + " "}>More Info</a>
+                            <h4>{article.title}</h4>
+                            <a className="btn btn-info btn-sm" href={"/articles/" + article._id + " "}>More Info</a>
                         </div>
+
                     }
                 })}
             </div>
