@@ -21,9 +21,9 @@ class CategoriesOverview extends Component {
         return (
             <div>
                 {
-                    this.state.categoriesListArr.map((category) => {
+                    this.state.categoriesList.map((category) => {
                         return (
-                            <CategoryCard category={category} href={"/categories/"+ category._id +" "}/>
+                            <CategoryCard category={category} href={"/categories/"+ category._id +""}/>
                         )
                     })
                 }

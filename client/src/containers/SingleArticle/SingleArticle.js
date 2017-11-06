@@ -22,14 +22,6 @@ class SingleArticle extends Component {
 
   render() {
     const { articleId } = this.props.match.params;
-    apiClient.getSingleArticle(articleId)
-      .then(({ data }) => {
-        this.setState({
-          article: data
-        })
-      })
-  }
-  render() {
     return (
       <div>
         {this.state.articles.map(article => {
