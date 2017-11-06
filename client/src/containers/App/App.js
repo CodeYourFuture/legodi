@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import CategoriesOverview from "../../components/Categories/CategoriesOverview/CategoriesOverview"
 import CategoriesNavOverview from "../../components/Categories/CategoriesOverview/categoriesNavOverView"
 import SingleArticle from "../../containers/SingleArticle/SingleArticle";
+import SingleCategory from "../../components/Categories/SingleCategory";
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
           <Route path="/about" component={About} />
           <Route path="/categories" component={CategoriesOverview} /> 
           <Route path="/articles/:articleId" component={SingleArticle} />
+          <Route path="/categories/:categoryId" component={SingleCategory} />
         </div>
       </Router>
     );
