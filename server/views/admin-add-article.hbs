@@ -1,11 +1,13 @@
-<form method="post" >
+<form method="post">
+    <div class="form-group row has-success">
+  <label for="example-text-input text-success " class="col-12 col-form-label">Title:</label>
+  <div class="col-lg-6 col-md-8 col-sm-9 col-xs-9 ">
+    <input class="form-control" type="text" name="title"  id="example-text-input">
+  </div>
+  </div>
     <div class="form-group has-success">
-        <h5 class="text-success" >Title:</h5>
-        <input  class="form-control" id="inputSuccess1" name="title"/>
-    </div>
-    <div class="form-group has-success">
-        <h4> Categories:</h4>
-        <select name="category" class="form-control">
+        <label class="text-success mt-2"> Categories:</label>
+        <select name="category" class="form-control mb-4">
             <option value="null" selected>Choose a Category</option>
             {{#each categories}}
             <option value={{this._id}}>{{ this.title }}</option>
@@ -13,12 +15,10 @@
         </select>
     </div>
     <div class="form-group has-success">
-        <h5 class="text-success">Full Content:</h5>
-        <textarea class="form-control" id="inputSuccess1" name="fullContent">
-        </textarea>
+        <label class="text-success">Full Content:</label>
+        <textarea class="form-control form-control-success mb-4" id="inputSuccess1" name="fullContent"></textarea>
+        <input class="btn btn-success" type="submit" value="Submit">
     </div>
-    <button class="btn bg-success"type="submit">New Article</button>
-    
+
+
 </form>
- 
- 

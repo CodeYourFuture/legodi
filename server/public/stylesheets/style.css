@@ -2,14 +2,9 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
-a {
-  color: #00B7FF;
-}
 nav#serverNav{
   margin-bottom: 20px;
   padding-bottom: .53rem;
-  
  }
  button,.navbar-toggler{
    margin-top:-5px;
@@ -17,7 +12,4 @@ nav#serverNav{
   .addNewArticle{
     margin-top: 20px;
     margin-bottom: 20px;
-  }
-  .visHid{
-    margin: 4px;
   }
