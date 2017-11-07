@@ -17,7 +17,6 @@ class SingleCategory extends Component {
                     articles: data
                 })
             })
-            .catch((err) => { })
     }
 
     render() {
@@ -28,7 +27,7 @@ class SingleCategory extends Component {
                     if (article.category._id === categoryId) {
                         return <div>
                             <h4>{article.title}</h4>
-                            <a className="btn btn-info btn-sm" href={"/articles/" + article._id + " "}>More Info</a>
+                            <a className="btn btn-info btn-sm" href={`/articles/${article._id}`}>More Info</a>
                         </div>
 
                     }
