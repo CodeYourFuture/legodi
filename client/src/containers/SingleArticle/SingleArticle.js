@@ -12,7 +12,7 @@ class SingleArticle extends Component {
   }
   componentDidMount() {
     const { articleId } = this.props.match.params;
-    apiClient.getSingleArticle()
+    apiClient.getSingleArticle(articleId)
       .then(({ data }) => {
         this.setState({
           article: data
