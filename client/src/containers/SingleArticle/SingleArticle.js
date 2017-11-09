@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import apiClient from '../../helpers/apiClient';
 
 class SingleArticle extends Component {
+  
   constructor() {
+
     super();
     this.state = {
       article: {}
@@ -17,6 +19,7 @@ class SingleArticle extends Component {
         })
       })
   }
+
   render() {
     return (
       <div className="SingleArticle">

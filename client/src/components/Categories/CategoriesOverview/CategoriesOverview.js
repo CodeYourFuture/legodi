@@ -23,7 +23,7 @@ class CategoriesOverview extends Component {
                 {
                     this.state.categoriesList.map((category) => {
                         return (
-                            <CategoryCard category={category} />
+                            <CategoryCard category={category} href={`/categories/${category._id}`}/>
                         )
                     })
                 }
