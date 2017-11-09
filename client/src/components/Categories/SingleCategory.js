@@ -11,7 +11,8 @@ class SingleCategory extends Component {
         }
     }
     componentDidMount() {
-        apiClient.getArticles()
+        const { categoryId } = this.props.match.params;
+        apiClient.getArticlesByCategoryId(categoryId)
             .then(({ data }) => {
                 this.setState({
                     articles: data
@@ -20,17 +21,13 @@ class SingleCategory extends Component {
     }
 
     render() {
-        const { categoryId } = this.props.match.params;
         return (
             <div className="SingleCategory">
                 {this.state.articles.map(article => {
-                    if (article.category._id === categoryId) {
-                        return <div>
-                            <h4>{article.title}</h4>
-                            <a className="btn btn-info btn-sm" href={`/articles/${article._id}`}>More Info</a>
-                        </div>
-
-                    }
+                    return <div>
+                        <h4>{article.title}</h4>
+                        <a className="btn btn-info btn-sm" href={`/articles/${article._id}`}>More Info</a>
+                    </div>
                 })}
             </div>
         )
