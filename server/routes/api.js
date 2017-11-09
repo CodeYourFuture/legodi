@@ -35,4 +35,18 @@ router.get('/categories', function (req, res, next) {
     categoryClient.findCategories({'visible':true},callback);
 });
 
+/* GET Single Category's articles */
+router.get('/categories/:categoryId', function (req, res, next) {
+    const categoryId = req.params.categoryId;
+    const callBack = (error, articles) => {
+        if (error) {
+            console.error(error)
+            res.sendStatus(500);
+        } else {
+            res.json(articles)
+        }
+    };
+    articleClient.findArticles({ category: categoryId}, callBack)
+});
+
 module.exports = router;
