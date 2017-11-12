@@ -15,7 +15,10 @@ router.get('/', function (req, res, next) {
 });
 
 router.get("/add", function (req, res, next) {
-    res.render('admin-add-category');
+    res.render('admin-edit-and-add-category', {
+        shortDesTitle: "Short",
+        desTitle: ""
+    });
 });
 
 router.post('/add', function (req, res, next) {
@@ -29,8 +32,10 @@ router.post('/add', function (req, res, next) {
 router.get('/edit/:categoryId', (req, res) => {
     const {categoryId} = req.params;
     const callback = (error, category) => {
-        res.render("admin-edit-category", {
-            category: category
+        res.render("admin-edit-and-add-category", {
+            category: category,
+            shortDesTitle: "Edit short",
+            desTitle: "Edit"
         })
     }
     categoryClient.findCategoryById(categoryId, callback);
