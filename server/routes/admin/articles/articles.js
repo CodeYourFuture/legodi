@@ -29,6 +29,11 @@ router.post('/add', (req, res) => {
     articleClient.addArticle(query, callBack)
 });
 
+
+
+
+
+
 router.get('/edit/:articleId', (req, res) => {
     const { articleId } = req.params;
     const categoriesCallback = (error, categories) => {
@@ -42,6 +47,13 @@ router.get('/edit/:articleId', (req, res) => {
     }
     categoryClient.findCategories(categoriesCallback);
 })
+
+
+
+
+
+
+
 
 router.post('/edit/:articleId', function (req, res, next) {
     const { articleId } = req.params;
