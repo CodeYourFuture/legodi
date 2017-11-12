@@ -30,6 +30,7 @@ router.post('/add', (req, res) => {
 });
 
 router.get('/edit/:articleId',ensureAuthenticated, (req, res) => {
+
     const { articleId } = req.params;
     const categoriesCallback = (error, categories) => {
         articleCallback = (error, article) => {
@@ -44,7 +45,7 @@ router.get('/edit/:articleId',ensureAuthenticated, (req, res) => {
 })
 
 router.post('/edit/:articleId', function (req, res, next) {
-    const {articleId} = req.params;
+    const { articleId } = req.params;
     const query = req.body;
 
     const callback = (error, article) => {

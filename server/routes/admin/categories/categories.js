@@ -22,8 +22,11 @@ router.get('/',ensureAuthenticated, (req, res, next)=>{
     categoryClient.findCategories({}, callback);
 });
 
-router.get("/add",ensureAuthenticated, (req, res, next)=> {
-    res.render('admin-add-category');
+router.get("/add", ensureAuthenticated,(req, res, next) =>{
+    res.render('admin-edit-and-add-category', {
+        shortDescriptionTitle: "Short",
+        descriptionTitle: ""
+    });
 });
 
 router.post('/add', (req, res, next)=> {
@@ -37,8 +40,10 @@ router.post('/add', (req, res, next)=> {
 router.get('/edit/:categoryId', ensureAuthenticated,(req, res) => {
     const {categoryId} = req.params;
     const callback = (error, category) => {
-        res.render("admin-edit-category", {
-            category: category
+        res.render("admin-edit-and-add-category", {
+            category: category,
+            shortDescriptionTitle: "Edit short",
+            descriptionTitle: "Edit"
         })
     }
     categoryClient.findCategoryById(categoryId, callback);
