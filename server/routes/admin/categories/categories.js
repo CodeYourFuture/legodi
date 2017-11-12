@@ -4,8 +4,16 @@ const categoryClient = require('../../../dbClients/categoriesDB');
 const articleClient = require('../../../dbClients/articlesDB')
 const ObjectId = require('mongodb').ObjectID;
 
+ensureAuthenticated=(req, res, next)=>{
+	if(req.isAuthenticated()){
+		return next();
+	}else {
+		//req.flash('error_msg','You are not logged in');
+		res.redirect('/admins/login');
+	}
+}
 
-router.get('/', function (req, res, next) {
+router.get('/',ensureAuthenticated, (req, res, next)=>{
     const callback = (error, category) => {
         res.render("admin-list-categories", {
             category
@@ -14,11 +22,11 @@ router.get('/', function (req, res, next) {
     categoryClient.findCategories({}, callback);
 });
 
-router.get("/add", function (req, res, next) {
+router.get("/add",ensureAuthenticated, (req, res, next)=> {
     res.render('admin-add-category');
 });
 
-router.post('/add', function (req, res, next) {
+router.post('/add', (req, res, next)=> {
     const query = req.body;
     const callback = () => {
         res.redirect("/");
@@ -26,7 +34,7 @@ router.post('/add', function (req, res, next) {
     categoryClient.addCategory(query, callback);
 });
 
-router.get('/edit/:categoryId', (req, res) => {
+router.get('/edit/:categoryId', ensureAuthenticated,(req, res) => {
     const {categoryId} = req.params;
     const callback = (error, category) => {
         res.render("admin-edit-category", {
@@ -36,7 +44,7 @@ router.get('/edit/:categoryId', (req, res) => {
     categoryClient.findCategoryById(categoryId, callback);
 });
 
-router.post('/edit/:categoryId', function (req, res, next) {
+router.post('/edit/:categoryId', (req, res, next) =>{
     const {categoryId} = req.params;
     const query = req.body;
 
