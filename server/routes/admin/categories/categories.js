@@ -16,8 +16,8 @@ router.get('/', function (req, res, next) {
 
 router.get("/add", function (req, res, next) {
     res.render('admin-edit-and-add-category', {
-        shortDesTitle: "Short",
-        desTitle: ""
+        shortDescriptionTitle: "Short",
+        descriptionTitle: ""
     });
 });
 
@@ -34,8 +34,8 @@ router.get('/edit/:categoryId', (req, res) => {
     const callback = (error, category) => {
         res.render("admin-edit-and-add-category", {
             category: category,
-            shortDesTitle: "Edit short",
-            desTitle: "Edit"
+            shortDescriptionTitle: "Edit short",
+            descriptionTitle: "Edit"
         })
     }
     categoryClient.findCategoryById(categoryId, callback);

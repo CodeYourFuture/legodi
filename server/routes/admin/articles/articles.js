@@ -29,34 +29,22 @@ router.post('/add', (req, res) => {
     articleClient.addArticle(query, callBack)
 });
 
-
-
-
-
-
 router.get('/edit/:articleId', (req, res) => {
-    const {articleId} = req.params;
-    const callback = (error, categories) => {
-        callback2 = (error, article) => {
+    const { articleId } = req.params;
+    const categoriesCallback = (error, categories) => {
+        articleCallback = (error, article) => {
             res.render("admin-edit-article", {
                 article: article,
                 categories: categories
             });
         };
-        articleClient.findArticleById(articleId, callback2);
+        articleClient.findArticleById(articleId, articleCallback);
     }
-    categoryClient.findCategories(callback);
+    categoryClient.findCategories(categoriesCallback);
 })
 
-
-
-
-
-
-
-
 router.post('/edit/:articleId', function (req, res, next) {
-    const {articleId} = req.params;
+    const { articleId } = req.params;
     const query = req.body;
 
     const callback = (error, article) => {
