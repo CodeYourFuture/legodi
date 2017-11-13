@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const { Schema } = mongoose;
 
-// Admin Schema
+// User Schema
 const schema = new Schema({
-    username: {
+	username: {
 		type: String,
-		index:true
+		index: true
 	},
 	password: {
 		type: String
@@ -16,9 +16,14 @@ const schema = new Schema({
 	},
 	name: {
 		type: String
+	},
+	isAdmin: {
+		type: Boolean,
+		default: false,
+
 	}
 });
 
-const Admin = mongoose.model('admin', schema);
+const User = mongoose.model('users', schema);
 
-module.exports = Admin;
+module.exports = User;

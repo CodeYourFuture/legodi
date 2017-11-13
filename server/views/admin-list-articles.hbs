@@ -1,7 +1,7 @@
- 
-<a href="/admin/articles/add" class="btn btn-primary btn-lg active  mb-3" role="button" aria-pressed="true">Add New article</a>
+<a href="/admin/articles/add" class="btn btn-primary btn-lg active  mb-3" role="button" aria-pressed="true">
+  Add New article</a>
 
- <table class="table table-bordered">
+<table class="table table-bordered">
   <thead class="thead-inverse">
     <tr>
       <th class="text-center">ID</th>
@@ -11,14 +11,21 @@
     </tr>
   </thead>
   <tbody>
-     {{#each articles}}
-      <tr>      
+    {{#each articles}}
+    <tr>
       <th scope="row" class="align-middle p-4">{{this._id}}</th>
-      <td class="align-middle p-4"> <h4>{{this.title}}</h4></td>
-      <td class="align-middle p-4"><h4>{{this.fullContent}} </h4></td>
-      <td class="align-middle p-4 text-center"><a href="/admin/articles/edit/{{this._id}}"><button class="btn">Edit</button> </a> </td> 
-     </tr>  
-     {{/each}}
+      <td class="align-middle p-4">
+        <h4>{{this.title}}</h4>
+      </td>
+      <td class="align-middle p-4">
+        <h4>{{this.fullContent}} </h4>
+      </td>
+      <td class="align-middle p-4 text-center">
+        <a href="/admin/articles/edit/{{this._id}}">
+          <button class="btn">Edit</button>
+        </a>
+      </td>
+    </tr>
+    {{/each}}
   </tbody>
 </table>
- 
