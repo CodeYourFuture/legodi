@@ -10,7 +10,9 @@ router.get('/login', (req, res) => {
 	res.render('login', { layout: false })
 });
 
-// This is temporary route to allow my team member to add an Users to their db
+// use users/register/codeyourfuture135 to create username and password to access adminstration
+//I will get rid of this link after all guys creatte an account in his local
+
 router.get('/register/codeyourfuture135', (req, res) => {
 	res.render('register');
 });

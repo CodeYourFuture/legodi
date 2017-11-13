@@ -29,8 +29,10 @@ router.post('/add', (req, res, next) => {
 router.get('/edit/:categoryId', (req, res) => {
     const { categoryId } = req.params;
     const callback = (error, category) => {
-        res.render("admin-edit-category", {
-            category: category
+        res.render("admin-edit-and-add-category", {
+            category: category,
+            shortDescriptionTitle: "Edit short",
+            descriptionTitle: "Edit"
         })
     }
     categoryClient.findCategoryById(categoryId, callback);

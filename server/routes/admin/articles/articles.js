@@ -29,7 +29,8 @@ router.post('/add', (req, res) => {
     articleClient.addArticle(query, callBack)
 });
 
-router.get('/edit/:articleId', (req, res) => {
+router.get('/edit/:articleId',ensureAuthenticated, (req, res) => {
+
     const { articleId } = req.params;
     const categoriesCallback = (error, categories) => {
         articleCallback = (error, article) => {
