@@ -3,7 +3,7 @@ var router = express.Router();
 const categoryClient = require('../../../dbClients/categoriesDB');
 const articleClient = require('../../../dbClients/articlesDB');
 
-router.get('/', function (req, res, next) {
+router.get('/', (req, res, next) => {
     const callback = (error, articles) => {
         res.render("admin-list-articles", {
             articles: articles
@@ -29,12 +29,8 @@ router.post('/add', (req, res) => {
     articleClient.addArticle(query, callBack)
 });
 
+router.get('/edit/:articleId',ensureAuthenticated, (req, res) => {
 
-
-
-
-
-router.get('/edit/:articleId', (req, res) => {
     const { articleId } = req.params;
     const categoriesCallback = (error, categories) => {
         articleCallback = (error, article) => {
@@ -47,13 +43,6 @@ router.get('/edit/:articleId', (req, res) => {
     }
     categoryClient.findCategories(categoriesCallback);
 })
-
-
-
-
-
-
-
 
 router.post('/edit/:articleId', function (req, res, next) {
     const { articleId } = req.params;

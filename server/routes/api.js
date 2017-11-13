@@ -8,17 +8,17 @@ const ObjectId = require('mongodb').ObjectID;
 router.get('/articles', function (req, res, next) {
     const callBack = (error, articles) => {
         if (error) {
-            console.error(error)            
+            console.error(error)
             res.sendStatus(500);
         } else {
             res.json(articles)
         }
     };
-    articleClient.findArticles({},callBack)
+    articleClient.findArticles({}, callBack)
 });
 /* GET Single Articles */
 router.get('/articles/:articleId', function (req, res, next) {
-    const articleId = req.params.articleId;    
+    const articleId = req.params.articleId;
     const callBack = (error, singleArticles) => {
         if (error) {
             console.error(error)
@@ -28,11 +28,11 @@ router.get('/articles/:articleId', function (req, res, next) {
         }
     };
     articleClient.findArticleById(articleId, callBack);
-    
+
 });
 router.get('/categories', function (req, res, next) {
     const callback = (error, data) => { res.json(data) }
-    categoryClient.findCategories({'visible':true},callback);
+    categoryClient.findCategories({ 'visible': true }, callback);
 });
 
 /* GET Single Category's articles */
@@ -46,7 +46,7 @@ router.get('/categories/:categoryId', function (req, res, next) {
             res.json(articles)
         }
     };
-    articleClient.findArticles({ category: categoryId}, callBack)
+    articleClient.findArticles({ category: categoryId }, callBack)
 });
 
 module.exports = router;

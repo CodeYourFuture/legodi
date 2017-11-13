@@ -5,7 +5,7 @@ const articleClient = require('../../../dbClients/articlesDB')
 const ObjectId = require('mongodb').ObjectID;
 
 
-router.get('/', function (req, res, next) {
+router.get('/', (req, res, next) => {
     const callback = (error, category) => {
         res.render("admin-list-categories", {
             category
@@ -14,14 +14,11 @@ router.get('/', function (req, res, next) {
     categoryClient.findCategories({}, callback);
 });
 
-router.get("/add", function (req, res, next) {
-    res.render('admin-edit-and-add-category', {
-        shortDescriptionTitle: "Short",
-        descriptionTitle: ""
-    });
+router.get("/add", (req, res, next) => {
+    res.render('admin-add-category');
 });
 
-router.post('/add', function (req, res, next) {
+router.post('/add', (req, res, next) => {
     const query = req.body;
     const callback = () => {
         res.redirect("/");
@@ -30,7 +27,7 @@ router.post('/add', function (req, res, next) {
 });
 
 router.get('/edit/:categoryId', (req, res) => {
-    const {categoryId} = req.params;
+    const { categoryId } = req.params;
     const callback = (error, category) => {
         res.render("admin-edit-and-add-category", {
             category: category,
@@ -41,8 +38,8 @@ router.get('/edit/:categoryId', (req, res) => {
     categoryClient.findCategoryById(categoryId, callback);
 });
 
-router.post('/edit/:categoryId', function (req, res, next) {
-    const {categoryId} = req.params;
+router.post('/edit/:categoryId', (req, res, next) => {
+    const { categoryId } = req.params;
     const query = req.body;
 
     const callback = (error, category) => {

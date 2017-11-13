@@ -1,6 +1,6 @@
-   <a href="/admin/categories/add" class="btn btn-primary btn-lg active  mb-3" role="button" aria-pressed="true">Add New category</a>
+<a href="/admin/categories/add" class="btn btn-primary btn-lg active  mb-3" role="button" aria-pressed="true">Add New category</a>
 
- </div>
+</div>
 
 <table class="table table-bordered ">
   <thead class="thead-inverse">
@@ -18,7 +18,7 @@
     <tr>
       <th class="align-middle p-4" scope="row">{{this._id}}</th>
       <td class="align-middle p-4">
-      <h4> {{this.title}}</h4>
+        <h4> {{this.title}}</h4>
       </td>
       <td class="align-middle p-4">
         <h4>{{this.shortDescription}}</h4>
@@ -28,16 +28,20 @@
       </td>
 
       <td class="align-middle text-center">
-        
+
         <a href="/admin/categories/edit/{{this._id}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a>
 
       </td>
     </tr>
     {{else}}
     <tr>
-      <th class="align-middle p-4" scope="row"><strike>{{this._id}}</strike></th>
+      <th class="align-middle p-4" scope="row">
+        <strike>{{this._id}}</strike>
+      </th>
       <td class="align-middle p-4">
-        <h4><strike>{{this.title}}</strike></h4>
+        <h4>
+          <strike>{{this.title}}</strike>
+        </h4>
       </td>
       <td class="align-middle p-4">
         <strike>
