@@ -18,8 +18,8 @@ class App extends Component {
           <Menu   />
           <hr />
           <Route exact path="/" component={CategoriesOverview} />
-          <Route path="/about" component={About} />
-          <Route path="/categories" component={CategoriesOverview} /> 
+          <Route path="/about" component={About} /> 
+          <Route path="/categories" exact component={CategoriesOverview}/>
           <Route path="/articles/:articleId" component={SingleArticle} />
           <Route path="/categories/:categoryId" component={SingleCategory} />
         </div>
