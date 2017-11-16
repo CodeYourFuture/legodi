@@ -7,8 +7,7 @@ function CategoryCard(props){
             <CardBody>
               <CardTitle>Title: {props.category.title}</CardTitle>
               <CardText>Description:{props.category.shortDescription}</CardText>
-  
-              <Button href={props.href}>view category</Button>
+              <Button onClick={() => props.history.push(props.href)}>view category</Button>
             </CardBody>
           </Card>
         </div>
