@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CategoryCard from "../CategoryCard";
 import apiClient from '../../../helpers/apiClient';
-import './category.css'
+import './category.css';
 
 class CategoriesOverview extends Component {
     constructor() {
@@ -26,7 +26,7 @@ class CategoriesOverview extends Component {
                         return (
                             <div className="category-item">
                                 <CategoryCard src={`/fwddesignhelp/${category.icon}.png`} href={`/categories/${category._id}`} />
-                            </div>    
+                            </div>
                         )
                     })
                 }
