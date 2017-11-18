@@ -1,21 +1,30 @@
 import React from 'react';
-import { Card, CardText, CardBody,CardTitle, Button, CardImg, style } from 'reactstrap';
+import { CardLink, Row, Card, CardText, CardBody, CardTitle, Button, CardImg, Col } from 'reactstrap';
+import { Link } from 'react-router-dom';
+import './CategoryCard.css';
 
+function CategoryCard(props) {
+  return (
+    <div>
+      <Card>
+        <CardBody>
+          <Row>
+            <Col sm="2">
+              <CardImg img={{ uri: 'asset:/app_icon.png' }} style={{ width: 200, height: 200 }}></CardImg>
+            </Col>
+            <Col sm="2">
+              <Link className="category-link" to={props.href}>
+                <CardLink>
+                  <CardTitle style={{ color: '#0f352e' }} > {props.category.title} </CardTitle>
+                  <CardText>{props.category.shortDescription}</CardText>
+                </CardLink>
+              </Link>
+            </Col>
+          </Row>
+        </CardBody>
+      </Card>
+    </div>
+  );
+}
 
-function CategoryCard(props){ 
- return (
-        <div>
-          <Card>
-            <CardBody>
-              <CardImg img={{uri: 'asset:/app_icon.png'}} style={{width: 40, height: 40}}></CardImg>
-              <CardTitle style={{color:'#0f352e'}} >Title: {props.category.title} </CardTitle>
-              <CardText>Description:{props.category.shortDescription}</CardText>
-              <Button onClick={() => props.history.push(props.href)}>view category</Button>
-            </CardBody>
-          </Card>
-        </div>
-      );
-  }
- 
 export default CategoryCard
- 
