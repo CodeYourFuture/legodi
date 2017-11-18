@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CategoryCard from "../CategoryCard";
 import apiClient from '../../../helpers/apiClient';
+import './category.css'
 
 class CategoriesOverview extends Component {
     constructor() {
@@ -19,11 +20,13 @@ class CategoriesOverview extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="category-container">
                 {
                     this.state.categoriesList.map((category) => {
                         return (
-                            <CategoryCard category={category} href={`/categories/${category._id}`}/>
+                            <div className="category-item">
+                                <CategoryCard title={category.title} src={`${category.icon}.png`} href={`/categories/${category._id}`} />
+                            </div>    
                         )
                     })
                 }
