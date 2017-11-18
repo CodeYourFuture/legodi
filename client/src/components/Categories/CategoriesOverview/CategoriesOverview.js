@@ -25,7 +25,7 @@ class CategoriesOverview extends Component {
                     this.state.categoriesList.map((category) => {
                         return (
                             <div className="category-item">
-                                <CategoryCard title={category.title} src={`${category.icon}.png`} href={`/categories/${category._id}`} />
+                                <CategoryCard src={`/fwddesignhelp/${category.icon}.png`} href={`/categories/${category._id}`} />
                             </div>    
                         )
                     })
