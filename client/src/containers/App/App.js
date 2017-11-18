@@ -2,20 +2,18 @@ import React, { Component } from 'react';
 import './App.css';
 import Menu from '../../components/Menu/menu.js'
 import About from '../../components/About/about.js'
-import Header from '../../components/Header/header.js'
-import { BrowserRouter as Router, Route } from "react-router-dom";
+ import { BrowserRouter as Router, Route } from "react-router-dom";
 import CategoriesOverview from "../../components/Categories/CategoriesOverview/CategoriesOverview"
 import SingleArticle from "../../containers/SingleArticle/SingleArticle";
 import SingleCategory from "../../components/Categories/SingleCategory";
 
 class App extends Component {
+
   render() {
     return (
       <Router>
         <div>
-           <Header headerTitle={"Legodi"}
-            headerDesc={"Digital Welcome Pack For Refugee in Glasgow"} />
-          <Menu   />
+          <Menu />
           <hr />
           <Route exact path="/" component={CategoriesOverview} />
           <Route path="/about" component={About} />
@@ -26,6 +24,7 @@ class App extends Component {
       </Router>
     );
   }
+  
 }
 
 export default App;
