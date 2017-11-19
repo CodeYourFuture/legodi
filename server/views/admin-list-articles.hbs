@@ -11,7 +11,7 @@
     </tr>
   </thead>
   <tbody>
-    {{#each articles}}
+    {{#each articles}}{{#if this.visible}}
     <tr>
       <th scope="row" class="align-middle p-4">{{this._id}}</th>
       <td class="align-middle p-4">
@@ -22,10 +22,30 @@
       </td>
       <td class="align-middle p-4 text-center">
         <a href="/admin/articles/edit/{{this._id}}">
-          <button class="btn">Edit</button>
+          <button class="btn btn-primary btn-lg active">Edit</button>
+        </a>
+      </td>
+    </tr> {{else}}
+    <tr>
+      <th scope="row" class="align-middle p-4">
+        <strike>{{this._id}}</strike>
+      </th>
+      <td class="align-middle p-4">
+        <h4>
+          <strike>{{this.title}}</strike>
+        </h4>
+      </td>
+      <td class="align-middle p-4">
+        <h4>
+          <strike>{{this.fullContent}}</strike>
+        </h4>
+      </td>
+      <td class="align-middle p-4 text-center">
+        <a href="/admin/articles/edit/{{this._id}}">
+          <button class="btn btn-danger btn-lg active">Edit</button>
         </a>
       </td>
     </tr>
-    {{/each}}
+    {{/if}} {{/each}}
   </tbody>
 </table>

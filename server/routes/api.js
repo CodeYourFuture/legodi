@@ -14,7 +14,7 @@ router.get('/articles', function (req, res, next) {
             res.json(articles)
         }
     };
-    articleClient.findArticles({}, callBack)
+    articleClient.findArticles({ 'visible': true }, callBack)
 });
 /* GET Single Articles */
 router.get('/articles/:articleId', function (req, res, next) {
@@ -46,7 +46,7 @@ router.get('/categories/:categoryId', function (req, res, next) {
             res.json(articles)
         }
     };
-    articleClient.findArticles({ category: categoryId }, callBack)
+    articleClient.findArticles({ category: categoryId,'visible': true  }, callBack)
 });
 
 module.exports = router;

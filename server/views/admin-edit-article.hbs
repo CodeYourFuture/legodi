@@ -1,24 +1,43 @@
 <form method="post">
-  
-  <div class="form-group row has-success">
-  <label for="example-text-input text-success " class="col-12 col-form-label">Aticle Title:</label>
-  <div class="col-lg-6 col-md-8 col-sm-9 col-xs-9 ">
-    <input class="form-control" type="text" name="title" value={{this.article.title}} id="example-text-input">
-  </div>
-  </div>
-  <div class="form-group has-success">
-    <label class="text-success mt-2"> Categories:</label>
-    <select name="category" class="form-control mb-4">
-      <option value="null" selected>Choose a Category</option>
-      {{#each categories}}
-      <option value={{this._id}}>{{ this.title }}</option>
-      {{/each}}
-    </select>
-  </div>
-  <div class="form-group has-success">
-    <label class="text-success">Aticle Discreption:</label>
-    <textarea class="form-control form-control-success mb-3" name="fullContent">{{this.article.fullContent}} 
+  <form method="post">
+    <div class="form-group has-success">
+      {{#if this.article.visible}}
+      <div class="mb-3">
+        <input type="radio" name="visible" value="true" checked="true">
+        <label class="visHid text-success">Visible</label>
+        <input type="radio" name="visible" value="false">
+        <label class="visHid text-success">Hidden</label>
+      </div>
+      {{else}}
+      <div class="mb-3">
+        <input type="radio" name="visible" value="true">
+        <label class="visHid text-success">Visible</label>
+        <input type="radio" name="visible" value="false" checked="true">
+        <label class="visHid text-success">Hidden</label>
+      </div>
+      {{/if}}
+    </div>
+
+    <div class="form-group row has-success">
+      <label for="example-text-input text-success " class="col-12 col-form-label">Aticle Title:</label>
+      <div class="col-lg-6 col-md-8 col-sm-9 col-xs-9 ">
+        <input class="form-control" type="text" name="title" value={{this.article.title}} id="example-text-input">
+      </div>
+    </div>
+
+    <div class="form-group has-success">
+      <label class="text-success mt-2"> Categories:</label>
+      <select name="category" class="form-control mb-4">
+        <option value={{this.article.category}} selected>Choose a Category</option>
+        {{#each categories}}
+        <option value={{this._id}}>{{ this.title }}</option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="form-group has-success">
+      <label class="text-success">Aticle Discreption:</label>
+      <textarea class="form-control form-control-success mb-3" name="fullContent">{{this.article.fullContent}} 
     </textarea>
-    <button class="btn bg-success">Update Aticle</button>
-  </div>
-</form>
+      <button class="btn bg-success">Update Aticle</button>
+    </div>
+  </form>
