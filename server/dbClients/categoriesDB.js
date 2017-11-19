@@ -8,7 +8,7 @@ const addCategory = (query, callback) => {
 }
 
 const findCategories = (query, callback) => {
-    CategoryModel.find(query, callback)
+    CategoryModel.find(query, callback).sort( { "title":1 } )
 }
 const findCategoryById = (id, callback) => {
     CategoryModel.findById(id).exec(callback)
