@@ -14,7 +14,7 @@ ensureAuthenticated = (req, res, next) => {
 // Get Homepage
 router.get('/', ensureAuthenticated, (req, res, next) => {
     const callback = (error, articles) => {
-        res.render("index", {
+        res.render("articles-list", {
             articles: articles
         })
     }

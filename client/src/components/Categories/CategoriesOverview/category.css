@@ -4,6 +4,9 @@
     justify-content: center;
     justify-content: space-around;
     flex-wrap: wrap;
+    z-index: -2;
+    position: absolute;
+    top: 70px;
 }
 .category-item{
     background: #205f55;
@@ -18,7 +21,33 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    position: relative;
 }
 .category-icon a img{
     width: 100%;
+}
+
+.icon-border{
+    height: 0;
+    width: 0;
+    border-bottom: 11px solid #0f352e;
+    border-left: 11px solid #0f352e;
+    border-top: 11px solid transparent;
+    border-right: 11px solid transparent;
+    position: absolute;
+    z-index: 10;
+    top: -11px;
+    right: -11px;
+}
+.icon-border-cros{
+    height: 0;
+    width: 0;
+    border-top: 11px solid #e6bb44;
+    border-right: 11px solid #e6bb44;
+    border-bottom: 11px solid transparent;
+    border-left: 11px solid transparent;
+    position: absolute;
+    z-index: 10;
+    top: -11px;
+    right: -11px;
 }
