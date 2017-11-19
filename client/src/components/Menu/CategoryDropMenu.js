@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import CategoryCard from "../CategoryCard";
-import apiClient from '../../../helpers/apiClient';
-import './category.css';
+import CategoryCard from "../Categories/CategoryCard";
+import apiClient from '../../../src/helpers/apiClient';
+import './menu.css';
 
-class CategoriesOverview extends Component {
+class CategoryDropMenu extends Component {
     constructor() {
         super();
         this.state = {
@@ -20,11 +20,12 @@ class CategoriesOverview extends Component {
     }
     render() {
         return (
-            <div className="category-container">
+            <div className="category-menu-container">
+                <div className="overlay"></div>
                 {
                     this.state.categoriesList.map((category) => {
                         return (
-                            <div className="category-item">
+                            <div className="category-menu-item">
                                 <CategoryCard alt={category.icon} src={`/fwddesignhelp/${category.icon}.png`} href={`/categories/${category._id}`} />
                             </div>
                         )
@@ -34,4 +35,4 @@ class CategoriesOverview extends Component {
         )
     }
 }
-export default CategoriesOverview
+export default CategoryDropMenu

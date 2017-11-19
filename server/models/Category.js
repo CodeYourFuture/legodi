@@ -15,6 +15,9 @@ const CategorySchema = new Schema({
     visible: {
         type: Boolean,
         default: true,
+    },
+    icon: {
+        type: String
     }
 });
 
