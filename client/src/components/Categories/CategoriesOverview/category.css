@@ -18,11 +18,15 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+<<<<<<< HEAD
     position: relative;
+=======
+>>>>>>> 45a2f13a3da2388636b49b36c31b5d5f3c8a96d3
 }
 .category-icon a img{
     width: 100%;
 }
+<<<<<<< HEAD
 
 .icon-border{
     height: 0;
@@ -48,3 +52,5 @@
     top: -11px;
     right: -11px;
 }
+=======
+>>>>>>> 45a2f13a3da2388636b49b36c31b5d5f3c8a96d3
