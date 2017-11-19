@@ -1,18 +1,13 @@
 import React from 'react';
-import { Card, CardText, CardBody,CardTitle, Button } from 'reactstrap';
-function CategoryCard(props){ 
- return (
-        <div>
-          <Card>
-            <CardBody>
-              <CardTitle>Title: {props.category.title}</CardTitle>
-              <CardText>Description:{props.category.shortDescription}</CardText>
-              <Button onClick={() => props.history.push(props.href)}>view category</Button>
-            </CardBody>
-          </Card>
-        </div>
-      );
-  }
- 
+import './CategoriesOverview/category.css';
+import CategoryIcon from './CategoryIcon'
+
+function CategoryCard(props) {
+  return (
+    <div className="category-card">
+      <CategoryIcon {...props} />
+    </div>
+  );
+}
+
 export default CategoryCard
- 
