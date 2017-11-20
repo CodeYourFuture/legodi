@@ -3,7 +3,7 @@
   "name": "Create React App Sample",
   "icons": [
     {
-      "src": "favicon.png",
+      "src": "legodi-icon.png",
       "sizes": "512x512",
       "type": "image/png"
     }

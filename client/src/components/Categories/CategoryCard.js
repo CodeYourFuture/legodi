@@ -1,6 +1,8 @@
 import React from 'react';
 import { CardLink, Row, Card, CardText, CardBody, CardTitle, Button, CardImg, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import CategoryIcon from './CategoryIcon';
+import './CategoriesOverview/category.css';
 import './CategoryCard.css';
 
 function CategoryCard(props) {
@@ -23,15 +25,16 @@ function CategoryCard(props) {
           </Row>
         </CardBody>
       </Card>
-import './CategoriesOverview/category.css';
-import CategoryIcon from './CategoryIcon'
-
-function CategoryCard(props) {
-  return (
-    <div className="category-card">
-      <CategoryIcon {...props} />
     </div>
-  );
+  )
 }
 
-export default CategoryCard
+
+  function CategoryCard(props) {
+    return (
+      <div className="category-card">
+        <CategoryIcon {...props} />
+      </div>
+    );
+  }
+export default CategoryCard;
