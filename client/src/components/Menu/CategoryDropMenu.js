@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CategoryCard from "../Categories/CategoryCard";
+import CategoryDropMenuIcon from "./CategoryDropMenuIcon";
 import apiClient from '../../../src/helpers/apiClient';
 import './menu.css';
 
