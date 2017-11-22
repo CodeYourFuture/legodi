@@ -12,6 +12,12 @@ const schema = new Schema({
     visible: {
         type: Boolean,
         default: true,
+    },
+    language:{
+        type:String,
+        default:'En',
+        upsert: true,
+        setDefaultsOnInsert: true
     }
 });
 
