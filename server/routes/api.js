@@ -46,7 +46,7 @@ router.get('/categories/:categoryId', function (req, res, next) {
             res.json(articles)
         }
     };
-    articleClient.findArticles({ category: categoryId, 'visible': true }, callBack)
+    articleClient.findArticles({ category: categoryId, 'visible': true ,language:"En"}, callBack)
 });
 
 module.exports = router;
