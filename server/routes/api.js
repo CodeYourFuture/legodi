@@ -14,6 +14,7 @@ router.get('/articles', function (req, res, next) {
             res.json(articles)
         }
     };
+    console.log(req.params)
     articleClient.findArticles({ visible: true,language:"En" }, callBack)
 });
 /* GET Single Articles */

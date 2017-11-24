@@ -15,9 +15,7 @@ const schema = new Schema({
     },
     language:{
         type:String,
-        default:'En',
-        upsert: true,
-        setDefaultsOnInsert: true
+        default:'En'
     }
 });
 
