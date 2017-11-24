@@ -11,7 +11,7 @@ jobs:
     steps:
       - checkout
       - run: npm --prefix client install
-      - run: npm --prefix client test
+      # - run: npm --prefix client test
       - save_cache:
           key: repo-client-{{ .Environment.CIRCLE_SHA1 }}
           paths:
