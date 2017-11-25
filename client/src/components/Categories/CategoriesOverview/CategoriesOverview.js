@@ -23,9 +23,13 @@ class CategoriesOverview extends Component {
             <div className="category-container">
                 {
                     this.state.categoriesList.map((category) => {
+                        var icon = `/icons/${category.icon}.png`;
+                        if (!category.icon) {
+                            icon = '/icons/default-icon.png'
+                        }
                         return (
                             <div className="category-item" key={category._id}>
-                                <CategoryCard alt={category.icon} src={`/icons/${category.icon}.png`} href={`/categories/${category._id}`} />
+                                <CategoryCard title={category.title} alt={category.icon} src={icon} href={`/categories/${category._id}`} />
                             </div>
                         )
                     })

@@ -6,6 +6,7 @@ import './CategoryCard.css';
      return (
        <div className="category-card">
          <CategoryIcon {...props} />
+         {props.title}
        </div>
   );
 }
