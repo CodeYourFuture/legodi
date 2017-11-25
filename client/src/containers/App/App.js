@@ -14,7 +14,7 @@ class App extends Component {
       <Router>
         <div>
           <Menu />
-          <hr />
+          
           <Route exact path="/" component={CategoriesOverview} />
           <Route path="/about" component={About} />
           <Route path="/categories" exact component={CategoriesOverview} /> 

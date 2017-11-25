@@ -30,7 +30,7 @@ class CategoriesOverview extends Component {
                         }
 
                         return (
-                            <div className="category-item">
+                            <div className="category-item" key={category._id}>
                                 <CategoryCard alt={category.icon} src={icon} href={`/categories/${category._id}`} />
                             </div>
                         )
