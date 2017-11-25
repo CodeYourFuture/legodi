@@ -3,7 +3,11 @@ const apiUrl = process.env.REACT_APP_API_URI || 'http://localhost:3001';
 
 const apiClient = {
     getCategories: () => {
-        return axios.get(`${apiUrl}/api/categories`);
+        let language=localStorage.getItem("language")
+        if(language='En'){
+            return axios.get(`${apiUrl}/api/categories`);            
+         }
+        return axios.get(`${apiUrl}/api/categories?language=${language}`);
     },
     getArticles: () => {
         return axios.get(`${apiUrl}/api/articles`);
