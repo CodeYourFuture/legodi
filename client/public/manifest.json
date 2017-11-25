@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Legodi",
+  "name": "Legodi - Glasgow Welcome Pack",
   "icons": [
     {
       "src": "legodi-icon.png",
@@ -11,6 +11,6 @@
   "start_url": "./index.html",
   "display": "standalone",
   "orientation": "portrait",
-  "theme_color": "#2196F3",
-  "background_color": "#0ff"
+  "theme_color": "#e6bb44",
+  "background_color": "#e6bb44"
 }
