@@ -14,13 +14,11 @@ router.get('/articles', function (req, res, next) {
             res.json(articles)
         }
     };
-    let articleLanguage = req.query.language
-    if (articleLanguage) {
-        articleClient.findArticles({ visible: true, language: articleLanguage }, callBack)
-    }else{
-        articleClient.findArticles({ visible: true,language:'En' }, callBack)
-        
-    }
+    const { language = "En" } = req.query;
+
+    articleClient.findArticles({ visible: true, language: language }, callBack)
+
+
 });
 /* GET Single Articles */
 router.get('/articles/:articleId', function (req, res, next) {
@@ -52,7 +50,9 @@ router.get('/categories/:categoryId', function (req, res, next) {
             res.json(articles)
         }
     };
-    articleClient.findArticles({ category: categoryId, 'visible': true, language: "En" }, callBack)
+    const { language = "En" } = req.query;
+    
+    articleClient.findArticles({ category: categoryId, 'visible': true, language: language }, callBack)
 });
 
 module.exports = router;
