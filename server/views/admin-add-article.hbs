@@ -1,10 +1,18 @@
 <form method="post">
+
     <div class="form-group row has-success">
         <label for="example-text-input text-success " class="col-12 col-form-label">Title:</label>
         <div class="col-lg-6 col-md-8 col-sm-9 col-xs-9 ">
             <input class="form-control" type="text" name="title" id="example-text-input">
         </div>
+
+        <label for="example-text-input text-success " class="col-12 col-form-label">Order:</label>
+        <div class="col-lg-6 col-md-8 col-sm-9 col-xs-9 ">
+            <input class="form-control" type="number" name="order" id="example-text-input">
+        </div>
+
     </div>
+    
     <div class="form-group has-success">
         <label class="text-success mt-2"> Categories:</label>
         <select name="category" class="form-control mb-4">
@@ -14,23 +22,21 @@
             {{/each}}
         </select>
 
-<div class="form-group has-success">
-  <label class="mr-sm-2 text-success" for="inlineFormCustomSelect">Language</label>
-  <select name="language" class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
-    <option  selected>Choose...</option>
-    <option value="En">English</option>
-    <option value="Ar">Arabic</option>
-    <option value="Am">Amharic</option>
-  </select>
-   </div>
+        <div class="form-group has-success">
+            <label class="mr-sm-2 text-success" for="inlineFormCustomSelect">Language</label>
+            <select name="language" class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+                <option selected>Choose...</option>
+                <option value="En">English</option>
+                <option value="Ar">Arabic</option>
+                <option value="Am">Amharic</option>
+            </select>
+        </div>
 
-    <div class="form-group has-success">
-        <label class="text-success">Full Content:</label>
-        <textarea class="form-control form-control-success mb-4" id="inputSuccess1" name="fullContent"></textarea>
-    </div>
+        <div class="form-group has-success">
+            <label class="text-success">Full Content:</label>
+            <textarea class="form-control form-control-success mb-4" id="inputSuccess1" name="fullContent"></textarea>
+        </div>
 
         <input class="btn btn-success" type="submit" value="Submit">
 
 </form>
-
- 

@@ -8,7 +8,7 @@ const addArticle = (query, callback) => {
 };
 
 const findArticles = (query, sucessCallBack) => {
-    Article.find(query).sort( { "title":1 } ).populate('category').exec(sucessCallBack);
+    Article.find(query).sort( { "order":1 } ).populate('category').exec(sucessCallBack);
 };
  const findArticleById = (id, callback) => {
     Article.findById(id).exec(callback)

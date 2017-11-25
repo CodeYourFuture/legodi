@@ -6,7 +6,7 @@
 <table class="table table-bordered">
     <thead class="thead-inverse">
         <tr>
-            <th class="text-center">ID</th>
+            <th class="text-center">Order</th>
             <th class="text-center">Title</th>
             <th class="text-center">Content</th>
             <th class="text-center">Lang</th>
@@ -16,7 +16,7 @@
     <tbody>
         {{#each articles}}{{#if this.visible}}
         <tr>
-            <th scope="row" class="align-middle p-4">{{this._id}}</th>
+            <th scope="row" class="align-middle p-4">{{this.order}}</th>
             <td class="align-middle p-4">
                 <h4>{{this.title}}</h4>
             </td>
@@ -36,7 +36,7 @@
         </tr> {{else}}
         <tr>
             <th scope="row" class="align-middle p-4">
-                <strike>{{this._id}}</strike>
+                <strike>{{this.order}}</strike>
             </th>
             <td class="align-middle p-4">
                 <h4>
