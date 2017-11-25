@@ -26,7 +26,7 @@ class CategoryDropMenu extends Component {
                     this.state.categoriesList.map((category) => {
                         return (
                             <div className="category-menu-item" key={category._id}>
-                                <CategoryDropMenuIcon alt={category.icon} src={`/fwddesignhelp/${category.icon}.png`} href={`/categories/${category._id}`} />
+                                <CategoryDropMenuIcon alt={category.icon} src={`/icons/${category.icon}.png`} href={`/categories/${category._id}`} />
                             </div>
                         )
                     })
