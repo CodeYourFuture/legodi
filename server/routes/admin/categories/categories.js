@@ -21,7 +21,7 @@ router.get("/add", (req, res, next) => {
 router.post('/add', (req, res, next) => {
     const query = req.body;
     const callback = () => {
-        res.redirect("/");
+        res.redirect("/admin/categories");
     }
     categoryClient.addCategory(query, callback);
 });
