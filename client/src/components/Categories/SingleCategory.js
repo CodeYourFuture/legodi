@@ -7,16 +7,23 @@ class SingleCategory extends Component {
 
         super();
         this.state = {
-            articles: []
+            articles: [],
+            defaultData: ""
         }
     }
     componentDidMount() {
         const { categoryId } = this.props.match.params;
         apiClient.getArticlesByCategoryId(categoryId)
             .then(({ data }) => {
-                this.setState({
-                    articles: data
-                })
+                if (data.length ===0 ) {
+                    this.setState({
+                        defaultData: "This category does not have articles"
+                    })
+                } else {
+                    this.setState({
+                        articles: data
+                    })
+                }
             })
     }
 
@@ -24,11 +31,12 @@ class SingleCategory extends Component {
         return (
             <div className="SingleCategory">
                 {this.state.articles.map(article => {
-                    return <div>
+                    return <div key={article._id}>
                         <h4>{article.title}</h4>
                         <a className="btn btn-info btn-sm" href={`/articles/${article._id}`}>More Info</a>
                     </div>
                 })}
+                <h1>{this.state.defaultData}</h1>
             </div>
         )
     }
