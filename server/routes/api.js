@@ -18,7 +18,7 @@ router.get('/articles', function (req, res, next) {
     if (articleLanguage) {
         articleClient.findArticles({ visible: true, language: articleLanguage }, callBack)
     }else{
-        articleClient.findArticles({ visible: true }, callBack)
+        articleClient.findArticles({ visible: true,language:'En' }, callBack)
         
     }
 });

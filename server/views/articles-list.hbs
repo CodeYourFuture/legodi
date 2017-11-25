@@ -9,6 +9,7 @@
             <th class="text-center">ID</th>
             <th class="text-center">Title</th>
             <th class="text-center">Content</th>
+            <th class="text-center">Lang</th>
             <th class="text-center">Update</th>
         </tr>
     </thead>
@@ -21,6 +22,11 @@
             </td>
             <td class="align-middle p-4">
                 <h4>{{this.fullContent}} </h4>
+            </td>
+            <td class="align-middle p-4">
+                <h4>
+                    {{this.language}}
+                </h4>
             </td>
             <td class="align-middle p-4 text-center">
                 <a href="/admin/articles/edit/{{this._id}}">
@@ -40,6 +46,11 @@
             <td class="align-middle p-4">
                 <h4>
                     <strike>{{this.fullContent}}</strike>
+                </h4>
+            </td>
+             <td class="align-middle p-4">
+                <h4>
+                    <strike>{{this.language}}</strike>
                 </h4>
             </td>
             <td class="align-middle p-4 text-center">

@@ -13,7 +13,17 @@
             <option value={{this._id}}>{{ this.title }}</option>
             {{/each}}
         </select>
-   
+
+<div class="form-group has-success">
+  <label class="mr-sm-2 text-success" for="inlineFormCustomSelect">Language</label>
+  <select name="language" class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+    <option  selected>Choose...</option>
+    <option value="En">English</option>
+    <option value="Ar">Arabic</option>
+    <option value="Am">Amharic</option>
+  </select>
+   </div>
+
     <div class="form-group has-success">
         <label class="text-success">Full Content:</label>
         <textarea class="form-control form-control-success mb-4" id="inputSuccess1" name="fullContent"></textarea>
