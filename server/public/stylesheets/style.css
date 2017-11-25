@@ -13,3 +13,7 @@ nav#serverNav{
     margin-top: 20px;
     margin-bottom: 20px;
   }
+  .registration{
+    padding: 5em 0;
+    border-radius: 1em
+  }

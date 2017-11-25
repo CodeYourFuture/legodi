@@ -13,7 +13,7 @@ router.get('/login', (req, res) => {
 // use users/register/codeyourfuture135 to create username and password to access adminstration
 //I will get rid of this link after all guys creatte an account in his local
 
-router.get('/register/codeyourfuture135', (req, res) => {
+router.get('/register', (req, res) => {
 	res.render('register');
 });
 
