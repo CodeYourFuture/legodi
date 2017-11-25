@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Link } from "react-router-dom";
 import './menu.css'
-import menuIcon from './fwddesignhelp/menu-menu.png';
-import menuInfo from './fwddesignhelp/menu-info.png';
-import menuSetting from './fwddesignhelp/menu-setting.png';
-import menuLogin from './fwddesignhelp/menu-login.png';
 import CategoryDropMenu from './CategoryDropMenu';
 
 class Menu extends Component {
@@ -32,10 +28,10 @@ class Menu extends Component {
     return (
       <nav className="menu">
         <ul>
-          <li onClick={this.onclickChange}><img src={menuIcon} alt="" /></li>
-          <li><Link to="/categories"><img src={menuInfo} alt="" /></Link></li>
-          <li><Link to="/articles"><img src={menuSetting} alt="" /></Link></li>
-          <li><Link to="/about"><img src={menuLogin} alt="" /></Link></li>
+          <li onClick={this.onclickChange}><img src="/icons/menu-menu.png" alt="" /></li>
+          <li><Link to="/categories"><img src="/icons/menu-info.png" alt="" /></Link></li>
+          <li><Link to="/articles"><img src="/icons/menu-setting.png" alt="" /></Link></li>
+          <li><Link to="/about"><img src="/icons/menu-login.png" alt="" /></Link></li>
         </ul>
         {this.dropMenuShow()}
       </nav>
