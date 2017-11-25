@@ -1,6 +1,4 @@
 import React from 'react';
-import { CardLink, Row, Card, CardText, CardBody, CardTitle, Button, CardImg, Col } from 'reactstrap';
-import { Link } from 'react-router-dom';
 import CategoryIcon from './CategoryIcon';
 import './CategoryCard.css';
 
