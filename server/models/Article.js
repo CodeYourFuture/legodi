@@ -16,7 +16,12 @@ const schema = new Schema({
     language:{
         type:String,
         default:'En'
-    }
+    },
+    order:{
+       type: Number,
+       unique:false}
+       
+       
 });
 
 const Article = mongoose.model('article', schema);
