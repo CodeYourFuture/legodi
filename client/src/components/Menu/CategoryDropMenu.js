@@ -18,22 +18,13 @@ class CategoryDropMenu extends Component {
                 })
             })
     }
-    getCategoryDropList(pram) {
-        const lastFiveCategory = [];
-        if (pram.length > 0) {
-            for (let i = pram.length - 5; i < pram.length; i++) {
-                lastFiveCategory.push(pram[i]);
-            }
-        }
-        return lastFiveCategory.reverse();
-    }
 
     render() {
         return (
             <div className="category-menu-container">
                 <div className="overlay"></div>
                 {
-                    this.getCategoryDropList(this.state.categoriesList).map((category) => {
+                    this.state.categoriesList.slice(this.state.categoriesList.length-5).reverse().map((category) => {
                         return <div className="category-menu-item" key={category._id}>
                             <CategoryDropMenuIcon alt={category.icon} src={`/icons/${category.icon}.png`} href={`/categories/${category._id}`} />
                         </div>
