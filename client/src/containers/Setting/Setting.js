@@ -5,16 +5,16 @@ class Setting extends Component {
     constructor() {
         super();
         this.state = {
-            language:'En'
+            catLanguage:'En'
         }
     }
     
     updateLanguage=(e)=>{
-        var language = e.target.value;
+        var languageValue = e.target.value;
          this.setState({
-            language:language
+            catLanguage:languageValue
         })
-        localStorage.setItem('language',language);
+        localStorage.setItem('language',languageValue);                
     }
 
     render() {

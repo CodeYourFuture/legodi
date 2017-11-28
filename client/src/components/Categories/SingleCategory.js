@@ -11,8 +11,10 @@ class SingleCategory extends Component {
         }
     }
     componentDidMount() {
+        let language=localStorage.getItem("language")
+        
         const { categoryId } = this.props.match.params;
-        apiClient.getArticlesByCategoryId(categoryId)
+        apiClient.getArticlesByCategoryId(categoryId,language)
             .then(({ data }) => {
                 this.setState({
                     articles: data
