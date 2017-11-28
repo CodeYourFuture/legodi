@@ -1,6 +1,4 @@
 import React from 'react';
-import { CardLink, Row, Card, CardText, CardBody, CardTitle, Button, CardImg, Col } from 'reactstrap';
-import { Link } from 'react-router-dom';
 import CategoryIcon from './CategoryIcon';
 import './CategoryCard.css';
 
@@ -8,6 +6,7 @@ import './CategoryCard.css';
      return (
        <div className="category-card">
          <CategoryIcon {...props} />
+         {props.title}
        </div>
   );
 }
