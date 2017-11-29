@@ -15,7 +15,7 @@ const apiClient = {
     },
     getArticlesByCategoryId: (categoryId,language) => {
 
-        if(language=="En"){
+        if(language==undefined){
             return axios.get(`${apiUrl}/api/categories/${categoryId}?language=En`);
             
         }else{

@@ -2,19 +2,11 @@ import React, { Component } from 'react';
 
 class Setting extends Component {
 
-    constructor() {
-        super();
-        this.state = {
-            catLanguage:'En'
-        }
-    }
-    
-    updateLanguage=(e)=>{
+    updateLanguage = (e) => {
         var languageValue = e.target.value;
-         this.setState({
-            catLanguage:languageValue
+        this.setState({
         })
-        localStorage.setItem('language',languageValue);                
+        localStorage.setItem('language', languageValue);
     }
 
     render() {
