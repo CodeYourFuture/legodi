@@ -51,3 +51,35 @@
     top: -11px;
     right: -11px;
 }
+/********* List of Aricles under single Category **********/
+.article-content{
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex: 1 1;
+    flex: 1 1;
+    height: 5em;
+    margin-bottom: .5em;
+    padding: 0 .5em;
+}
+.article-content .article-logo{
+    width: 30%;
+    background: #0f352e;
+    display: flex;
+    justify-content: center;
+}
+.article-content .article-logo img{
+    align-self: center;
+}
+.article-content .article-pragraph{
+    width: 70%;
+    padding: 0 .5em;
+    line-height: .8em;
+    overflow: hidden;
+}
+.article-content .article-pragraph p{
+  font-size: .5em;
+  text-align: justify;
+}

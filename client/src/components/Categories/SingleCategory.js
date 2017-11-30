@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import apiClient from '../../helpers/apiClient'
+import apiClient from '../../helpers/apiClient';
+import './CategoriesOverview/category.css'
 
 class SingleCategory extends Component {
 
@@ -31,9 +32,13 @@ class SingleCategory extends Component {
         return (
             <div className="SingleCategory">
                 {this.state.articles.map(article => {
-                    return <div key={article._id}>
-                        <h4>{article.title}</h4>
-                        <a className="btn btn-info btn-sm" href={`/articles/${article._id}`}>More Info</a>
+                    return <div key={article._id} className="article-content">
+                        <div className="article-logo">    
+                            <img src="/icons/default-icon.png" alt="default-icon" />
+                        </div>
+                        <div className="article-pragraph">
+                            <p>{article.fullContent}</p>
+                        </div>    
                     </div>
                 })}
                 <h1>{this.state.defaultData}</h1>
