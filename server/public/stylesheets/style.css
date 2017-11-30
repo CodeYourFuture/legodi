@@ -17,3 +17,8 @@ nav#serverNav{
     padding: 5em 0;
     border-radius: 1em
   }
+
+  .articleList-content{
+    max-height: 50px;
+    overflow: auto;
+  }
