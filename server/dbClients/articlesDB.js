@@ -18,9 +18,15 @@ const editArticle = (articleId, query, upsertOption, sucessCallBack) => {
     Article.update({ "_id": ObjectId(articleId) }, query, { upsert: upsertOption }, sucessCallBack);
 };
 
+const removeArticle = (articleId, callback) => {
+    Article.remove({ "_id": ObjectId(articleId) }, callback)
+}
+
+
 module.exports = {
     addArticle,
     findArticles,
     findArticleById,
-    editArticle
+    editArticle,
+    removeArticle
 };
