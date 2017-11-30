@@ -35,7 +35,7 @@
     <div class="form-group has-success">
       <label class="text-success mt-2"> Categories:</label>
       <select name="category" class="form-control mb-4">
-        <option value={{this.article.category}} selected>Choose a Category</option>
+        <option value={{this.article.category}} selected>{{this.CategorySelected}}</option>
         {{#each categories}}
         <option value={{this._id}}>{{ this.title }}</option>
         {{/each}}
