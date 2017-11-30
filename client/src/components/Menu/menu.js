@@ -29,9 +29,9 @@ class Menu extends Component {
       <nav className="menu">
         <ul>
           <li onClick={this.onclickChange}><img src="/icons/menu-menu.png" alt="" /></li>
-          <li><Link to="/articles"><img src="/icons/menu-setting.png" alt="" /></Link></li>
-          <li><Link to="/categories"><img src="/icons/menu-login.png" alt="" /></Link></li>
-           <li><Link to="/about"><img src="/icons/menu-info.png" alt="" /></Link></li>
+          <li><Link to="/categories"><img src="/icons/menu-info.png" alt="" /></Link></li>
+          <li><Link to="/settings"><img src="/icons/menu-setting.png" alt="" /></Link></li>
+          <li><Link to="/about"><img src="/icons/menu-login.png" alt="" /></Link></li>
         </ul>
         {this.dropMenuShow()}
       </nav>
