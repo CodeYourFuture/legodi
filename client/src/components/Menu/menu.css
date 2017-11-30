@@ -3,6 +3,11 @@
     list-style: none
 }
 
+.menu ul :hover{
+    background:#205f55;
+}
+
+
 .menu ul{
     display: flex;
     flex-direction: row;
@@ -71,3 +76,7 @@
     background: rgba(230, 187, 68, .5);
     z-index: -1;
 }
+
+.category-menu-item:hover{
+     background: #205f55;
+ }
