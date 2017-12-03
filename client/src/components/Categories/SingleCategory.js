@@ -41,6 +41,7 @@ class SingleCategory extends Component {
     render() {
         return (
             <div className="SingleCategory">
+                <h1 className="category-header">Category Description:</h1>    
                 <p className="category-description">{this.categoryData()}</p>
                 {this.state.articles.map(article => {
                     return <div key={article._id} className="article-content">    
