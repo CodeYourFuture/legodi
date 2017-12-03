@@ -10,6 +10,8 @@
       <th class="text-center">Short content</th>
       <th class="text-center">Visible</th>
       <th class="text-center">Update</th>
+      <th class="text-center">Delete</th>
+
     </tr>
   </thead>
   <tbody>
@@ -32,6 +34,11 @@
         <a href="/admin/categories/edit/{{this._id}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a>
 
       </td>
+
+      <td class="align-middle text-center">
+        <a  href="/admin/categories/delete" class="btn btn-primary btn-lg " role="button" aria-pressed="true">Delete</a>
+      </td>
+      
     </tr>
     {{else}}
     <tr>
@@ -54,6 +61,11 @@
       <td class="align-middle text-center">
         <a href="/admin/categories/edit/{{this._id}}" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Edit</a>
       </td>
+
+      <td class="align-middle text-center">
+        <a  href="/admin/categories/delete" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Delete</a>
+      </td>
+
     </tr>
     {{/if}} {{/each}}
   </tbody>
