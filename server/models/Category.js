@@ -7,8 +7,8 @@ const CategorySchema = new Schema({
         type: String,
     }, 
     titleTranslation:{
-        arabic:String,
-        amarigna:String
+        ar:String,
+        am:String
     },
     description: {
         type: String

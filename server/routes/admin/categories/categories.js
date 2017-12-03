@@ -21,16 +21,18 @@ router.get("/add", (req, res, next) => {
 router.post('/add', (req, res, next) => {
     const query = req.body;
     let titleTranslation = {};
-     
-    titleTranslation.amarigna=  query.amarigna;
-    titleTranslation.arabic=query.arabic;
 
-    query.titleTranslation=titleTranslation;
- 
+    titleTranslation.am = query.am;
+    titleTranslation.ar = query.ar;
+
+    query.titleTranslation = titleTranslation;
+
     const callback = () => {
         res.redirect("/admin/categories");
     }
+
     categoryClient.addCategory(query, callback);
+
 });
 
 router.get('/edit/:categoryId', (req, res) => {

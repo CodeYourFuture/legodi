@@ -9,7 +9,7 @@
   </div>
 
   <div class="showTransitionSection">
-    <h4 class="text-danger">Show/Hide Title Tranlation section</h4>
+    <h4 class="text-danger">Show/Hide Title Translation section</h4>
     <button id="showBtn" class="btn btn-success" type="button">+/-</button>
   </div>
 
@@ -19,17 +19,17 @@
     </label>
 
     <div class="col-lg-6 col-md-8 col-sm-9 col-xs-9 ">
-      <input class="form-control" type="text" name="arabic" id="example-text-input">
+      <input class="form-control" type="text" name="ar" id="example-text-input">
     </div>
 
     <label class="text-success">
       <h3 class="text-primary">amarigna:</h3>
     </label>
-     
-     <div class="col-lg-6 col-md-8 col-sm-9 col-xs-9 ">
-      <input class="form-control" type="text" name="amarigna" id="example-text-input">
+
+    <div class="col-lg-6 col-md-8 col-sm-9 col-xs-9 ">
+      <input class="form-control" type="text" name="am" id="example-text-input">
     </div>
-    
+
   </div>
 
   <div class="form-group row has-success">
@@ -49,3 +49,17 @@
     <input class="btn btn-success" type="submit" value="Submit">
   </div>
 </form>
+
+<script>
+
+  var transition = document.getElementById('transitionSection');
+  transition.style.display = "none";
+  var showButton = document.getElementById('showBtn');
+  showButton.addEventListener('click', () => {
+    if (transition.style.display == "none") {
+      transition.style.display = "block";
+    } else {
+      transition.style.display = "none";
+    }
+  }) 
+</script>
