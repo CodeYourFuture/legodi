@@ -18,9 +18,15 @@ const editCategory = (CategoryId, query, upsertOption, sucessCallBack) => {
     CategoryModel.update({ "_id": ObjectId(CategoryId) }, query, { upsert: upsertOption }, sucessCallBack);
 };
 
+const removeCategory = (categoryId, callback) => {
+    Article.remove({ "_id": ObjectId(categoryId) }, callback)
+}
+
+
 module.exports = {
     addCategory,
     findCategories,
     editCategory,
-    findCategoryById
+    findCategoryById,
+    removeCategory
 };
