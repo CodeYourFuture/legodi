@@ -53,6 +53,14 @@ router.get('/edit/:articleId', ensureAuthenticated, (req, res) => {
     categoryClient.findCategories(categoriesCallback);
 })
 
+router.get('/delete/:articleId',ensureAuthenticated,(req,res) =>{
+    const { articleId } = req.params;
+    callBack=()=>{
+        res.redirect('/');
+    }
+    articleClient.removeArticle(articleId,callBack)
+})
+
 router.post('/edit/:articleId', function (req, res, next) {
     const { articleId } = req.params;
     const query = req.body;

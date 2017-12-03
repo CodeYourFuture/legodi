@@ -11,6 +11,8 @@
             <th class="text-center">Content</th>
             <th class="text-center">Lang</th>
             <th class="text-center">Update</th>
+            <th class="text-center">Delete</th>
+
         </tr>
     </thead>
     <tbody>
@@ -31,6 +33,12 @@
             <td class="align-middle p-4 text-center">
                 <a href="/admin/articles/edit/{{this._id}}">
                     <button class="btn btn-primary btn-lg active">Edit</button>
+                </a>
+            </td>
+
+            <td class="align-middle p-4 text-center">
+                <a href="/admin/articles/delete/{{this._id}}">
+                    <button class="btn btn-primary btn-lg active">Delete</button>
                 </a>
             </td>
         </tr> {{else}}
@@ -56,6 +64,13 @@
             <td class="align-middle p-4 text-center">
                 <a href="/admin/articles/edit/{{this._id}}">
                     <button class="btn btn-danger btn-lg active">Edit</button>
+                </a>
+            </td>
+        </tr>
+
+         <td class="align-middle p-4 text-center">
+                <a href="/admin/articles/delete/{{this._id}}">
+                    <button class="btn btn-danger btn-lg active">Delete</button>
                 </a>
             </td>
         </tr>
