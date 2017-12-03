@@ -20,6 +20,13 @@ router.get("/add", (req, res, next) => {
 
 router.post('/add', (req, res, next) => {
     const query = req.body;
+    let titleTranslation = {};
+     
+    titleTranslation.amarigna=  query.amarigna;
+    titleTranslation.arabic=query.arabic;
+
+    query.titleTranslation=titleTranslation;
+ 
     const callback = () => {
         res.redirect("/admin/categories");
     }
