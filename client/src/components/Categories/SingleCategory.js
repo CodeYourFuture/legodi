@@ -9,7 +9,8 @@ class SingleCategory extends Component {
         super();
         this.state = {
             articles: [],
-            defaultData: ""
+            defaultData: "",
+            category: {}
         }
     }
     componentDidMount() {
@@ -20,11 +21,13 @@ class SingleCategory extends Component {
             .then(({ data }) => {
                 if (data.length ===0 ) {
                     this.setState({
-                        defaultData: "This category does not have articles"
+                        defaultData: "This category does not have any articles"
                     })
                 } else {
+                    const { category = {} } = data[0];
                     this.setState({
-                        articles: data
+                        articles: data,
+                        category
                     })
                 }
             })
@@ -33,8 +36,10 @@ class SingleCategory extends Component {
     render() {
         return (
             <div className="SingleCategory">
+                <h1 className="category-header">{this.state.category.title}</h1>    
+                <p className="category-description">{this.state.category.description}</p>
                 {this.state.articles.map(article => {
-                    return <div key={article._id} className="article-content">
+                    return <div key={article._id} className="article-content">    
                         <div className="article-logo">    
                             <img src="/icons/default-icon.png" alt="default-icon" />
                         </div>
