@@ -83,3 +83,7 @@
   font-size: .5em;
   text-align: justify;
 }
+.category-description{
+    padding: 0 .5em;
+    text-align: justify;
+}
