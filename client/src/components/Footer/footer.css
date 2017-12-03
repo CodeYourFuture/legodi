@@ -1,0 +1,46 @@
+ .footer {
+    display: flex;
+    flex-direction: row;
+    background: #e6bb44;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    border-top: .1em solid #0f352e;
+
+}
+
+.footer-continer{
+width: 75%;
+display: flex;
+flex-direction: row;
+align-items: center;
+padding-top: .3em;
+}
+
+.footer-continer .img{
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    padding-left: .2em;
+
+}
+
+.footer-continer h5{
+width: 85%;
+    font-size: .8em;
+    padding-left: .3em;
+
+}
+
+.footer-icon{
+width: 25%;
+background: #0f352e;
+display: flex;
+justify-content: center;
+ align-items: center;
+}
+
+.footer-text{
+    color: #0f352e;
+}
