@@ -2,18 +2,22 @@
   <form method="post">
     <div class="form-group has-success">
       {{#if this.article.visible}}
+      
+      <label class="text-success">Visible:</label>
       <div class="mb-3">
         <input type="radio" name="visible" value="true" checked="true">
-        <label class="visHid text-success">Visible</label>
+        <label class="visHid text-success">True</label>
         <input type="radio" name="visible" value="false">
-        <label class="visHid text-success">Hidden</label>
+        <label class="visHid text-success">False</label>
       </div>
       {{else}}
+      
+      <label class="text-success">Visible:</label>
       <div class="mb-3">
         <input type="radio" name="visible" value="true">
-        <label class="visHid text-success">Visible</label>
+        <label class="visHid text-success">True</label>
         <input type="radio" name="visible" value="false" checked="true">
-        <label class="visHid text-success">Hidden</label>
+        <label class="visHid text-success">False</label>
       </div>
       {{/if}}
     </div>
