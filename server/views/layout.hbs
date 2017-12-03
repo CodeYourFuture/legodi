@@ -49,6 +49,21 @@
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
     crossorigin="anonymous"></script>
+
+      <script>
+    var transition = document.getElementById('transitionSection');
+    transition.style.display = "none";
+    var showButton = document.getElementById('showBtn');
+    showButton.addEventListener('click', () => {
+      if (transition.style.display == "none") {
+        transition.style.display = "block";
+      } else {
+        transition.style.display = "none";
+      }
+    })
+  </script>
+
+  
  </body>
 
 </html>
