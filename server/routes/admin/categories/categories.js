@@ -9,15 +9,15 @@ router.get('/', (req, res, next) => {
     const callback = (error, category) => {
         res.render("admin-list-categories", {
             category,
-            categoryHome:'homeNav'
+            categoryHome: 'homeNav'
         })
     }
     categoryClient.findCategories({}, callback);
 });
 
 router.get("/add", (req, res, next) => {
-    res.render('admin-add-category',{
-        addcategoryHome:'homeNav'
+    res.render('admin-add-category', {
+        addcategoryHome: 'homeNav'
     });
 });
 

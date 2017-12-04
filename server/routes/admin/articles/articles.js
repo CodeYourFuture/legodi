@@ -8,7 +8,7 @@ router.get('/', (req, res, next) => {
         res.render("articles-list", {
             articles: articles,
             addArticle: 'true',
-            articlehome:'homeNav'
+            articlehome: 'homeNav'
 
         })
     }
@@ -19,7 +19,7 @@ router.get('/add', (req, res, next) => {
     const callback = (error, categories) => {
         res.render('admin-add-article', {
             categories,
-            addArticlehome:'homeNav'
+            addArticlehome: 'homeNav'
         })
     }
     categoryClient.findCategories(callback);
@@ -39,40 +39,40 @@ router.get('/edit/:articleId', ensureAuthenticated, (req, res) => {
     const categoriesCallback = (error, categories) => {
         articleCallback = (error, article) => {
             let CategorySelected = "";
-            categories.map((category)=>{
-                if(article.category.equals(category._id)){
-                    CategorySelected=category.title;
+            categories.map((category) => {
+                if (article.category.equals(category._id)) {
+                    CategorySelected = category.title;
                 }
             })
             res.render("admin-edit-article", {
                 article: article,
                 categories: categories,
-                CategorySelected:CategorySelected,
-                editArticleHome:'homeNav'
+                CategorySelected: CategorySelected,
+                editArticleHome: 'homeNav'
             });
         };
         articleClient.findArticleById(articleId, articleCallback);
     }
     categoryClient.findCategories(categoriesCallback);
 })
- 
-router.post('/delete/:articleId',(req,res) =>{
-    const { articleId } = req.params;
- 
-    callBack=(error,data)=>{
-         if(data.title ===req.body.validationTitle){
-            deleteCallBack=()=>{
-                res.redirect('/');            
-                
-            }            
-            articleClient.removeArticle(articleId,deleteCallBack);
 
-        }else{
+router.post('/delete/:articleId', (req, res) => {
+    const { articleId } = req.params;
+
+    callBack = (error, data) => {
+        if (data.title === req.body.validationTitle) {
+            deleteCallBack = () => {
+                res.redirect('/');
+
+            }
+            articleClient.removeArticle(articleId, deleteCallBack);
+
+        } else {
             res.render("delete-title-wrong");
         }
-     }
+    }
     // articleClient.removeArticle(articleId,callBack)
-    articleClient.findArticleById(articleId,callBack)
+    articleClient.findArticleById(articleId, callBack)
 })
 
 router.post('/edit/:articleId', function (req, res, next) {
