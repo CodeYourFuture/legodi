@@ -15,7 +15,8 @@ ensureAuthenticated = (req, res, next) => {
 router.get('/', ensureAuthenticated, (req, res, next) => {
     const callback = (error, articles) => {
         res.render("articles-list", {
-            articles: articles
+            articles: articles,
+            home:'homeNav'
         })
     }
     articleClient.findArticles({}, callback);
