@@ -25,8 +25,7 @@ nav#serverNav{
 
   #serverNav a li{
     font-size: 1.75rem;
-    list-style: none;
-    
+    list-style: none; 
     border-left: none;
     
    }
@@ -34,33 +33,39 @@ nav#serverNav{
  #serverNav a#homeNav li{
   font-size: 1.75rem;
   list-style: none;
-  
   border-left: none;
+  vertical-align: middle;
+  
   
  }
   @media (min-width: 992px){
-    #serverNav li {
-     }
+   
     #serverNav li:hover{
-      background: rgb(47, 49, 58);
-       border-radius: 4px
+      background: rgba(0,0,0,.5);
+       border-radius: 4px;
+       vertical-align: middle;
+       
     }
     #serverNav a li{
        padding: 10px;
       
       }
     #serverNav a#homeNav li{
-      background: rgb(47, 49, 58);
+      background: rgba(0,0,0,.5);
       padding: 10px;
       border: solid 0.3px white;
+      vertical-align: middle;
+       
       
       }
          
       #serverNav li#homeNav {
         border-left: solid 1px rgb(245, 241, 241);
         border: solid 0.3px white;
+        background: rgba(0,0,0,.5);
+        vertical-align: middle;
+        padding-top:3px
         
-        background: rgb(47, 49, 58);
         
       }
      
