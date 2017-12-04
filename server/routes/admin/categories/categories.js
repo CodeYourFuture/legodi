@@ -42,7 +42,7 @@ router.get('/delete/:categoryId',(req,res)=>{
     const {categoryId} = req.params;
 
     const callback=()=>{
-        res.redirect('admin/categories')
+        res.redirect('/admin/categories')
     }
     categoryClient.removeCategory(categoryId,callback);
 })
