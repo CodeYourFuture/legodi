@@ -7,7 +7,8 @@ router.get('/', (req, res, next) => {
     const callback = (error, articles) => {
         res.render("articles-list", {
             articles: articles,
-            addArticle: 'true'
+            addArticle: 'true',
+            articlehome:'homeNav'
 
         })
     }
@@ -17,7 +18,8 @@ router.get('/', (req, res, next) => {
 router.get('/add', (req, res, next) => {
     const callback = (error, categories) => {
         res.render('admin-add-article', {
-            categories
+            categories,
+            addArticlehome:'homeNav'
         })
     }
     categoryClient.findCategories(callback);
@@ -45,7 +47,8 @@ router.get('/edit/:articleId', ensureAuthenticated, (req, res) => {
             res.render("admin-edit-article", {
                 article: article,
                 categories: categories,
-                CategorySelected:CategorySelected
+                CategorySelected:CategorySelected,
+                editArticleHome:'homeNav'
             });
         };
         articleClient.findArticleById(articleId, articleCallback);

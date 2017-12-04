@@ -9,30 +9,35 @@
 </head>
 
 <body>
-  <nav id="serverNav" class="navbar navbar-toggleable-md navbar-inverse bg-inverse text-info">
+  <nav id="serverNav" class="navbar navbar-toggleable-md navbar-inverse bg-danger text-info">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="/">Home</a>
+    {{#if home}}
+    <a class="navbar-brand homeNav" id={{home}} href="/"> <li>Home</li> </a>
+    {{else}}
+    <a class="navbar-brand homeNav" href="/"> <li>Home</li> </a>
+
+    {{/if}}
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link text-info" href="/admin/categories">Categories
+        <li class="nav-item active" id={{categoryHome}} >
+          <a class="nav-link text-white" href="/admin/categories"><h3>Categories</h3>
             <span class="sr-only">(current)</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-info" href="/admin/articles">Articles</a>
+        <li class="nav-item" id={{articlehome}}>
+          <a class="nav-link text-white" href="/admin/articles"><h3>Articles</h3></a>
+        </li>
+        <li class="nav-item" id={{addArticlehome}}>
+          <a class="nav-link text-white" href="/admin/articles/add"><h3>Add Articles</h2></a>
+        </li>
+        <li class="nav-item" id={{addcategoryHome}}>
+          <a class="nav-link text-white" href="/admin/categories/add"><h3>Add Categories</h3></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-info" href="/admin/articles/add">Add Articles</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-info" href="/admin/categories/add">Add Categories</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-info" href="/users/logout">Logout</a>
+          <a class="nav-link text-white" href="/users/logout"><h3>Logout</h3></a>
         </li>
       </ul>
     </div>

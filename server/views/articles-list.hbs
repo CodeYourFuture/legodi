@@ -6,38 +6,48 @@
 
 {{/if}}
 
+<table class="table table-bordered table-inverse ">
+    <thead class="bg-primary thead-bordered">
+                <tr>
+                        <th class="text-center align-middle">
+                                <h2 class="text-center">#</h2>
+                        </th>
+                        <th class="text-center align-middle">
+                                <h2 class="text-center">Title</h2>
+                        </th>
+                        <th class="text-center align-middle">
+                                <h2 class="text-center">Content</h2>
+                        </th>
+                        <th class="text-center align-middle">
+                                <h2 class="text-center">Visible</h2>
+                        </th>
+                        <th class="text-center align-middle">
+                                <h2 class="text-center">Update</h2>
+                        </th>
+                        <th class="text-center align-middle">
+                                <h2 class="text-center">Delete</h2>
+                        </th>
 
-
-<table class="table table-bordered">
-    <thead class="thead-inverse">
-        <tr>
-            <th class="text-center">Order</th>
-            <th class="text-center">Title</th>
-            <th class="text-center">Content</th>
-            <th class="text-center">Lang</th>
-            <th class="text-center">Update</th>
-            <th class="text-center">Delete</th>
-
-        </tr>
-    </thead>
+                </tr>
+        </thead>
     <tbody>
         {{#each articles}}{{#if this.visible}}
         <tr>
-            <th scope="row" class="align-middle p-4">{{this.order}}</th>
+            <th scope="row" class="align-middle text-center p-4">{{this.order}}</th>
             <td class="align-middle p-4">
-                <h4>{{this.title}}</h4>
+                <h4 class="text-center">{{this.title}}</h4>
             </td>
             <td class="align-middle p-4">
-                <h4 class="articleList-content">{{this.fullContent}} </h4>
+                <h4 class="articleList-content text-center">{{this.fullContent}} </h4>
             </td>
-            <td class="align-middle p-4">
+            <td class="align-middle p-4 text-center">
                 <h4>
                     {{this.language}}
                 </h4>
             </td>
             <td class="align-middle p-4 text-center">
                 <a href="/admin/articles/edit/{{this._id}}">
-                    <button class="btn btn-primary btn-lg active">Edit</button>
+                    <button class="btn btn-success btn-lg active">Edit</button>
                 </a>
             </td>
 
@@ -59,20 +69,20 @@
 
         </tr> {{else}}
         <tr>
-            <th scope="row" class="align-middle p-4">
+            <th scope="row" class="align-middle p-4 text-center">
                 <strike>{{this.order}}</strike>
             </th>
-            <td class="align-middle p-4">
+            <td class="align-middle p-4 text-center">
                 <h4>
                     <strike>{{this.title}}</strike>
                 </h4>
             </td>
-            <td class="align-middle p-4">
+            <td class="align-middle p-4 text-center">
                 <h4>
                     <strike>{{this.fullContent}}</strike>
                 </h4>
             </td>
-            <td class="align-middle p-4">
+             <td class="align-middle p-4 text-center">
                 <h4>
                     <strike>{{this.language}}</strike>
                 </h4>
@@ -82,7 +92,7 @@
                     <button class="btn btn-danger btn-lg active">Edit</button>
                 </a>
             </td>
-        </tr>
+      
 
         <td class="align-middle p-4 text-center">
             <button class="btn btn-danger btn-lg active delete-article" type="button">Delete</button>
