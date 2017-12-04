@@ -22,7 +22,6 @@ class App extends Component {
           <Route path="/categories" exact component={CategoriesOverview} /> 
           <Route path="/articles/:articleId" component={SingleArticle} />
           <Route path="/categories/:categoryId" component={SingleCategory} />
-          <Route path="/footer" component={Footer} />
           <Footer />
         </div>
       </Router>
