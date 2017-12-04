@@ -38,6 +38,15 @@ router.get('/edit/:categoryId', (req, res) => {
     categoryClient.findCategoryById(categoryId, callback);
 });
 
+router.get('/delete/:categoryId',(req,res)=>{
+    const {categoryId} = req.params;
+
+    const callback=()=>{
+        res.redirect('admin/categories')
+    }
+    categoryClient.removeCategory(categoryId,callback);
+})
+
 router.post('/edit/:categoryId', (req, res, next) => {
     const { categoryId } = req.params;
     const query = req.body;

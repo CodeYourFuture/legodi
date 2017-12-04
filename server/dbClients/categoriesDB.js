@@ -19,7 +19,7 @@ const editCategory = (CategoryId, query, upsertOption, sucessCallBack) => {
 };
 
 const removeCategory = (categoryId, callback) => {
-    Article.remove({ "_id": ObjectId(categoryId) }, callback)
+    CategoryModel.remove({ "_id": ObjectId(categoryId) }, callback)
 }
 
 
