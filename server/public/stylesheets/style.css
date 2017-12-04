@@ -22,3 +22,15 @@ nav#serverNav{
     max-height: 50px;
     overflow: auto;
   }
+
+  #validation{
+    width:90%;
+      height: 500px;
+    background: rgb(152, 40, 218);
+    border: solid 2px blueviolet ;
+    border-radius: 15px;
+    position: fixed;
+    top: 1;
+    z-index: 1;
+    display: none;
+   }
