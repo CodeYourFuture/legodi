@@ -21,18 +21,24 @@
 
   <div class="form-group has-success">
     <label class="text-success">Category Title:</label>
-    <input class="mb-3 form-control" name="title" value={{this.category.title}}>
+  
+     <div class="col-lg-6 col-md-8 col-sm-9 col-xs-9 ">
+         <textarea class="form-control mb-3" type="text" name="title"  id="example-text-input">{{this.category.title}}</textarea>
+      </div>
+
   </div>
+
+  
   <div class="form-group has-success">
     <label class="text-success">Category Icon:</label>
     <input class="mb-3 form-control" name="icon" value={{this.category.icon}}>
   </div>
   <div class="form-group has-success">
-    <label class="text-success">{{shortDescriptionTitle}} Description:</label>
+    <label class="text-success">{{shortDescriptionTitle}} short Description:</label>
     <textarea rows="4" cols="50" class="form-control form-control-success mb-3" id="inputSuccess1" name="shortDescription">{{this.category.shortDescription}}</textarea>
   </div>
   <div class="form-group has-success">
-    <label class="text-success">{{descriptionTitle}} Description:</label>
+    <label class="text-success">{{descriptionTitle}}full Description:</label>
     <textarea rows="4" cols="50" class="form-control form-control-success mb-3" id="inputSuccess1" name="description">{{this.category.description}}</textarea>
     <button class="btn bg-success">Update category</button>
   </div>
