@@ -24,7 +24,7 @@ nav#serverNav{
     overflow: auto;
   }
 
-  #validation{
+  .validation{
     width:90%;
       height: 300px;
     background: rgb(152, 40, 218);
