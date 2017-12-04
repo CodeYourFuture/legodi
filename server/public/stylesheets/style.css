@@ -22,3 +22,6 @@ nav#serverNav{
     max-height: 50px;
     overflow: auto;
   }
+  #serverNav li {
+      border-left: solid 1px rgb(245, 241, 241)
+  }
