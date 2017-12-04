@@ -22,6 +22,46 @@ nav#serverNav{
     max-height: 50px;
     overflow: auto;
   }
-  #serverNav li {
-      border-left: solid 1px rgb(245, 241, 241)
-  }
+
+  #serverNav a li{
+    font-size: 1.75rem;
+    list-style: none;
+    
+    border-left: none;
+    
+   }
+
+ #serverNav a#homeNav li{
+  font-size: 1.75rem;
+  list-style: none;
+  
+  border-left: none;
+  
+ }
+  @media (min-width: 992px){
+    #serverNav li {
+     }
+    #serverNav li:hover{
+      background: rgb(47, 49, 58);
+       border-radius: 4px
+    }
+    #serverNav a li{
+       padding: 10px;
+      
+      }
+    #serverNav a#homeNav li{
+      background: rgb(47, 49, 58);
+      padding: 10px;
+      border: solid 0.3px white;
+      
+      }
+         
+      #serverNav li#homeNav {
+        border-left: solid 1px rgb(245, 241, 241);
+        border: solid 0.3px white;
+        
+        background: rgb(47, 49, 58);
+        
+      }
+     
+  }  

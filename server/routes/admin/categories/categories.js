@@ -8,14 +8,17 @@ const ObjectId = require('mongodb').ObjectID;
 router.get('/', (req, res, next) => {
     const callback = (error, category) => {
         res.render("admin-list-categories", {
-            category
+            category,
+            categoryHome:'homeNav'
         })
     }
     categoryClient.findCategories({}, callback);
 });
 
 router.get("/add", (req, res, next) => {
-    res.render('admin-add-category');
+    res.render('admin-add-category',{
+        addcategoryHome:'homeNav'
+    });
 });
 
 router.post('/add', (req, res, next) => {
