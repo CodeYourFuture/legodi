@@ -7,7 +7,8 @@ router.get('/', (req, res, next) => {
     const callback = (error, articles) => {
         res.render("articles-list", {
             articles: articles,
-            addArticle: 'true'
+            addArticle: 'true',
+            articlehome:'homeNav'
 
         })
     }
@@ -17,7 +18,8 @@ router.get('/', (req, res, next) => {
 router.get('/add', (req, res, next) => {
     const callback = (error, categories) => {
         res.render('admin-add-article', {
-            categories
+            categories,
+            addArticlehome:'homeNav'
         })
     }
     categoryClient.findCategories(callback);
@@ -36,14 +38,30 @@ router.get('/edit/:articleId', ensureAuthenticated, (req, res) => {
     const { articleId } = req.params;
     const categoriesCallback = (error, categories) => {
         articleCallback = (error, article) => {
+            let CategorySelected = "";
+            categories.map((category)=>{
+                if(article.category.equals(category._id)){
+                    CategorySelected=category.title;
+                }
+            })
             res.render("admin-edit-article", {
                 article: article,
-                categories: categories
+                categories: categories,
+                CategorySelected:CategorySelected,
+                editArticleHome:'homeNav'
             });
         };
         articleClient.findArticleById(articleId, articleCallback);
     }
     categoryClient.findCategories(categoriesCallback);
+})
+
+router.get('/delete/:articleId',ensureAuthenticated,(req,res) =>{
+    const { articleId } = req.params;
+    callBack=()=>{
+        res.redirect('/');
+    }
+    articleClient.removeArticle(articleId,callBack)
 })
 
 router.post('/edit/:articleId', function (req, res, next) {

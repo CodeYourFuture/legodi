@@ -2,25 +2,42 @@
 
 </div>
 
-<table class="table table-bordered ">
-  <thead class="thead-inverse">
-    <tr>
-      <th class="text-center">ID</th>
-      <th class="text-center">Title</th>
-      <th class="text-center">Short content</th>
-      <th class="text-center">Visible</th>
-      <th class="text-center">Update</th>
-    </tr>
-  </thead>
+ 
+
+  <table class="table table-bordered table-inverse">
+        <thead class="bg-primary thead-bordered">
+                <tr>
+                        <th class="text-center">
+                                <h2>#</h2>
+                        </th>
+                        <th class="text-center">
+                                <h2>Title</h2>
+                        </th>
+                        <th class="text-center">
+                                <h2>Brief</h2>
+                        </th>
+                        <th class="text-center">
+                                <h2>Visible</h2>
+                        </th>
+                        <th class="text-center">
+                                <h2>Update</h2>
+                        </th>
+                        <th class="text-center">
+                                <h2>Delete</h2>
+                        </th>
+                         
+
+                </tr>
+        </thead>
   <tbody>
     {{#each category}} {{#if this.visible}}
 
     <tr>
-      <th class="align-middle p-4" scope="row">{{this._id}}</th>
+      <th class="align-middle p-4 text-center" scope="row">{{this._id}}</th>
       <td class="align-middle p-4">
-        <h4> {{this.title}}</h4>
+        <h4 class="text-center"> {{this.title}}</h4>
       </td>
-      <td class="align-middle p-4">
+      <td class="align-middle p-4 text-center">
         <h4>{{this.shortDescription}}</h4>
       </td>
       <td class="align-middle p-4 text-center">
@@ -29,21 +46,26 @@
 
       <td class="align-middle text-center">
 
-        <a href="/admin/categories/edit/{{this._id}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a>
+        <a href="/admin/categories/edit/{{this._id}}" class="btn btn-success btn-lg active" role="button" aria-pressed="true">Edit</a>
 
       </td>
+
+      <td class="align-middle text-center">
+        <a  href="/admin/categories/delete/{{this._id}}" class="btn btn-info btn-lg " role="button" aria-pressed="true">Delete</a>
+      </td>
+      
     </tr>
     {{else}}
     <tr>
-      <th class="align-middle p-4" scope="row">
+      <th class="align-middle p-4 text-center" scope="row">
         <strike>{{this._id}}</strike>
       </th>
-      <td class="align-middle p-4">
+      <td class="align-middle p-4 text-center">
         <h4>
           <strike>{{this.title}}</strike>
         </h4>
       </td>
-      <td class="align-middle p-4">
+      <td class="align-middle p-4 text-center">
         <strike>
           <h4>{{this.shortDescription}}</h4>
         </strike>
@@ -54,6 +76,11 @@
       <td class="align-middle text-center">
         <a href="/admin/categories/edit/{{this._id}}" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Edit</a>
       </td>
+
+      <td class="align-middle text-center">
+        <a  href="/admin/categories/delete/{{this._id}}" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Delete</a>
+      </td>
+
     </tr>
     {{/if}} {{/each}}
   </tbody>

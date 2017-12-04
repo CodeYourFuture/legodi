@@ -12,11 +12,15 @@ class Setting extends Component {
     render() {
         var localLang = localStorage.getItem("language");
         return (
-            <div>
-                <h1>{localLang}</h1>
-                <button value="En" onClick={this.updateLanguage}> En</button>
-                <button value="Ar" onClick={this.updateLanguage}>Ar</button>
-                <button value="Am" onClick={this.updateLanguage}>Am</button>
+            <div className="row">
+                <div className="col">    
+                    <select onChange={this.updateLanguage} className="form-control">
+                        <option value="null">Select Language</option>    
+                        <option value="En">English</option>
+                        <option value="Ar">Arabic</option>
+                        <option value="Am">Amharnga</option>
+                    </select>
+                </div>
             </div>
         )
     }

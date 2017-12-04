@@ -19,12 +19,12 @@
     </div>
 
     <div class="form-group row has-success">
-      <label for="example-text-input text-success " class="col-12 col-form-label">Aticle Title:</label>
+      <label for="example-text-input text-success " class="col-12 col-form-label"><h3 class="text-primary">Aticle Title:</h3></label>
       <div class="col-lg-6 col-md-8 col-sm-9 col-xs-9 ">
         <input class="form-control" type="text" name="title" value={{this.article.title}} id="example-text-input">
       </div>
 
-      <label for="example-text-input text-success " class="col-12 col-form-label">Order:</label>
+      <label for="example-text-input text-success " class="col-12 col-form-label"><h3 class="text-primary">Order:</h3></label>
         <div class="col-lg-6 col-md-8 col-sm-9 col-xs-9 ">
             <input class="form-control" type="number" name="order" id="example-text-input">
         </div>
@@ -33,9 +33,9 @@
     </div>
     
     <div class="form-group has-success">
-      <label class="text-success mt-2"> Categories:</label>
+      <label class="text-success mt-2"> <h3 class="text-primary">Categories:</h3></label>
       <select name="category" class="form-control mb-4">
-        <option value={{this.article.category}} selected>Choose a Category</option>
+        <option value={{this.article.category}} selected>{{this.CategorySelected}}</option>
         {{#each categories}}
         <option value={{this._id}}>{{ this.title }}</option>
         {{/each}}
@@ -43,7 +43,7 @@
     </div>
     
     <div class="form-group has-success">
-  <label class="mr-sm-2 text-success" for="inlineFormCustomSelect">Language</label>
+  <label class="mr-sm-2 text-success" for="inlineFormCustomSelect"><h3 class="text-primary">Language</h3></label>
   <select name="language"  class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
     <option value={{this.article.language}}  selected>{{this.article.language}}</option>
     <option value="En">English</option>
@@ -53,9 +53,9 @@
    </div>
 
     <div class="form-group has-success">
-      <label class="text-success">Aticle Discreption:</label>
+      <label class="text-success"><h3 class="text-primary">Aticle Discreption:</h3></label>
       <textarea class="form-control form-control-success mb-3" name="fullContent">{{this.article.fullContent}} 
     </textarea>
-      <button class="btn bg-success">Update Aticle</button>
+      <button class="btn bg-success"><h3 class="text-white">Update Aticle</h3></button>
     </div>
   </form>
