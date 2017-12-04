@@ -2,10 +2,7 @@
 <a href="/admin/articles/add" class="btn btn-primary btn-lg active  mb-3" role="button" aria-pressed="true">
     Add New article</a>
 
-<div id="validation">
-    What is the name of the article you want to delete
-    <input type="text" value="name of article">
-</div>
+
 
 {{/if}}
 
@@ -45,10 +42,21 @@
             </td>
 
             <td class="align-middle p-4 text-center">
-                <a href="/admin/articles/delete/{{this._id}}">
-                    <button class="btn btn-primary btn-lg active delete-article">Delete</button>
-                </a>
+                <button class="btn btn-primary btn-lg active delete-article">Delete</button>
+
             </td>
+            <form method="post" action="/admin/articles/delete/{{this._id}}">
+            <div id="validation">
+                <div class="validation-box">
+                <h3>Are you sure you want to delete this Article:</h3>
+               <h4 class="text-white">{{this.title}}</h4>
+               <h5>Write the name of the article in the text input to delete it:</h5>
+                <input type="text" name="validationTitle"   placeholder="name of article" />
+                <button   class="btn btn-danger btn-lg active delete-article" >Go</button> 
+                </div>
+            </div>
+            </form>
+
         </tr> {{else}}
         <tr>
             <th scope="row" class="align-middle p-4">
@@ -77,9 +85,8 @@
         </tr>
 
         <td class="align-middle p-4 text-center">
-            <a href="/admin/articles/delete/{{this._id}}">
-                <button class="btn btn-danger btn-lg active delete-article">Delete</button>
-            </a>
+            <button class="btn btn-danger btn-lg active delete-article" type="button">Delete</button>
+
         </td>
         </tr>
         {{/if}} {{/each}}

@@ -48,14 +48,13 @@
     crossorigin="anonymous"></script>
 
     <script>
-     let validationBox= document.getElementById("validation");
-
+      let validationBox= document.getElementById("validation")
 
       let deleteButtons=document.getElementsByClassName("delete-article");
 
         for (var i = 0; i < deleteButtons.length; i++) {
           deleteButtons[i].addEventListener("click",()=>{
-          validationBox.style.display="block"
+          validationBox.style.display="flex";
           })
      }
      </script>

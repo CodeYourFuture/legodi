@@ -52,13 +52,24 @@ router.get('/edit/:articleId', ensureAuthenticated, (req, res) => {
     }
     categoryClient.findCategories(categoriesCallback);
 })
-
-router.get('/delete/:articleId',ensureAuthenticated,(req,res) =>{
+ 
+router.post('/delete/:articleId',(req,res) =>{
     const { articleId } = req.params;
-    callBack=()=>{
-        res.redirect('/');
-    }
-    articleClient.removeArticle(articleId,callBack)
+ 
+    callBack=(error,data)=>{
+         if(data.title ===req.body.validationTitle){
+            deleteCallBack=()=>{
+                res.redirect('/');            
+                
+            }            
+            articleClient.removeArticle(articleId,deleteCallBack);
+
+        }else{
+            res.render("delete-title-wrong");
+        }
+     }
+    // articleClient.removeArticle(articleId,callBack)
+    articleClient.findArticleById(articleId,callBack)
 })
 
 router.post('/edit/:articleId', function (req, res, next) {
