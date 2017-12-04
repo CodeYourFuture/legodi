@@ -1,12 +1,12 @@
 <form method="post">
 
     <div class="form-group row has-success">
-        <label for="example-text-input text-success " class="col-12 col-form-label">Title:</label>
+        <label for="example-text-input text-success " class="col-12 col-form-label"><h3 class="text-primary">Title:</h3></label>
         <div class="col-lg-6 col-md-8 col-sm-9 col-xs-9 ">
             <input class="form-control" type="text" name="title" id="example-text-input">
         </div>
 
-        <label for="example-text-input text-success " class="col-12 col-form-label">Order:</label>
+        <label for="example-text-input text-success " class="col-12 col-form-label"><h3 class="text-primary">Order:</h3></label>
         <div class="col-lg-6 col-md-8 col-sm-9 col-xs-9 ">
             <input class="form-control" type="number" name="order" id="example-text-input">
         </div>
@@ -14,7 +14,7 @@
     </div>
     
     <div class="form-group has-success">
-        <label class="text-success mt-2"> Categories:</label>
+        <label class="text-success mt-2"> <h3 class="text-primary">Categories:</h3></label>
         <select name="category" class="form-control mb-4">
             <option value="null" selected>Choose a Category</option>
             {{#each categories}}
@@ -23,7 +23,7 @@
         </select>
 
         <div class="form-group has-success">
-            <label class="mr-sm-2 text-success" for="inlineFormCustomSelect">Language</label>
+            <label class="mr-sm-2 text-success" for="inlineFormCustomSelect"><h3 class="text-primary">Language</h3></label>
             <select name="language" class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
                 <option selected>Choose...</option>
                 <option value="En">English</option>
@@ -33,10 +33,10 @@
         </div>
 
         <div class="form-group has-success">
-            <label class="text-success">Full Content:</label>
+            <label class="text-success"><h3 class="text-primary">Full Content:</h3></label>
             <textarea class="form-control form-control-success mb-4" id="inputSuccess1" name="fullContent"></textarea>
         </div>
 
-        <input class="btn btn-success" type="submit" value="Submit">
+        <input class="btn btn-success btn-lg" type="submit" value="Submit">
 
 </form>
