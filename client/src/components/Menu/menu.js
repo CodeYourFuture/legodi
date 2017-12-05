@@ -35,7 +35,6 @@ class Menu extends Component {
         </ul>
         {this.dropMenuShow()}
       </nav>
-
     )
   }
 }
