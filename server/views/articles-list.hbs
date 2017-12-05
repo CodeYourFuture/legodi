@@ -32,6 +32,7 @@
     </thead>
     <tbody>
         {{#each articles}}{{#if this.visible}}
+        
         <tr>
             <th scope="row" class="align-middle text-center p-4">{{this.order}}</th>
             <td class="align-middle p-4">
@@ -52,17 +53,18 @@
             </td>
 
             <td class="align-middle p-4 text-center">
-                <button class="btn btn-primary btn-lg active delete-article">Delete</button>
+                <button class="btn btn-primary btn-lg active delete-article delete-article{{@key}}">Delete</button>
 
             </td>
+
             <form method="post" action="/admin/articles/delete/{{this._id}}">
-                <div class="validation">
+                <div class="validation validation{{@key}}">
                     <div class="validation-box">
                         <h3>Are you sure you want to delete this Article:</h3>
                         <h4 class="text-white">{{this.title}}</h4>
                         <h5>Write the name of the article in the text input to delete it:</h5>
                         <input type="text" name="validationTitle" placeholder="name of article" />
-                        <button class="btn btn-danger btn-lg active">Delete</button>
+                        <button class="btn btn-danger btn-lg active ">Delete</button>
                     </div>
                 </div>
             </form>
@@ -103,14 +105,20 @@
     </tbody>
 </table>
 
+<button id="testmili" ></button>
 
 <script>
-    const validationBox = document.getElementsByClassName("validation")
-
-    let deleteButtons = document.getElementsByClassName("delete-article");
+    let mtest=document.getElementById("testmili");
+     let deleteButtons = document.getElementsByClassName("delete-article");
 
     for (var i = 0; i < deleteButtons.length; i++) {
-        deleteButtons[i].addEventListener("click", () => {
+   
+    let deletearticle = document.getElementsByClassName("delete-article"+i);
+ 
+    let validationBox = document.getElementsByClassName("validation"+i)
+
+         deletearticle[0].addEventListener("click", () => {
+
             validationBox[0].style.display = "flex";
         })
     }
