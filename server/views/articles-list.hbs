@@ -108,13 +108,13 @@
  
 <script>
     
-    let deleteButtons = document.getElementsByClassName("delete-article");
+    const deleteButtons = document.getElementsByClassName("delete-article");
 
     for (var i = 0; i < deleteButtons.length; i++) {
    
-    let deletearticle = document.getElementsByClassName("delete-article"+i);
+    const deletearticle = document.getElementsByClassName("delete-article"+i);
  
-    let validationBox = document.getElementsByClassName("validation"+i)
+    const validationBox = document.getElementsByClassName("validation"+i)
 
          deletearticle[0].addEventListener("click", () => {
 
