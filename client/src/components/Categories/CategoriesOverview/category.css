@@ -1,4 +1,4 @@
-.category-container{
+ .category-container{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -91,4 +91,10 @@
     font-size: 1.2em;
     padding: 0 .5em;
     font-weight: bold;
+}
+
+#root .SingleCategory{
+    position: absolute;
+    top: 74px;
+      z-index: -1;
 }

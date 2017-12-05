@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import './setting.css'
 class Setting extends Component {
 
     updateLanguage = (e) => {
@@ -12,7 +12,7 @@ class Setting extends Component {
     render() {
         var localLang = localStorage.getItem("language");
         return (
-            <div className="row">
+            <div className="row app-select-language">
                 <div className="col">    
                     <select onChange={this.updateLanguage} className="form-control">
                         <option value="null">Select Language</option>    
