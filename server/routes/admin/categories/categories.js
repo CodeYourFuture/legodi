@@ -32,7 +32,7 @@ router.post('/add', (req, res, next) => {
 router.get('/edit/:categoryId', (req, res) => {
     const { categoryId } = req.params;
     const callback = (error, category) => {
-        res.render("admin-edit-and-add-category", {
+        res.render("admin-edit-category", {
             category: category,
             shortDescriptionTitle: "Edit short",
             descriptionTitle: "Edit"
@@ -55,7 +55,7 @@ router.post('/edit/:categoryId', (req, res, next) => {
     const query = req.body;
 
     const callback = (error, category) => {
-        res.redirect('/')
+        res.redirect('/admin/categories')
     }
 
     categoryClient.editCategory(categoryId, query, true, callback);
