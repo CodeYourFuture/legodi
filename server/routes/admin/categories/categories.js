@@ -41,13 +41,26 @@ router.get('/edit/:categoryId', (req, res) => {
     categoryClient.findCategoryById(categoryId, callback);
 });
 
+
+
 router.get('/delete/:categoryId',(req,res)=>{
     const {categoryId} = req.params;
+    console.log(categoryId)
+    
 
-    const callback=()=>{
-        res.redirect('/admin/categories')
+    callBack = (error, data) => {
+        if (data.title === req.body.validationTitle) {
+            deleteCallBack = () => {
+                res.redirect('/');
+
+            }
+            categoryClient.removeCategory(categoryId,callback);
+            
+        } else {
+            res.render("delete-title-wrong");
+        }
     }
-    categoryClient.removeCategory(categoryId,callback);
+    categoryClient.findCategoryById(categoryId, callBack)
 })
 
 router.post('/edit/:categoryId', (req, res, next) => {
