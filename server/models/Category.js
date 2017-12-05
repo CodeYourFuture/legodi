@@ -19,7 +19,8 @@ const CategorySchema = new Schema({
     icon: {
         type: String,
         default :"default-icon"
-    }
+    },
+    order:Number
 });
 
 const CategoryModel = mongoose.model('category', CategorySchema);
