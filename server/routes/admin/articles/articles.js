@@ -71,8 +71,7 @@ router.post('/delete/:articleId', (req, res) => {
             res.render("delete-title-wrong");
         }
     }
-    // articleClient.removeArticle(articleId,callBack)
-    articleClient.findArticleById(articleId, callBack)
+     articleClient.findArticleById(articleId, callBack)
 })
 
 router.post('/edit/:articleId', function (req, res, next) {
