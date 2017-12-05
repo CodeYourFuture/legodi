@@ -25,9 +25,17 @@ class CategoryDropMenu extends Component {
                 <div className="overlay"></div>
                 {
                     this.state.categoriesList.slice(this.state.categoriesList.length - 5).reverse().map((category) => {
-                        return <div className="category-menu-item" key={category._id}>
-                            <CategoryDropMenuIcon alt={category.icon} src={`/icons/${category.icon}.png`} href={`/categories/${category._id}`} />
-                        </div>
+                         if(category.icon.length>0){
+                        return (<div className="category-menu-item" key={category._id}>
+                        <CategoryDropMenuIcon alt={category.icon} src={`/icons/${category.icon}.png`} href={`/categories/${category._id}`} />
+                         </div>)
+                       }else{
+                        
+                        return (<div className="category-menu-item" key={category._id}>
+                        <CategoryDropMenuIcon alt={category.icon} src={`/icons/default-icon.png`} href={`/categories/${category._id}`} />
+                         </div>)
+                       }
+                      
                     })
                 }
             </div>

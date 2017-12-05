@@ -17,9 +17,8 @@ const CategorySchema = new Schema({
         default: true,
     },
     icon: {
-        type: String,
-        default :"default-icon",
-        required:true
+        type: String
+    
     }
 });
 
