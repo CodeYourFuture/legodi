@@ -53,6 +53,19 @@
       <td class="align-middle text-center">
         <a  href="/admin/categories/delete/{{this._id}}" class="btn btn-info btn-lg " role="button" aria-pressed="true">Delete</a>
       </td>
+
+      <form method="post" action="/admin/articles/delete/{{this._id}}">
+                <div class="validation">
+                    <div class="validation-box">
+                        <h3>Are you sure you want to delete this Article:</h3>
+                        <h4 class="text-white">{{this.title}}</h4>
+                        <h5>Write the name of the article in the text input to delete it:</h5>
+                        <input type="text" name="validationTitle" placeholder="name of article" />
+                        <button class="btn btn-danger btn-lg active delete-article">Go</button>
+                    </div>
+                </div>
+            </form>
+            
       
     </tr>
     {{else}}
