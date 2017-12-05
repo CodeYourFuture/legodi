@@ -43,18 +43,16 @@ router.get('/edit/:categoryId', (req, res) => {
 
 
 
-router.get('/delete/:categoryId',(req,res)=>{
+router.post('/delete/:categoryId',(req,res)=>{
     const {categoryId} = req.params;
-    console.log(categoryId)
     
-
     callBack = (error, data) => {
         if (data.title === req.body.validationTitle) {
+             
             deleteCallBack = () => {
-                res.redirect('/');
-
+                res.redirect('/admin/categories');
             }
-            categoryClient.removeCategory(categoryId,callback);
+            categoryClient.removeCategory(categoryId,deleteCallBack);
             
         } else {
             res.render("delete-title-wrong");
@@ -68,7 +66,7 @@ router.post('/edit/:categoryId', (req, res, next) => {
     const query = req.body;
 
     const callback = (error, category) => {
-        res.redirect('/')
+        res.redirect('/admin/categories')
     }
 
     categoryClient.editCategory(categoryId, query, true, callback);
