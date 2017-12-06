@@ -7,6 +7,7 @@
     z-index: -2;
     position: absolute;
     top: 70px;
+    width:100%;
 }
 .category-item{
     background: #205f55;
@@ -14,6 +15,7 @@
     width: 30%;
     margin-bottom: 10px;
     padding: 10px;
+    
 }
 .category-card{
     display: flex;
@@ -22,7 +24,22 @@
     justify-content: center;
     flex-direction: column;
     position: relative;
+    height: 80px;
+    
 }
+@media (min-width: 692px){
+    .category-card{
+        height: 110px;
+        font-size:24px
+        
+    }
+    .category-container{
+        margin-top:15px;        
+        width:90%;
+        margin-left:5%;
+     }        
+           
+}    
 .category-icon a img{
     width: 100%;
 }
