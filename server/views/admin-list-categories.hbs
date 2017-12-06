@@ -1,34 +1,35 @@
-<a href="/admin/categories/add" class="btn btn-primary btn-lg active  mb-3" role="button" aria-pressed="true">Add New category</a>
+<a href="/admin/categories/add" class="btn btn-primary btn-lg active  mb-3" role="button" aria-pressed="true">
+  Add New category</a>
 
 </div>
 
- 
 
-  <table class="table table-bordered table-inverse">
-        <thead class="bg-primary thead-bordered">
-                <tr>
-                        <th class="text-center">
-                                <h2>#</h2>
-                        </th>
-                        <th class="text-center">
-                                <h2>Title</h2>
-                        </th>
-                        <th class="text-center">
-                                <h2>Brief</h2>
-                        </th>
-                        <th class="text-center">
-                                <h2>Visible</h2>
-                        </th>
-                        <th class="text-center">
-                                <h2>Update</h2>
-                        </th>
-                        <th class="text-center">
-                                <h2>Delete</h2>
-                        </th>
-                         
 
-                </tr>
-        </thead>
+<table class="table table-bordered table-inverse">
+  <thead class="bg-primary thead-bordered">
+    <tr>
+      <th class="text-center">
+        <h2>#</h2>
+      </th>
+      <th class="text-center">
+        <h2>Title</h2>
+      </th>
+      <th class="text-center">
+        <h2>Brief</h2>
+      </th>
+      <th class="text-center">
+        <h2>Visible</h2>
+      </th>
+      <th class="text-center">
+        <h2>Update</h2>
+      </th>
+      <th class="text-center">
+        <h2>Delete</h2>
+      </th>
+
+
+    </tr>
+  </thead>
   <tbody>
     {{#each category}} {{#if this.visible}}
 
@@ -51,9 +52,9 @@
       </td>
 
       <td class="align-middle text-center">
-        <a  href="/admin/categories/delete/{{this._id}}" class="btn btn-info btn-lg " role="button" aria-pressed="true">Delete</a>
+        <a href="/admin/categories/delete/{{this._id}}" class="btn btn-info btn-lg " role="button" aria-pressed="true">Delete</a>
       </td>
-      
+
     </tr>
     {{else}}
     <tr>
@@ -78,7 +79,7 @@
       </td>
 
       <td class="align-middle text-center">
-        <a  href="/admin/categories/delete/{{this._id}}" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Delete</a>
+        <a href="/admin/categories/delete/{{this._id}}" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Delete</a>
       </td>
 
     </tr>
