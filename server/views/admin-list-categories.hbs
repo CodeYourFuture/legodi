@@ -31,7 +31,7 @@
     {{#each category}} {{#if this.visible}}
 
     <tr>
-      <th class="align-middle p-4 text-center" scope="row">{{this._id}}</th>
+      <th class="align-middle p-4 text-center" scope="row">{{this.order}}</th>
       <td class="align-middle p-4">
         <h4 class="text-center"> {{this.title}}</h4>
       </td>
@@ -44,9 +44,14 @@
 
       <td class="align-middle text-center">
 
-        <a href="/admin/categories/edit/{{this._id}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a>
+        <a href="/admin/categories/edit/{{this._id}}" class="btn btn-success btn-lg active" role="button" aria-pressed="true">Edit</a>
 
       </td>
+
+      <td class="align-middle text-center">
+        <a href="/admin/categories/delete/{{this._id}}" class="btn btn-info btn-lg " role="button" aria-pressed="true">Delete</a>
+      </td>
+
     </tr>
     {{else}}
     <tr>
@@ -69,6 +74,11 @@
       <td class="align-middle text-center">
         <a href="/admin/categories/edit/{{this._id}}" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Edit</a>
       </td>
+
+      <td class="align-middle text-center">
+        <a href="/admin/categories/delete/{{this._id}}" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Delete</a>
+      </td>
+
     </tr>
     {{/if}} {{/each}}
   </tbody>

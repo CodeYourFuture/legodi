@@ -32,7 +32,7 @@ router.post('/add', (req, res, next) => {
 router.get('/edit/:categoryId', (req, res) => {
     const { categoryId } = req.params;
     const callback = (error, category) => {
-        res.render("admin-edit-and-add-category", {
+        res.render("admin-edit-category", {
             category: category,
             shortDescriptionTitle: "Edit short",
             descriptionTitle: "Edit"
@@ -41,12 +41,21 @@ router.get('/edit/:categoryId', (req, res) => {
     categoryClient.findCategoryById(categoryId, callback);
 });
 
+router.get('/delete/:categoryId',(req,res)=>{
+    const {categoryId} = req.params;
+
+    const callback=()=>{
+        res.redirect('/admin/categories')
+    }
+    categoryClient.removeCategory(categoryId,callback);
+})
+
 router.post('/edit/:categoryId', (req, res, next) => {
     const { categoryId } = req.params;
     const query = req.body;
 
     const callback = (error, category) => {
-        res.redirect('/')
+        res.redirect('/admin/categories')
     }
 
     categoryClient.editCategory(categoryId, query, true, callback);
