@@ -27,11 +27,11 @@ class CategoryDropMenu extends Component {
                 {
                     this.state.categoriesList.slice(this.state.categoriesList.length - 5).reverse().map((category) => {
                         return <div className="category-menu-item" key={category._id}>
-                                <div className="category-card">
-                                    <div className="category-icon">
-                                        <a href={`/categories/${category._id}`}><img src={`/icons/${category.icon}.png`} alt={category.icon} /></a>
-                                    </div>
+                            <div className="category-card">
+                                <div className="category-icon">
+                                    <a href={`/categories/${category._id}`}><img src={`/icons/${category.icon}.png`} alt={category.icon} /></a>
                                 </div>
+                            </div>
                         </div>
                     })
                 }
