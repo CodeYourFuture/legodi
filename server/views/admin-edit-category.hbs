@@ -19,21 +19,38 @@
     {{/if}}
   </div>
 
+<div class="form-group row has-success">
+        <label for="example-text-input text-success " class="col-12 col-form-label"><h3 class="text-primary">Title:</h3></label>
+        <div class="col-lg-6 col-md-8 col-sm-9 col-xs-9 ">
+            <input class="form-control" type="text"  name="title" id="example-text-input" value={{this.category.title}} >
+        </div>
+
+        <label for="example-text-input text-success " class="col-12 col-form-label"><h3 class="text-primary">Order:</h3></label>
+        <div class="col-lg-6 col-md-8 col-sm-9 col-xs-9 ">
+            <input class="form-control" type="number"  name="order" id="example-text-input" value={{this.category.order}}>
+        </div>
+
+    </div>
+
   <div class="form-group has-success">
-    <label class="text-success"><h3 class="text-primary">Category Title:</h3></label>
-    <input class="mb-3 form-control" name="title" value={{this.category.title}}>
-  </div>
-  <div class="form-group has-success">
-    <label class="text-success"><h3 class="text-primary">Category Icon:</h3></label>
+    <label class="text-success">
+      <h3 class="text-primary">Category Icon:</h3>
+    </label>
     <input class="mb-3 form-control" name="icon" value={{this.category.icon}}>
   </div>
   <div class="form-group has-success">
-    <label class="text-success"><h3 class="text-primary">{{shortDescriptionTitle}} Description:</h3></label>
+    <label class="text-success">
+      <h3 class="text-primary">{{shortDescriptionTitle}} Description:</h3>
+    </label>
     <textarea rows="4" cols="50" class="form-control form-control-success mb-3" id="inputSuccess1" name="shortDescription">{{this.category.shortDescription}}</textarea>
   </div>
   <div class="form-group has-success">
-    <label class="text-success"><h3 class="text-primary">{{descriptionTitle}} Description:</h3></label>
+    <label class="text-success">
+      <h3 class="text-primary">{{descriptionTitle}} Description:</h3>
+    </label>
     <textarea rows="4" cols="50" class="form-control form-control-success mb-3" id="inputSuccess1" name="description">{{this.category.description}}</textarea>
-    <button class="btn bg-success"><h3 class="text-white">Update category</h3></button>
+    <button class="btn bg-success">
+      <h3 class="text-white">Update category</h3>
+    </button>
   </div>
 </form>
