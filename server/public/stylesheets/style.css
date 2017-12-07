@@ -66,9 +66,7 @@ nav#serverNav{
   border-left: none;
   vertical-align: middle;
   
-  
- }
-
+ } 
   @media (min-width: 992px){
    
     #serverNav li:hover{
