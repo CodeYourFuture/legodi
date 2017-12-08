@@ -5,6 +5,10 @@ const Schema = mongoose.Schema;
 const CategorySchema = new Schema({
     title: {
         type: String,
+    }, 
+    titleTranslation:{
+        ar:{type:String,default:'amharic translation'},
+        am:{type:String,default:'arabic translation'}
     },
     description: {
         type: String
