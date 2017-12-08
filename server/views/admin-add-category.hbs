@@ -1,17 +1,21 @@
 <form method="post">
 
-<div class="form-group row has-success">
-        <label for="example-text-input text-success " class="col-12 col-form-label"><h3 class="text-primary">Title:</h3></label>
-        <div class="col-lg-6 col-md-8 col-sm-9 col-xs-9 ">
-            <input class="form-control" type="text" name="title" id="example-text-input">
-        </div>
-
-        <label for="example-text-input text-success " class="col-12 col-form-label"><h3 class="text-primary">Order:</h3></label>
-        <div class="col-lg-6 col-md-8 col-sm-9 col-xs-9 ">
-            <input class="form-control" type="number" name="order" id="example-text-input">
-        </div>
-
+  <div class="form-group row has-success">
+    <label for="example-text-input text-success " class="col-12 col-form-label">
+      <h3 class="text-primary">Title:</h3>
+    </label>
+    <div class="col-lg-6 col-md-8 col-sm-9 col-xs-9 ">
+      <input class="form-control" type="text" name="title" id="example-text-input">
     </div>
+
+    <label for="example-text-input text-success " class="col-12 col-form-label">
+      <h3 class="text-primary">Order:</h3>
+    </label>
+    <div class="col-lg-6 col-md-8 col-sm-9 col-xs-9 ">
+      <input class="form-control" type="number" name="order" id="example-text-input">
+    </div>
+
+  </div>
   </div>
 
   <div class="showTransitionSection">
@@ -43,7 +47,7 @@
       <h3 class="text-primary">Icon:</h3>
     </label>
     <div class="col-lg-6 col-md-8 col-sm-9 col-xs-9 ">
-      <input class="form-control" type="text" name="icon" id="example-text-input" >
+      <input id="iconName" class="form-control" type="text" name="icon" id="example-text-input">
     </div>
   </div>
 
@@ -59,12 +63,22 @@
       <h3 class="text-primary">Description:</h3>
     </label>
     <textarea class="form-control form-control-success mb-4" id="inputSuccess1" name="description"></textarea>
-    <input class="btn btn-success btn-lg" type="submit" value="Submit">
+    <input id="submitform" class="btn btn-success btn-lg" type="submit" value="Submit">
   </div>
 </form>
 
 <script>
+  const submitform = document.getElementById("submitform")
+  const iconName = document.getElementById("iconName");
+  submitform.addEventListener("click", () => {
 
+    if (iconName.value === "") {
+      alert("Warning: Please add your icon name or write default-icon")
+    }else{
+            alert("successful");
+    }
+  }
+  )
   var transition = document.getElementById('transitionSection');
   transition.style.display = "none";
   var showButton = document.getElementById('showBtn');
