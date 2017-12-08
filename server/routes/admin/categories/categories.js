@@ -23,6 +23,7 @@ router.get("/add", (req, res, next) => {
 
 router.post('/add', (req, res, next) => {
     const query = req.body;
+    console.log(query)
     let titleTranslation = {};
 
     titleTranslation.am = query.am;

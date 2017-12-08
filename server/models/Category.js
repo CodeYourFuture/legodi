@@ -20,6 +20,7 @@ const CategorySchema = new Schema({
         type: Boolean,
         default: true,
     },
+    order:Number,
     icon: {
         type: String,
         required:true
