@@ -10,11 +10,15 @@ import Setting from "../Setting/Setting";
 
 class App extends Component {
 
+  goToUrl = (url) => {
+    this.props.history.push(url)
+  }
+
   render() {
     return (
       <Router>
         <div>
-          <Menu />
+          <Menu goToUrl={this.goToUrl}  />
           
           <Route exact path="/" component={CategoriesOverview} />
           <Route path="/about" component={About} />

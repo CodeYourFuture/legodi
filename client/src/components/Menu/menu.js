@@ -13,9 +13,13 @@ class Menu extends Component {
     }
   }
 
+  goToUrl = (url) => {
+    this.props.history.push(url)
+  }
+
   dropMenuShow = () => {
     if (this.state.CategoryDropMenu) {
-      return <CategoryDropMenu />
+      return <CategoryDropMenu goToUrl={this.goToUrl} />
     }
   }
 
