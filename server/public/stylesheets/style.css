@@ -29,6 +29,10 @@ nav#serverNav{
     max-height: 50px;
     overflow: auto;
   }
+  .categoryList-content{
+    max-height: 50px;
+    overflow: auto;
+  }
 
   .validation{
     width:90%;
