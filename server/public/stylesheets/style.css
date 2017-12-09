@@ -19,6 +19,12 @@ nav#serverNav{
     border-radius: 1em
   }
 
+  .showTransitionSection{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
   .articleList-content{
     max-height: 50px;
     overflow: auto;
@@ -66,9 +72,7 @@ nav#serverNav{
   border-left: none;
   vertical-align: middle;
   
-  
- }
-
+ } 
   @media (min-width: 992px){
    
     #serverNav li:hover{
