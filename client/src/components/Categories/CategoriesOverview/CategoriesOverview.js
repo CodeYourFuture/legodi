@@ -19,6 +19,8 @@ class CategoriesOverview extends Component {
                         category.title=category.titleTranslation.ar
                      }else if(language==="Am"){
                         category.title=category.titleTranslation.am       
+                    }else{
+                        category.title=category.title;
                     }
 
                 });
