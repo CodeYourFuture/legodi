@@ -15,8 +15,6 @@ class CategoriesOverview extends Component {
           apiClient.getCategories()
             .then(({ data }) => {
                  data.map((category)=>{
-
-                    console.log(category.titleTranslation[language])
                     
                     if(language==="en"){
                         category.title=category.title;

@@ -33,7 +33,9 @@ class CategoryDropMenu extends Component {
                                 <div className="category-icon">
                                     <button onClick={() => {
                                         this.props.goToUrl(`/categories/${category._id}`)
-                                    }}><img src={`/icons/${category.icon}.png`} alt={category.icon} /></button>
+                                    }}><img src={`/icons/${category.icon}.png`} alt={category.icon} />
+                                    </button>
+                                    <h1 className="icon-title-drop">{category.title}</h1>
                                 </div>
                             </div>
                         </div>

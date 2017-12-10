@@ -53,10 +53,14 @@
     
 }
 .category-menu-container .category-menu-item{
-    height: 60px
-}
-.category-menu-container .category-card{
-    height: 60px
+    height: 75px;
+    width: 25%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2.2em 0;
 }
 .category-menu-item{
     background: #0f352e;
@@ -72,14 +76,18 @@
     background: #0f352e;
     border: none;
 }
-.category-icon a img{
+.category-icon  img{
     width: 100%;
+    padding: .5em 0;
+}
+.icon-title-drop{
+    font-size: .9em
 }
 .overlay{
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
-    top: 0;
+    top: 60px;
     left: 0;
     bottom: 0;
     background: rgba(230, 187, 68, .5);

@@ -62,7 +62,7 @@ a{
     border-top: 11px solid transparent;
     border-right: 11px solid transparent;
     position: absolute;
-    z-index: 10;
+    z-index: 0;
     top: -11px;
     right: -11px;
 }
@@ -74,7 +74,7 @@ a{
     border-bottom: 11px solid transparent;
     border-left: 11px solid transparent;
     position: absolute;
-    z-index: 10;
+    z-index: 0;
     top: -11px;
     right: -11px;
 }
@@ -107,8 +107,7 @@ a{
     overflow: hidden;
 }
 .article-content .article-pragraph p{
-  font-size: .5em;
-  text-align: justify;
+   line-height: 1.2em;
 }
 .category-description{
     padding: 0 .5em;
