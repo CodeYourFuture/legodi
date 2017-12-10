@@ -30,10 +30,12 @@ router.post('/add', (req, res, next) => {
 
     query.titleTranslation = titleTranslation;
 
+    if (query.icon == "") {
+        query.icon = "default-icon"
+    }
     const callback = () => {
         res.redirect("/admin/categories");
     }
-
     categoryClient.addCategory(query, callback);
 
 });
@@ -52,17 +54,17 @@ router.get('/edit/:categoryId', (req, res) => {
 
 
 
-router.post('/delete/:categoryId',(req,res)=>{
-    const {categoryId} = req.params;
-    
+router.post('/delete/:categoryId', (req, res) => {
+    const { categoryId } = req.params;
+
     callBack = (error, data) => {
         if (data.title === req.body.validationTitle) {
-             
+
             deleteCallBack = () => {
                 res.redirect('/admin/categories');
             }
-            categoryClient.removeCategory(categoryId,deleteCallBack);
-            
+            categoryClient.removeCategory(categoryId, deleteCallBack);
+
         } else {
             res.render("delete-title-wrong");
         }
