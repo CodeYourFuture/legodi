@@ -1,13 +1,22 @@
 import React from 'react';
-import CategoryIcon from './CategoryIcon';
 import './CategoryCard.css';
+import './CategoriesOverview/category.css';
+import { Link } from 'react-router-dom';
+
 
  function CategoryCard(props) {
-     return (
+   return (
+     <Link to={props.href}>
        <div className="category-card">
-         <CategoryIcon {...props} />
+         <div className="category-icon">
+           <div className="icon-border"></div>
+           <div className="icon-border-cros"></div>
+           <img src={props.src} alt={props.alt} />
+         </div>
          {props.title}
        </div>
+     </Link>
   );
 }
 export default CategoryCard;
+
