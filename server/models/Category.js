@@ -20,11 +20,12 @@ const CategorySchema = new Schema({
         type: Boolean,
         default: true,
     },
+    order:Number,
     icon: {
         type: String,
-        default :"default-icon"
-    },
-    order:Number
+        required:true
+    
+    }
 });
 
 const CategoryModel = mongoose.model('category', CategorySchema);
