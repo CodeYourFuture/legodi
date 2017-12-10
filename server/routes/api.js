@@ -14,7 +14,7 @@ router.get('/articles', function (req, res, next) {
             res.json(articles)
         }
     };
-    const { language = "En" } = req.query;
+    const { language = "en" } = req.query;
 
     articleClient.findArticles({ visible: true, language: language }, callBack)
 
@@ -50,7 +50,7 @@ router.get('/categories/:categoryId', function (req, res, next) {
             res.json(articles)
         }
     };
-    const { language = "En" } = req.query;
+    const { language = "en" } = req.query;
     
     articleClient.findArticles({ category: categoryId, 'visible': true, language: language }, callBack)
 });

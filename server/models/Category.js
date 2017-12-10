@@ -5,6 +5,10 @@ const Schema = mongoose.Schema;
 const CategorySchema = new Schema({
     title: {
         type: String,
+    }, 
+    titleTranslation:{
+        ar:{type:String,default:'amharic translation'},
+        am:{type:String,default:'arabic translation'}
     },
     description: {
         type: String
@@ -19,7 +23,8 @@ const CategorySchema = new Schema({
     icon: {
         type: String,
         default :"default-icon"
-    }
+    },
+    order:Number
 });
 
 const CategoryModel = mongoose.model('category', CategorySchema);

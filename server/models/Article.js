@@ -15,7 +15,7 @@ const schema = new Schema({
     },
     language:{
         type:String,
-        default:'En'
+        default:'en'
     },
     order:{
        type: Number,

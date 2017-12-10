@@ -2,7 +2,6 @@
     text-decoration: none;
     list-style: none
 }
-
 .menu ul :hover{
     background:#205f55;
 }
@@ -39,8 +38,7 @@
  }
 /********* Category Drop menu ********/
 .category-container{
-    top: -401px;
-    position: relative;
+    
 }
 .category-menu-container{
     display: flex;
@@ -48,21 +46,28 @@
     justify-content: center;
     justify-content: space-around;
     margin-top: -10px;
+    position: absolute;
+    width: 100%;
+    top:80px;
+    z-index: 1;
+    
+}
+.category-menu-container .category-menu-item{
+    height: 60px
+}
+.category-menu-container .category-card{
+    height: 60px
 }
 .category-menu-item{
     background: #0f352e;
     color: #fff;
     width: 25%;
     margin-bottom: 10px;
-    padding: 10px;
-}
+ }
 .category-card{
     display: flex;
     flex: .3;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
+ }
 .category-icon a img{
     width: 100%;
 }
@@ -80,3 +85,4 @@
 .category-menu-item:hover{
      background: #205f55;
  }
+
