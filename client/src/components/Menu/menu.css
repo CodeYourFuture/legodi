@@ -68,6 +68,10 @@
     display: flex;
     flex: .3;
  }
+.category-card button{
+    background: #0f352e;
+    border: none;
+}
 .category-icon a img{
     width: 100%;
 }
