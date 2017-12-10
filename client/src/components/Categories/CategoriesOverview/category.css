@@ -6,6 +6,9 @@
     justify-content: space-around;
     flex-wrap: wrap;
     padding-bottom: 100px;
+    height: 27em;
+    overflow: auto;
+    padding: 1.5em 0 1em 0;
 }
 a{
     text-decoration: none;
@@ -14,10 +17,9 @@ a{
 .category-item{
     background: #205f55;
     color: #fff;
-    width: 30%;
-    margin-bottom: 10px;
+    width: 25%;
+    margin: 16px;
     padding: 10px;
-    
 }
 .category-card{
     display: flex;
@@ -27,7 +29,11 @@ a{
     flex-direction: column;
     position: relative;
     height: 76px;
-    
+}
+.main-category-item .icon-title{
+    font-size: .9em;
+    position: absolute;
+    top: 50px;
 }
 @media (min-width: 692px){
     .category-card{
@@ -41,8 +47,11 @@ a{
      }        
            
 }    
-.category-icon a img{
-    width: 100%;
+.main-category-item .category-icon img{
+    width: 40%;
+    position: absolute;
+    top: 7px;
+    left: 26px;
 }
 
 .icon-border{
