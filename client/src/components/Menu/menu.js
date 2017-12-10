@@ -3,29 +3,33 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Link } from "react-router-dom";
 import './menu.css'
 import CategoryDropMenu from './CategoryDropMenu';
+import { withRouter } from "react-router-dom";
 
 class Menu extends Component {
 
   constructor() {
     super();
     this.state = {
-      CategoryDropMenu: false
+      categoryDropMenu: false
     }
   }
 
   goToUrl = (url) => {
+    this.setState({
+      categoryDropMenu: false
+    })
     this.props.history.push(url)
   }
 
   dropMenuShow = () => {
-    if (this.state.CategoryDropMenu) {
+    if (this.state.categoryDropMenu) {
       return <CategoryDropMenu goToUrl={this.goToUrl} />
     }
   }
 
   onclickChange = () => {
     this.setState({
-      CategoryDropMenu: !this.state.CategoryDropMenu
+      categoryDropMenu: !this.state.categoryDropMenu
     })
   }
   render() {
@@ -44,4 +48,4 @@ class Menu extends Component {
 }
 
 
-export default Menu
+export default withRouter(Menu);
