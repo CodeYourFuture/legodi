@@ -12,15 +12,16 @@ class CategoriesOverview extends Component {
     }
     componentDidMount() {
         let language=localStorage.getItem("language");
-         apiClient.getCategories()
+          apiClient.getCategories()
             .then(({ data }) => {
                  data.map((category)=>{
-                    if(language==="Ar"){
-                        category.title=category.titleTranslation.ar
-                     }else if(language==="Am"){
-                        category.title=category.titleTranslation.am       
-                    }else{
+
+                    console.log(category.titleTranslation[language])
+                    
+                    if(language==="en"){
                         category.title=category.title;
+                    }else{
+                         category.title = category.titleTranslation[language]
                     }
 
                 });
