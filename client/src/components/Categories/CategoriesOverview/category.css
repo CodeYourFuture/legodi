@@ -95,8 +95,7 @@
     overflow: hidden;
 }
 .article-content .article-pragraph p{
-  font-size: .5em;
-  text-align: justify;
+   line-height: 1.2em;
 }
 .category-description{
     padding: 0 .5em;
