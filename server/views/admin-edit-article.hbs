@@ -4,16 +4,16 @@
       {{#if this.article.visible}}
       <div class="mb-3">
         <input type="radio" name="visible" value="true" checked="true">
-        <label class="visHid text-success">Visible</label>
+        <label class="visHid  mr-3 text-primary"><h2> Visible</h3></label>
         <input type="radio" name="visible" value="false">
-        <label class="visHid text-success">Hidden</label>
+        <label class="visHid text-primary"><h2> Hidden</h2></label>
       </div>
       {{else}}
       <div class="mb-3">
         <input type="radio" name="visible" value="true">
-        <label class="visHid text-success">Visible</label>
+        <label class="visHid  mr-3 text-primary"><h2>Visible</h2></label>
         <input type="radio" name="visible" value="false" checked="true">
-        <label class="visHid text-success">Hidden</label>
+        <label class="visHid  text-primary"><h2>Hidden</h2></label>
       </div>
       {{/if}}
     </div>
@@ -64,7 +64,7 @@
       <label class="text-success">
         <h3 class="text-primary">Aticle Discreption:</h3>
       </label>
-      <textarea class="form-control form-control-success mb-3" name="fullContent">{{this.article.fullContent}} 
+      <textarea rows="14" class="form-control form-control-success mb-3" name="fullContent">{{this.article.fullContent}} 
     </textarea>
       <button class="btn bg-success">
         <h3 class="text-white">Update Aticle</h3>
