@@ -20,7 +20,7 @@ class App extends Component {
           <Route path="/about" component={About} />
           <Route path="/settings" component={Setting} />
           <Route path="/categories" exact component={CategoriesOverview} /> 
-          <Route path="/article/:articleId" component={SingleArticle} />
+          <Route path="/articles/:articleId" component={SingleArticle} />
           <Route path="/categories/:categoryId" component={SingleCategory} />
           <Footer />
         </div>

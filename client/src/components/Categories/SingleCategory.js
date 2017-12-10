@@ -29,8 +29,7 @@ class SingleCategory extends Component {
                     const { category = {} } = data[0];
                      this.setState({
                         articles: data,
-                        articleUrl:"my",
-                        category
+                         category
                     })
                 }
             })
@@ -47,7 +46,7 @@ class SingleCategory extends Component {
    
                 <p className="category-description">{this.state.category.description}</p>
                 {this.state.articles.map(article => {
-                     let articleLink="/article/"+article._id;
+                     const articleLink="/articles/"+article._id;
                     return <Link to={articleLink}> 
                     <div key={article._id} className="article-content">  
                        
