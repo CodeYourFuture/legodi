@@ -16,9 +16,9 @@ class Setting extends Component {
                 <div className="col">    
                     <select onChange={this.updateLanguage} className="form-control">
                         <option value="null">Select Language</option>    
-                        <option value="En">English</option>
-                        <option value="Ar">Arabic</option>
-                        <option value="Am">Amharnga</option>
+                        <option value="en">English</option>
+                        <option value="ar">Arabic</option>
+                        <option value="am">Amharnga</option>
                     </select>
                 </div>
             </div>
