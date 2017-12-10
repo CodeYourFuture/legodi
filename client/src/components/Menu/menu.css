@@ -2,7 +2,6 @@
     text-decoration: none;
     list-style: none
 }
-
 .menu ul :hover{
     background:#205f55;
 }
@@ -39,8 +38,7 @@
  }
 /********* Category Drop menu ********/
 .category-container{
-    top: -401px;
-    position: relative;
+    
 }
 .category-menu-container{
     display: flex;
@@ -48,6 +46,11 @@
     justify-content: center;
     justify-content: space-around;
     margin-top: -10px;
+    position: absolute;
+    width: 100%;
+    top:80px;
+    z-index: 1;
+    
 }
 .category-menu-container .category-menu-item{
     height: 60px

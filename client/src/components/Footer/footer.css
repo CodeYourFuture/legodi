@@ -2,11 +2,13 @@
     display: flex;
     flex-direction: row;
     background: #e6bb44;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     height: 50px;
     border-top: .1em solid #0f352e;
+ 
+    
 }
 
 .footer-continer {
