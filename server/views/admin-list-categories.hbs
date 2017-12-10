@@ -39,7 +39,7 @@
         <h4 class="text-center"> {{this.title}}</h4>
       </td>
       <td class="align-middle p-4 text-center">
-        <h4>{{this.shortDescription}}</h4>
+        <h4 class="categoryList-content" >{{this.shortDescription}}</h4>
       </td>
       <td class="align-middle p-4 text-center">
         <h4>&#x2714;</h4>
@@ -82,7 +82,7 @@
       </td>
       <td class="align-middle p-4 text-center">
         <strike>
-          <h4>{{this.shortDescription}}</h4>
+          <h4 class="categoryList-content">{{this.shortDescription}}</h4>
         </strike>
       </td>
       <td class="align-middle p-4 text-center">
@@ -92,9 +92,21 @@
         <a href="/admin/categories/edit/{{this._id}}" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Edit</a>
       </td>
 
-      <td class="align-middle text-center">
-        <a href="/admin/categories/delete/{{this._id}}" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Delete</a>
+      <td class="align-middle p-4 text-center">
+        <button class="btn btn-danger btn-lg active delete-category delete-category{{@key}}">Delete</button>
       </td>
+
+      <form method="post" action="/admin/categories/delete/{{this._id}}">
+        <div class="validation validation{{@key}}">
+          <div class="validation-box">
+            <h3>Are you sure you want to delete this Category:</h3>
+            <h4 class="text-white">{{this.title}}</h4>
+            <h5>Write the name of the category in the text input to delete it:</h5>
+            <input type="text" name="validationTitle" placeholder="name of category" />
+            <button class="btn btn-danger btn-lg active ">delete</button>
+          </div>
+        </div>
+      </form>
 
     </tr>
     {{/if}} {{/each}}

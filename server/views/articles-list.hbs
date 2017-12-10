@@ -80,7 +80,7 @@
                 </h4>
             </td>
             <td class="align-middle p-4 text-center">
-                <h4>
+                <h4 class="articleList-content">
                     <strike>{{this.fullContent}}</strike>
                 </h4>
             </td>
@@ -97,9 +97,21 @@
 
 
             <td class="align-middle p-4 text-center">
-                <button class="btn btn-danger btn-lg active delete-article" type="button">Delete</button>
+                <button class="btn btn-danger btn-lg active delete-article delete-article{{@key}}">Delete</button>
 
             </td>
+
+            <form method="post" action="/admin/articles/delete/{{this._id}}">
+                <div class="validation validation{{@key}}">
+                    <div class="validation-box">
+                        <h3>Are you sure you want to delete this Article:</h3>
+                        <h4 class="text-white">{{this.title}}</h4>
+                        <h5>Write the name of the article in the text input to delete it:</h5>
+                        <input type="text" name="validationTitle" placeholder="name of article" />
+                        <button class="btn btn-danger btn-lg active ">Delete</button>
+                    </div>
+                </div>
+            </form>
         </tr>
         {{/if}} {{/each}}
     </tbody>
