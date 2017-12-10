@@ -1,14 +1,14 @@
 import React from 'react';
- import './about.css'
+import './about.css'
 
-function About(){
-   
+function About() {
+
     return (
         <div className="about-page">
-            <img src="http://demo.codeyourfuture.co/img/ico/cyf_brand.png"width="500px" />
-            <img src="http://www.justpeaceglasgow.org.uk/wp-content/uploads/2017/01/refuweegee.jpg" />
+            <img src="refuweegee.png" />
+            <img src="codeyourfuture.png" />
         </div>)
-  
+
 }
 
 export default About
