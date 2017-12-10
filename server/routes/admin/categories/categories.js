@@ -23,7 +23,7 @@ router.get("/add", (req, res, next) => {
 
 router.post('/add', (req, res, next) => {
     const query = req.body;
-    let titleTranslation = {};
+    const titleTranslation = {};
 
     titleTranslation.am = query.am;
     titleTranslation.ar = query.ar;
@@ -75,6 +75,13 @@ router.post('/delete/:categoryId', (req, res) => {
 router.post('/edit/:categoryId', (req, res, next) => {
     const { categoryId } = req.params;
     const query = req.body;
+
+     const titleTranslation = {};
+
+    titleTranslation.am = query.am;
+    titleTranslation.ar = query.ar;
+
+    query.titleTranslation = titleTranslation;
 
     const callback = (error, category) => {
         res.redirect('/admin/categories')
