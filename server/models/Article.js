@@ -19,7 +19,12 @@ const schema = new Schema({
     },
     order:{
        type: Number,
-       unique:false}
+       unique:false},
+    writerId:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'writer'
+    },
+    writerName:String
        
        
 });

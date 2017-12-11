@@ -17,7 +17,8 @@ const index = require('./routes/index');
 const adminArticles = require('./routes/admin/articles/articles');
 const adminCategories = require('./routes/admin/categories/categories');
 const autentication = require('./routes/admin/authentication/login');
-
+const userName="";
+const userId="";
 const app = express();
 app.use(cors());
 

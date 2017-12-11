@@ -62,8 +62,7 @@ router.post('/register', (req, res) => {
 
 		UserDB.createUser(newUser, (err, User) => {
 			if (err) throw err;
-			console.log(User);
-		});
+ 		});
 
 		req.flash('success_msg', 'You are registered and can now login');
 
@@ -82,6 +81,7 @@ passport.use(new LocalStrategy(
 			UserDB.comparePassword(password, user.password, (err, isMatch) => {
 				if (err) throw err;
 				if (isMatch) {
+					userName=username;						
 					return done(null, user);
 				} else {
 					return done(null, false, { message: 'Invalid password' });
@@ -91,6 +91,8 @@ passport.use(new LocalStrategy(
 	}));
 
 passport.serializeUser((user, done) => {
+	userId=user.id;
+	
 	done(null, user.id);
 });
 
@@ -103,7 +105,7 @@ passport.deserializeUser((id, done) => {
 router.post('/login',
 	passport.authenticate('local', { successRedirect: '/', failureRedirect: '/users/login', failureFlash: true }),
 	(req, res) => {
-		res.redirect('/');
+	    res.redirect('/');
 	});
 
 router.get('/logout', (req, res) => {

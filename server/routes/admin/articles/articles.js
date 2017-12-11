@@ -15,18 +15,22 @@ router.get('/', (req, res, next) => {
     articleClient.findArticles({}, callback);
 });
 
-router.get('/add', (req, res, next) => {
+router.get('/add', (req, res, next) => { 
+    console.log(userId)   
     const callback = (error, categories) => {
         res.render('admin-add-article', {
             categories,
-            addArticlehome: 'homeNav'
-        })
+            addArticlehome: 'homeNav',
+            userName:userName
+         })
     }
     categoryClient.findCategories(callback);
 });
 
 router.post('/add', (req, res) => {
     const query = req.body;
+    query.writerId=userId;
+    query.writerName=userName;
     const callBack = (data) => {
         res.redirect('/')
     }
