@@ -32,28 +32,7 @@ a{
 }
 .main-category-item .icon-title{
     font-size: .9em;
-    position: absolute;
-    top: 50px;
-}
-@media (min-width: 692px){
-    .category-card{
-         font-size:24px
-        
-    }
-    .category-container{
-        margin-top:15px;        
-        width:90%;
-        margin-left:5%;
-     }        
-           
 }    
-.main-category-item .category-icon img{
-    width: 15%;
-    position: absolute;
-    top: -4px;
-    left: 84px;
-}
-
 .icon-border{
     height: 0;
     width: 0;
@@ -130,6 +109,24 @@ a{
     width: 40%;
     position: absolute;
     top: 7px;
-    left: 26px;
+        left: 26px;
+    }
+    .main-category-item .icon-title{
+        font-size: .9em;
+        position: absolute;
+        top: 50px;
+    }
 }
+
+@media (min-width: 692px){
+    .category-card{
+         font-size:24px
+        
+    }
+    .category-container{
+        margin-top:15px;        
+        width:90%;
+        margin-left:5%;
+     }        
+           
 }
