@@ -8,7 +8,7 @@ import CategoriesOverview from "../../components/Categories/CategoriesOverview/C
 import SingleArticle from "../../containers/SingleArticle/SingleArticle";
 import SingleCategory from "../../components/Categories/SingleCategory";
 import Setting from "../Setting/Setting";
-import QuestionGames from "../QuestionGame/question"
+import QuestionGames from "../QuestionGame/questiongmae"
 class App extends Component {
 
   render() {
@@ -23,7 +23,7 @@ class App extends Component {
           <Route path="/articles/:articleId" component={SingleArticle} />
           <Route path="/categories/:categoryId" component={SingleCategory} />
           <Route path="/weegie" component={QuestionGames} />
-
+          
           <Footer />
         </div>
       </Router>
