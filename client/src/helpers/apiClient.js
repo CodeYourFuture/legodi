@@ -21,6 +21,9 @@ const apiClient = {
         }else{
             return axios.get(`${apiUrl}/api/categories/${categoryId}?language=${language}`);            
         }
+    },
+    getWeegie: () => {
+        return axios.get(`${apiUrl}/api/weegie`);
     }
 }
 

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
  import Question from '../../components/Question/question'
  import QuestionsObject from '../../data/questions.json'
- var mydata = require("../../data/questions.json");
-class QuestionGames extends Component {
+ import apiClient from '../../helpers/apiClient';
+ const mydata = require("../../data/questions.json");
+ 
+ class QuestionGames extends Component {
     constructor(){
         super();
         this.state = {
@@ -10,7 +12,10 @@ class QuestionGames extends Component {
         }
     }
     componentDidMount(){
-         
+         apiClient.getWeegie()
+         .then(({ data }) => {
+            console.log(data)
+         })
      let data=shuffle(mydata);
      
      function shuffle(array) {
