@@ -73,7 +73,7 @@
     flex: .3;
  }
 .category-card button{
-    background: #0f352e;
+    background: transparent;
     border: none;
 }
 .category-icon  img{
