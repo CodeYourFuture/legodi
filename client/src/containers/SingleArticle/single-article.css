@@ -1,0 +1,14 @@
+.Single-article{
+    padding: 0 .5em 1em .5em;
+    line-height: 1.8em;
+}
+.Single-article h1{
+    font-size: 1.8em;
+    text-align: center;
+}
+.Single-article p{
+    background: #333;
+    color: #fff;
+    padding: .5em;
+    border-radius: .4em;
+}

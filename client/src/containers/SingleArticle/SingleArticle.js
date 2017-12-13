@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import apiClient from '../../helpers/apiClient';
+import './single-article.css'
 
 class SingleArticle extends Component {
   
@@ -22,9 +23,9 @@ class SingleArticle extends Component {
 
   render() {
     return (
-      <div className="SingleArticle">
-        <h1>Title:{this.state.article.title}</h1>
-        <h3>Description:{this.state.article.fullContent}</h3>
+      <div className="Single-article">
+        <h1>{this.state.article.title}</h1>
+        <p>{this.state.article.fullContent}</p>
       </div>
     )
   }
