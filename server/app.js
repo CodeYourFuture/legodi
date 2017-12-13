@@ -17,6 +17,7 @@ const index = require('./routes/index');
 const adminArticles = require('./routes/admin/articles/articles');
 const adminCategories = require('./routes/admin/categories/categories');
 const autentication = require('./routes/admin/authentication/login');
+const weegie = require('./routes/admin/weegie/weegie');
 
 const app = express();
 app.use(cors());
@@ -74,12 +75,12 @@ app.use(function (req, res, next) {
   next();
 });
 
-
 app.use('/', index);
 app.use('/admin/articles',ensureAuthenticated, adminArticles);
 app.use('/admin/categories',ensureAuthenticated, adminCategories);
 app.use('/api', router);
-app.use('/users', autentication)
+app.use('/users', autentication);
+app.use('/admin/weegie',weegie);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

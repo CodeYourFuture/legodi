@@ -1,0 +1,76 @@
+<a href="weegie/add" class="btn btn-primary btn-lg active  mb-3" role="button" aria-pressed="true">
+  Add New Question</a>
+</div>
+
+<table class="table table-bordered table-inverse">
+  <thead class="bg-primary thead-bordered">
+    <tr>
+      <th class="text-center">
+        <h2>#</h2>
+      </th>
+      <th class="text-center">
+        <h2>question</h2>
+      </th>
+      <th class="text-center">
+        <h2>Visible</h2>
+      </th>
+      <th class="text-center">
+        <h2>Update</h2>
+      </th>
+      <th class="text-center">
+        <h2>Delete</h2>
+      </th>
+
+    </tr>
+  </thead>
+  <tbody>
+    {{#each weegieQuestions}} {{#if this.visible}}
+
+    <tr>
+      <th class="align-middle p-4 text-center" scope="row"> 1 </th>
+      <td class="align-middle p-4">
+        <h4 class="text-center"> {{this.title}}</h4>
+      </td>
+      <td class="align-middle p-4 text-center">
+        <h4>&#x2714;</h4>
+      </td>
+
+      <td class="align-middle text-center">
+
+        <a href="weegie/edit/{{this._id}}" class="btn btn-success btn-lg active" role="button" aria-pressed="true">Edit</a>
+
+      </td>
+ 
+      <td class="align-middle p-4 text-center">
+        <a href="weegie/delete/{{this._id}}"><button class="btn btn-primary btn-lg active">Delete</button></a>
+      </td>
+
+    </tr>
+    {{else}}
+    <tr>
+      <th class="align-middle p-4 text-center" scope="row">
+        <strike>1</strike>
+      </th>
+      <td class="align-middle p-4 text-center">
+        <h4>
+          <strike>{{this.title}}</strike>
+        </h4>
+      </td>
+     
+      <td class="align-middle p-4 text-center">
+        <h4>&#x2716;</h4>
+      </td>
+      <td class="align-middle text-center">
+        <a href="weegie/edit" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Edit</a>
+      </td>
+
+      <td class="align-middle p-4 text-center">
+        <button class="btn btn-danger btn-lg active">Delete</button>
+      </td>
+
+    </tr>
+    {{/if}} {{/each}}
+  </tbody>
+</table>
+
+ 
