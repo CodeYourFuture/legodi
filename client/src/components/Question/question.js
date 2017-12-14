@@ -30,7 +30,7 @@ export default class Question extends React.Component {
 
   changeQuestion = (e) => {
 
-    this.state.userAnswers.push({title:this.state.gameQuestion[this.state.questionNumber].title,answer:this.state.selectedOption})
+    this.state.userAnswers.push({title:this.state.gameQuestion[this.state.questionNumber]._id,answer:this.state.selectedOption})
     if (answerValue === this.state.selectedOption) {
       this.setState({
         rightanswer: this.state.rightanswer + 1
