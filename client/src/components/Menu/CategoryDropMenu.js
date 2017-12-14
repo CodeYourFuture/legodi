@@ -3,7 +3,6 @@ import apiClient from '../../../src/helpers/apiClient';
 import { Route } from 'react-router-dom';
 import './menu.css';
 
-
 class CategoryDropMenu extends Component {
     constructor() {
         super();
@@ -11,6 +10,7 @@ class CategoryDropMenu extends Component {
             categoriesList: []
         }
     }
+
     componentDidMount() {
         apiClient.getCategories()
             .then(({ data }) => {
@@ -20,8 +20,6 @@ class CategoryDropMenu extends Component {
             })
     }
 
-    
-
     render() {
         return (
             <div className="category-menu-container">
@@ -29,14 +27,12 @@ class CategoryDropMenu extends Component {
                 {
                     this.state.categoriesList.slice(this.state.categoriesList.length - 5).reverse().map((category) => {
                         return <div className="category-menu-item" key={category._id}>
-                            <div className="category-card">
-                                <div className="category-icon">
-                                    <button onClick={() => {
-                                        this.props.goToUrl(`/categories/${category._id}`)
-                                    }}><img src={`/icons/${category.icon}.png`} alt={category.icon} />
-                                    </button>
+                            <div className="category-icon">
+                                <button onClick={() => {
+                                    this.props.goToUrl(`/categories/${category._id}`)
+                                }}><img src={`/icons/${category.icon}.png`} alt={category.icon} />
                                     <h1 className="icon-title-drop">{category.title}</h1>
-                                </div>
+                                </button>
                             </div>
                         </div>
                     })

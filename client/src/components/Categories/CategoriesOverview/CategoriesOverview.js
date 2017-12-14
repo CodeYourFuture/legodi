@@ -11,25 +11,22 @@ class CategoriesOverview extends Component {
         }
     }
     componentDidMount() {
-        let language=localStorage.getItem("language");
-          apiClient.getCategories()
+        let language = localStorage.getItem("language");
+        apiClient.getCategories()
             .then(({ data }) => {
-                 data.map((category)=>{
-                    
-                    if(language==="en"){
-                        category.title=category.title;
-                    }else{
-                         category.title = category.titleTranslation[language]
+                data.map((category) => {
+                    if (language === "en") {
+                        category.title = category.title;
+                    } else {
+                        category.title = category.titleTranslation[language]
                     }
-
                 });
-                 this.setState({
+                this.setState({
                     categoriesList: data
                 })
             })
     }
     render() {
-        
         return (
             <div className="category-container">
                 {
