@@ -5,9 +5,10 @@
 .Single-article h1{
     font-size: 1.8em;
     text-align: center;
+    color: #0f352e;
 }
 .Single-article p{
-    background: #333;
+    background: #0f352e;
     color: #fff;
     padding: .5em;
     border-radius: .4em;
