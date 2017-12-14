@@ -5,51 +5,11 @@ import React, { Component } from 'react';
  const mydata = require("../../data/questions.json");
  
  class QuestionGames extends Component {
-    constructor(){
-        super();
-        this.state = {
-            questions: [],
-            weegieQuestions:[]
-        }
-    }
-    componentDidMount(){
-         apiClient.getWeegie()
-         .then(({ data }) => {
-            console.log(data)
-            this.setState({
-                weegieQuestions:data
-            })
-         })
-     let data=shuffle(mydata);
-     
-     function shuffle(array) {
-        var currentIndex = array.length, temporaryValue, randomIndex;
-      
-        // While there remain elements to shuffle...
-        while (0 !== currentIndex) {
-      
-          // Pick a remaining element...
-          randomIndex = Math.floor(Math.random() * currentIndex);
-          currentIndex -= 1;
-      
-          // And swap it with the current element.
-          temporaryValue = array[currentIndex];
-          array[currentIndex] = array[randomIndex];
-          array[randomIndex] = temporaryValue;
-        }
-      
-        return array;
-      }
-
-
-       this.setState({
-        questions:data
-      })
-     }
+   
     render() {
              
         return (
-            <Question weegieQuestions={this.state.weegieQuestions} questions={this.state.questions}/>
+            <Question />
         )
     }
 }
