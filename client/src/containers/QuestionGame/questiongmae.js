@@ -8,13 +8,17 @@ import React, { Component } from 'react';
     constructor(){
         super();
         this.state = {
-            questions: []
+            questions: [],
+            weegieQuestions:[]
         }
     }
     componentDidMount(){
          apiClient.getWeegie()
          .then(({ data }) => {
             console.log(data)
+            this.setState({
+                weegieQuestions:data
+            })
          })
      let data=shuffle(mydata);
      
@@ -45,7 +49,7 @@ import React, { Component } from 'react';
     render() {
              
         return (
-            <Question questions={this.state.questions}/>
+            <Question weegieQuestions={this.state.weegieQuestions} questions={this.state.questions}/>
         )
     }
 }

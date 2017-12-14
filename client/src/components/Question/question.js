@@ -41,19 +41,21 @@ export default class Question extends React.Component {
 
   render(props) {
     let questionTitle = "", chooiseOne = "", chooiseTwo = "", chooiseThree = "", chooiseFour = "";
-
-    if (this.props.questions[this.state.questionNumber]) {
-
-      questionTitle = this.props.questions[this.state.questionNumber].title;
-      chooiseOne = this.props.questions[this.state.questionNumber].choices[0].a;
-      chooiseTwo = this.props.questions[this.state.questionNumber].choices[0].b;
-      chooiseThree = this.props.questions[this.state.questionNumber].choices[0].c;
-      chooiseFour = this.props.questions[this.state.questionNumber].choices[0].d;
-      answerValue = this.props.questions[this.state.questionNumber].answer
+    let x=this.props.weegieQuestions; 
+    
+    if ( x[0]) {
+        console.log(x[1])
+      questionTitle =x[this.state.questionNumber].title;
+      chooiseOne = x[this.state.questionNumber].choices.a;
+      chooiseTwo =x[this.state.questionNumber].choices.b;
+      chooiseThree =x[this.state.questionNumber].choices.c;
+      chooiseFour = x[this.state.questionNumber].choices.d;
+      answerValue = x[this.state.questionNumber].answer
 
     }
 
     if (this.state.questionNumber < 10) {
+     
       return (
 
         <Form className="container" >
@@ -93,6 +95,8 @@ export default class Question extends React.Component {
             </Col>
 
           </FormGroup>
+
+        
 
         </Form>
       );
