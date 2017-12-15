@@ -29,8 +29,16 @@ export default class Question extends React.Component {
     })}
 
   changeQuestion = (e) => {
-
+    
     this.state.userAnswers.push({title:this.state.gameQuestion[this.state.questionNumber]._id,answer:this.state.selectedOption})
+    const questionNumber=this.state.questionNumber
+
+    if(questionNumber === 9){
+       apiClient.postWeegie(this.state.userAnswers);
+        
+      
+    } 
+      
     if (answerValue === this.state.selectedOption) {
       this.setState({
         rightanswer: this.state.rightanswer + 1
@@ -44,12 +52,15 @@ export default class Question extends React.Component {
       questionNumber: this.state.questionNumber + 1,
       selectedOption: "a"
     })
+
+    
   }
 
   changeSelectOption = (e) => {
     this.setState({
       selectedOption: e.target.value
     })
+
   }
 
   render(props) {
@@ -109,8 +120,7 @@ export default class Question extends React.Component {
         </Form>
       );
     } else {
-      console.log(this.state.userAnswers);
-      return (
+       return (
         <div class="container">
           <h3 class="text-center text-success">True answers:{this.state.rightanswer}</h3>
           <h3 class="text-center text-success">Wrong answers:{this.state.wronganswer}</h3>
