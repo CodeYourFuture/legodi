@@ -37,9 +37,6 @@
      text-align: center;
  }
 /********* Category Drop menu ********/
-.category-container{
-    
-}
 .category-menu-container{
     display: flex;
     flex-direction: column;
@@ -62,28 +59,30 @@
     text-align: center;
     padding: 2.2em 0;
 }
-.category-menu-item{
+.category-menu-container .category-menu-item{
     background: #0f352e;
     color: #fff;
     width: 25%;
     margin-bottom: 10px;
  }
-.category-card{
-    display: flex;
-    flex: .3;
- }
-.category-card button{
+
+.category-menu-container  button{
     background: #0f352e;
     border: none;
+    color: #ddd;
 }
-.category-icon  img{
-    width: 100%;
+.category-menu-container .category-icon{
+    display: flex;
+    justify-content: center;
+}
+.category-menu-container .category-icon img{
     padding: .5em 0;
 }
-.icon-title-drop{
-    font-size: .9em
+.category-menu-container .icon-title-drop{
+    font-size: .9em;
 }
-.overlay{
+.category-menu-container.icon-title-drop
+ .overlay{
     position: fixed;
     width: 100%;
     height: 100%;
@@ -94,6 +93,7 @@
     z-index: -1;
 }
 
+.category-menu-container.icon-title-drop
 .category-menu-item:hover{
      background: #205f55;
  }

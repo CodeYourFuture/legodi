@@ -5,8 +5,12 @@ function About() {
 
     return (
         <div className="about-page">
-            <img src="refuweegee.png" />
-            <img src="codeyourfuture.png" />
+            <div className="refuweege-logo">
+                <img src="refuweegee.png" />
+            </div>
+            <div className="cyf-logo">
+                <img src="codeyourfuture.png" />
+            </div> 
         </div>)
 
 }
