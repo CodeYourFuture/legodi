@@ -5,7 +5,9 @@
     justify-content: center;
     justify-content: space-around;
     flex-wrap: wrap;
-    padding-bottom: 100px;
+    height: 63vh;
+    margin-top: 3.5em;
+    overflow: auto;
 }
 a{
     text-decoration: none;
@@ -15,7 +17,7 @@ a{
     background: #205f55;
     color: #fff;
     width: 25%;
-    margin: 13px;
+    margin: 0 13px 35px 13px;
     padding: 10px;
 }
 .category-card{
