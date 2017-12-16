@@ -1,29 +1,29 @@
 .about-page{
-    justify-content: space-around;
     display: flex;
-    flex-direction: column;
-    margin-bottom: 80px;
-    
+    justify-content: space-around;
+    padding-bottom: 4em;
 }
 
-.about-page img{
-    max-height: 240px;
+.about-page .refuweege-logo,
+.about-page .cyf-logo{
+    width: 48%;
+    display: flex;
  }
 
-@media (min-width: 592px){
-   
-.about-page img{
-  width:45%;
-  max-height: 350px;
-  
-    } 
-    
-.about-page{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  margin-top:60px;
-        }
-        
+ .about-page .refuweege-logo img,
+.about-page .cyf-logo img{
+    width: 100%;
+    border-radius: 1em;
+    align-self: center;
+ }
+
+@media (max-width: 592px){
+    .about-page{
+        flex-direction: column;
+        padding: .5em;
+    }
+    .about-page .refuweege-logo,
+    .about-page .cyf-logo{
+        width: 100%;
+    }    
 }    
