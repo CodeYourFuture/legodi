@@ -92,33 +92,33 @@ export default class Question extends React.Component {
        return (
 
         <Form className="container" >
-          <h3 class="text-success"> Correct:<span class="text-danger">{this.state.correct}</span>  <span class="text-info">|</span> Wrong:<span class="text-danger">{this.state.wrong}</span></h3>
-          <h2 className=" text-primary">Question <span class="text-danger">{this.state.questionNumber + 1}</span></h2>
+          <h1 class="text-danger"> &#x2714;:<span class="text-white">{this.state.correct}</span>  <span class="text-danger">|</span> &#x2716;:<span class="text-white">{this.state.wrong}</span></h1>
+          <h2 className=" text-primary"># <span class="text-danger">{this.state.questionNumber + 1}</span></h2>
           <FormGroup tag="fieldset" row>
-            <legend className="col-form-legend col-sm-4 text-primary"><h3>Calculate :<span class="text-danger">{questionTitle}</span></h3></legend>
+            <legend className="col-form-legend col-sm-4 text-primary"><h3>Question :<span class="text-danger">{questionTitle}</span></h3></legend>
             <Col sm={10}>
               <FormGroup  >
                 <Label check>
                   <Input checked={this.state.selectedOption === 'a'} onChange={this.changeSelectOption} type="radio" value="a" name="radio1" />{' '}
-                  {chooiseOne}
+                  a-{chooiseOne}
                 </Label>
               </FormGroup>
               <FormGroup  >
                 <Label check>
                   <Input checked={this.state.selectedOption === 'b'} onChange={this.changeSelectOption} type="radio" value="b" name="radio1" />{' '}
-                  {chooiseTwo}
+                  b-{chooiseTwo}
                 </Label>
               </FormGroup>
               <FormGroup  >
                 <Label check>
                   <Input checked={this.state.selectedOption === 'c'} onChange={this.changeSelectOption} type="radio" value="c" name="radio1" />{' '}
-                  {chooiseThree}
+                  c-{chooiseThree}
                 </Label>
               </FormGroup>
               <FormGroup  >
                 <Label check>
                   <Input checked={this.state.selectedOption === 'd'} onChange={this.changeSelectOption} type="radio" value="d" name="radio1" />{' '}
-                  {chooiseFour}
+                  d-{chooiseFour}
                 </Label>
               </FormGroup>
               <Button onClick={this.changeQuestion} className="btn btn-lg"> submit</Button>
@@ -132,8 +132,8 @@ export default class Question extends React.Component {
     } else {      
        return (
         <div class="container">
-          <h3 class="text-center text-success">True answers:{this.state.rightanswer}</h3>
-          <h3 class="text-center text-success">Wrong answers:{this.state.wronganswer}</h3>
+          <h1 class="text-center text-success"> Correct &#x2714;:{this.state.rightanswer}</h1>
+          <h1 class="text-center text-success">Wrong &#x2716;:{this.state.wronganswer}</h1>
           { this.state.wrongAnswersList.map((question,i)=>{
             return (
               <ul class="pb-5" key={question._id}>

@@ -26,7 +26,9 @@ router.post('/add',(req,res)=>{
     router.get('/',(req,res)=>{
         callback=(err,weegieQuestions)=>{
             res.render('admin-list-weegie',{
-                weegieQuestions:weegieQuestions
+                weegieQuestions:weegieQuestions,
+                Weegie: 'homeNav'                
+                
             })
         }
         WeegieDB.findQuestions({},callback);
