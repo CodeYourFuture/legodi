@@ -4,9 +4,7 @@ body{
 }
 
 @media (min-width: 700px){
-    body{
-        background: #987c31;
-    }
+   
  #root #web-container{
     background: #e6bb44;
     
