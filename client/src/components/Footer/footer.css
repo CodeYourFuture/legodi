@@ -31,7 +31,7 @@
     padding-left: .3em;
 }
 
-.footer-icon {
+.footer a {
     width: 25%;
     background: #0f352e;
     display: flex;

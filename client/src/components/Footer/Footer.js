@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './footer.css';
 
 function Footer() {
@@ -10,9 +11,9 @@ function Footer() {
                 </span>
                 <h5> <strong>{'{Legodi} '}</strong><span className="footer-text">Glasglow Welcome Pack</span> </h5>
             </div>
-            <div className="footer-icon">
+            <Link to="/"><div className="footer-icon">
                 <img src="/icons/menu-glasgow.png" />
-            </div>
+            </div></Link>
         </div>)
 }
 
