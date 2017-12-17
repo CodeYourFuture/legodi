@@ -23,7 +23,7 @@
         <h3 class="text-primary">Aticle Title:</h3>
       </label>
       <div class="col-lg-6 col-md-8 col-sm-9 col-xs-9 ">
-        <input class="form-control" type="text" name="title" value={{this.article.title}} id="example-text-input">
+        <input class="form-control" type="text" name="title" value="{{this.article.title}}" id="example-text-input">
       </div>
 
       <label for="example-text-input text-success " class="col-12 col-form-label">
@@ -41,9 +41,9 @@
         <h3 class="text-primary">Categories:</h3>
       </label>
       <select name="category" class="form-control mb-4">
-        <option value={{this.article.category}} selected>Selected:{{this.CategorySelected}}</option>
+        <option value="{{this.article.category}}" selected>Selected:{{this.CategorySelected}}</option>
         {{#each categories}}
-        <option value={{this._id}}>{{ this.title }}</option>
+        <option value="{{this._id}}">{{ this.title }}</option>
         {{/each}}
       </select>
     </div>
@@ -53,7 +53,7 @@
         <h3 class="text-primary">Language</h3>
       </label>
       <select name="language" class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
-        <option value={{this.article.language}} selected>{{this.article.language}}</option>
+        <option value="{{this.article.language}}" selected>{{this.article.language}}</option>
         <option value="en">English</option>
         <option value="ar">Arabic</option>
         <option value="am">Amharic</option>
