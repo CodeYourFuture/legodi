@@ -39,14 +39,18 @@ router.get('/edit/:articleId', ensureAuthenticated, (req, res) => {
     const categoriesCallback = (error, categories) => {
         articleCallback = (error, article) => {
             let CategorySelected = "";
+            let categoriesList=[];
+
             categories.map((category) => {
                 if (article.category.equals(category._id)) {
                     CategorySelected = category.title;
+                }else{
+                    categoriesList.push(category);
                 }
             })
             res.render("admin-edit-article", {
                 article: article,
-                categories: categories,
+                categories: categoriesList,
                 CategorySelected: CategorySelected,
                 editArticleHome: 'homeNav'
             });
