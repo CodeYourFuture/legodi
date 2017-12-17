@@ -8,16 +8,11 @@
     color: #0f352e;
 }
 .Single-article p{
-    background: #2ba790;
-    color: #fff;
     padding: .5em;
     border-radius: .4em;
-    width: 90%;
-    margin-left: 5%;
-    padding: 10px;
     font-size: 1.3em;
-    border:solid rgb(211, 195, 195) 1px;
- }
+    text-align: justify;
+  }
 .Single-article{
     padding-bottom:90px;
     
