@@ -37,6 +37,7 @@ submitButton.addEventListener("click", () => {
   }
   if (error.value === "") {
     alert("success")
+    categoryForm.submit();
   } else {
     alert(error)
     error = "";
