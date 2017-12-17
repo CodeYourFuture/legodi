@@ -1,18 +1,18 @@
-<form method="post">
+<form id="articleForm" method="post">
 
     <div class="form-group row has-success">
         <label for="example-text-input text-success " class="col-12 col-form-label">
             <h3 class="text-primary">Title:</h3>
         </label>
         <div class="col-lg-6 col-md-8 col-sm-9 col-xs-9 ">
-            <input class="form-control" type="text" name="title" id="example-text-input">
+            <input id="articleTitle" class="form-control" type="text" name="title" id="example-text-input">
         </div>
 
         <label for="example-text-input text-success " class="col-12 col-form-label">
             <h3 class="text-primary">Order:</h3>
         </label>
         <div class="col-lg-6 col-md-8 col-sm-9 col-xs-9 ">
-            <input class="form-control" type="number" name="order" id="example-text-input">
+            <input id="articleOrder" class="form-control" type="number" name="order" id="example-text-input">
         </div>
 
     </div>
@@ -21,7 +21,7 @@
         <label class="text-success mt-2">
             <h3 class="text-primary">Categories:</h3>
         </label>
-        <select name="category" class="form-control mb-4">
+        <select id="selectCategory" name="category" class="form-control mb-4">
             <option value="null" selected>Choose a Category</option>
             {{#each categories}}
             <option value={{this._id}}>{{ this.title }}</option>
@@ -32,7 +32,7 @@
             <label class="mr-sm-2 text-success" for="inlineFormCustomSelect">
                 <h3 class="text-primary">Language</h3>
             </label>
-            <select required="true" name="language" class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+            <select id="selectLanguage" required="true" name="language" class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
                 <option></option>
                 <option value="en">English</option>
                 <option value="ar">Arabic</option>
@@ -47,6 +47,43 @@
             <textarea rows="14"  class="form-control form-control-success mb-4" id="inputSuccess1" name="fullContent"></textarea>
         </div>
 
-        <input class="btn btn-success btn-lg" type="submit" value="Submit">
+        <input id="submitBtn" class="btn btn-success btn-lg" type="button" value="Submit">
 
 </form>
+
+<script>
+    const categorySelected=document.getElementById("selectCategory");
+    const languageSelected=document.getElementById("selectLanguage");
+    const submitButton=document.getElementById("submitBtn");
+    const articleTitle=document.getElementById("articleTitle");
+    const articleOrder=document.getElementById("articleOrder");
+    const articleForm=document.getElementById("articleForm");
+
+    let errors="";
+    submitButton.addEventListener(("click"),()=>{
+ 
+ 
+        if(categorySelected.value=="null"){
+            errors+="Please select the categorey\n";
+         }
+         if(languageSelected.value==""){
+             errors+="please select the language\n";
+         }
+         if(articleTitle.value===""){
+            errors+="please add article title\n";
+         }
+         if(articleOrder.value===""){
+            errors+="please add order number";
+         }
+         
+         if(errors===""){
+             alert("Successfull")
+             articleForm.submit();
+         }else{
+         alert(errors)
+         errors="";
+
+         }
+    })
+
+</script>
