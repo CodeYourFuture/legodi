@@ -39,6 +39,7 @@ class Menu extends Component {
           <li onClick={this.onclickChange}><img src="/icons/menu-menu.png" alt="" /></li>
           <li><Link to="/categories"><img src="/icons/menu-info.png" alt="" /></Link></li>
           <li><Link to="/settings"><img src="/icons/menu-setting.png" alt="" /></Link></li>
+          <li><Link to="/weegie"><img width="35" src="weegie.png" /></Link></li>
           <li><Link to="/about"><img src="/icons/menu-login.png" alt="" /></Link></li>
         </ul>
         {this.dropMenuShow()}
