@@ -5,9 +5,10 @@
     justify-content: center;
     justify-content: space-around;
     flex-wrap: wrap;
-    height: 63vh;
+    height: 60vh;
     margin-top: 3.5em;
     overflow: auto;
+    margin-bottom: 4em;
 }
 a{
     text-decoration: none;
@@ -43,6 +44,7 @@ a{
 .main-category-item .icon-title{
     font-size: .9em;
 }
+
 @media (min-width: 692px){
     .category-item a{
         font-size: 1.4em;
@@ -53,7 +55,7 @@ a{
         margin-left:5%;
      }        
            
-}    
+}   
 .main-category-item .category-icon img{
     width: 100%;
 }
@@ -126,5 +128,19 @@ a{
 #root .single-category{
     position: absolute;
     top: 74px;
-      z-index: -1;
+    z-index: -1;
+    padding-bottom: 70px;    
 }
+
+@media (max-width: 592px){
+    .category-container{
+        margin-top:15px;        
+        width:90%;
+        margin-left:5%;
+     }
+     .category-container{
+        height: 67vh;
+        margin-top: 3.5em;
+    }        
+           
+}  

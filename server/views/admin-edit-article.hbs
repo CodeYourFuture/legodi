@@ -41,7 +41,7 @@
         <h3 class="text-primary">Categories:</h3>
       </label>
       <select name="category" class="form-control mb-4">
-        <option value={{this.article.category}} selected>{{this.CategorySelected}}</option>
+        <option value={{this.article.category}} selected>Selected:{{this.CategorySelected}}</option>
         {{#each categories}}
         <option value={{this._id}}>{{ this.title }}</option>
         {{/each}}
