@@ -8,8 +8,25 @@
     color: #0f352e;
 }
 .Single-article p{
-    background: #0f352e;
+    background: #2ba790;
     color: #fff;
     padding: .5em;
     border-radius: .4em;
+    width: 90%;
+    margin-left: 5%;
+    padding: 10px;
+    font-size: 1.3em;
+    border:solid rgb(211, 195, 195) 1px;
+ }
+.Single-article{
+    padding-bottom:90px;
+    
 }
+
+@media (min-width: 592px){
+    .Single-article p{
+        width: 80%;  
+        margin-left: 10%;
+        padding: 15px;      
+    }        
+}    
