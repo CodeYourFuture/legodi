@@ -50,15 +50,7 @@ export default class Question extends React.Component {
       
     } 
       
-    if (answerValue === this.state.selectedOption) {
-      this.setState({
-        correct: this.state.correct + 1
-      })
-    } else {
-      this.setState({
-        wrong: this.state.wrong + 1
-      })
-    }
+    
     this.setState({
       questionNumber: this.state.questionNumber + 1,
       selectedOption: "a"
@@ -92,10 +84,8 @@ export default class Question extends React.Component {
        return (
 
         <Form className="container" >
-          <h1 class="text-danger"> &#x2714;:<span class="text-white">{this.state.correct}</span>  <span class="text-danger">|</span> &#x2716;:<span class="text-white">{this.state.wrong}</span></h1>
-          <h2 className=" text-primary"># <span class="text-danger">{this.state.questionNumber + 1}</span></h2>
-          <FormGroup tag="fieldset" row>
-            <legend className="col-form-legend col-sm-4 text-primary"><h3>Question :<span class="text-danger">{questionTitle}</span></h3></legend>
+           <FormGroup tag="fieldset" row>
+            <legend className="col-form-legend col-sm-4 "><h3>{this.state.questionNumber + 1} - <span class="">{questionTitle}</span></h3></legend>
             <Col sm={10}>
               <FormGroup  >
                 <Label check>
@@ -121,8 +111,11 @@ export default class Question extends React.Component {
                   d-{chooiseFour}
                 </Label>
               </FormGroup>
-              <Button onClick={this.changeQuestion} className="btn btn-lg"> submit</Button>
-      
+             
+          
+              <Button onClick={this.changeQuestion} className="btn btn-lg bg-primary float-right">{this.state.questionNumber===9? "Submit" :"Next"}</Button>
+              
+
             </Col>
 
           </FormGroup>
@@ -131,15 +124,14 @@ export default class Question extends React.Component {
       );
     } else {      
        return (
-        <div class="container">
-          <h1 class="text-center text-success"> Correct &#x2714;:{this.state.rightanswer}</h1>
-          <h1 class="text-center text-success">Wrong &#x2716;:{this.state.wronganswer}</h1>
+        <div class="">
+          <h1 class="text-center "> Correct &#x2714;:{this.state.rightanswer}</h1>
+          <h1 class="text-center ">Wrong &#x2716;:{this.state.wronganswer}</h1>
           { this.state.wrongAnswersList.map((question,i)=>{
             return (
-              <ul class="pb-5" key={question._id}>
-               <h2>correction {i+1}:</h2> 
-            <li >Question: {question.title}</li>
-            
+              <ul class="pb-2" key={question._id}>
+               <h2> {question.title}</h2> 
+             
             <li>a:{question.choices.a}</li>
            
             <li>b:{question.choices.b}</li>
@@ -148,7 +140,7 @@ export default class Question extends React.Component {
             
             <li>d;{question.choices.d}</li>
 
-            <h3 class="text-danger">Answer: {question.answer} </h3>
+            <h3 class="">Answer: {question.answer} </h3>
 
 
             </ul>
