@@ -57,8 +57,8 @@ class SingleCategory extends Component {
                         </div>
                          
                         <div className="article-pragraph">
-                             <p>{article.fullContent}</p>
-                     
+                            <h1>{article.title}</h1>
+                             <p>{article.fullContent && article.fullContent.substring(0, 80)}...</p>
                         </div>    
                     </div>
                     </Link>
