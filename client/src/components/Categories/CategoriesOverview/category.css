@@ -19,7 +19,14 @@ a{
     width: 25%;
     margin: 0 13px 35px 13px;
     padding: 10px;
+    text-align: center;
+
 }
+.category-item a{
+    line-height: 1.3em;
+    margin-top: 10px;
+    font-size: 1.1em;
+ }
 .category-card{
     display: flex;
     width: 100%;
@@ -37,6 +44,9 @@ a{
     font-size: .9em;
 }
 @media (min-width: 692px){
+    .category-item a{
+        font-size: 1.4em;
+     }
     .category-container{
         margin-top:15px;        
         width:90%;
