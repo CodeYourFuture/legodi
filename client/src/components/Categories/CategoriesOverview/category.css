@@ -146,6 +146,16 @@ a{
     padding-bottom: 70px;    
 }
 
+ .category a:hover{
+    text-decoration: none;
+    color:white;
+
+}
+.category-title{
+    font-size: 0.8em;
+    margin-top:5px;
+}
+
 @media (max-width: 592px){
     .category-container{
         margin-top:15px;        

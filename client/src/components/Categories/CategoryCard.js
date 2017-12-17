@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom';
               <div className="icon-border-cros"></div>
               <img src={props.src} alt={props.alt} />
             </div>
-           {props.title}
+            <div className="category-title"> {props.title}</div>
          </Link>
         </div>
       </div>
