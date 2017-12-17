@@ -44,7 +44,7 @@
             <label class="text-success">
                 <h3 class="text-primary">Full Content:</h3>
             </label>
-            <textarea rows="14"  class="form-control form-control-success mb-4" id="inputSuccess1" name="fullContent"></textarea>
+            <textarea id="article-content" rows="14"  class="form-control form-control-success mb-4" id="inputSuccess1" name="fullContent"></textarea>
         </div>
 
         <input id="submitBtn" class="btn btn-success btn-lg" type="button" value="Submit">
@@ -58,6 +58,7 @@
     const articleTitle=document.getElementById("articleTitle");
     const articleOrder=document.getElementById("articleOrder");
     const articleForm=document.getElementById("articleForm");
+    const articlecontent=document.getElementById("article-content");
 
     let errors="";
     submitButton.addEventListener(("click"),()=>{
@@ -67,14 +68,18 @@
             errors+="Please select the categorey\n";
          }
          if(languageSelected.value==""){
-             errors+="please select the language\n";
+             errors+="please select the article language\n";
          }
          if(articleTitle.value===""){
-            errors+="please add article title\n";
+            errors+="please add the article title\n";
          }
          if(articleOrder.value===""){
-            errors+="please add order number";
+            errors+="please add article order number";
          }
+         if(articlecontent.value===""){
+            errors+="please add the full content";
+         }
+         
          
          if(errors===""){
              alert("Successfull")
