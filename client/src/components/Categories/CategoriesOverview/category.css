@@ -94,10 +94,17 @@ a{
 .article-content .article-logo img{
     align-self: center;
 }
-.article-pragraph h1{
-    font-size:1.6em;
-    color:#0e362e;
+.article-content {
+    margin-bottom: 15px;
+    
 }
+.article-pragraph h1{
+    font-size:1.3em;
+    margin: 0;
+    font-weight: bold;
+    color:#0e362e;
+
+ }
 .article-pragraph p{
     color:#0e362e;
 }
