@@ -57,7 +57,8 @@ class SingleCategory extends Component {
                         </div>
                          
                         <div className="article-pragraph">
-                             <p>Title:{article.title}<br/> {article.fullContent}</p>
+                                 <h1>{article.title}</h1>
+                             <p>{article.fullContent}</p>
                         </div>    
                     </div>
                     </Link>

@@ -94,6 +94,13 @@ a{
 .article-content .article-logo img{
     align-self: center;
 }
+.article-pragraph h1{
+    font-size:1.6em;
+    color:#0e362e;
+}
+.article-pragraph p{
+    color:#0e362e;
+}
 .article-content .article-pragraph{
     width: 70%;
     padding: 0 .5em;
