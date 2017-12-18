@@ -20,10 +20,17 @@ class SingleArticle extends Component {
         })
       })
   }
-
+  showWriterPicure() {
+    if (this.state.article.writerPicture) {
+      return (<div className="writer-picutre">
+        <img src={`/${this.state.article.writerPicture}.png`} alt={this.state.article.writerPictuer} />
+      </div>)
+    }
+  }
   render() {
     return (
       <div className="Single-article">
+        {this.showWriterPicure()}
         <h1>{this.state.article.title}</h1>
         <p>{this.state.article.fullContent}</p>
       </div>
