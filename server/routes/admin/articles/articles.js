@@ -25,8 +25,22 @@ router.get('/add', (req, res, next) => {
     categoryClient.findCategories(callback);
 });
 
-router.post('/add', (req, res) => {
+router.post('/add', function (req, res, next) {
+    console.log(req.body);
     const query = req.body;
+    if (req.files) {
+        let writerPicture = req.files.writerPicture,
+            filename = writerPicture.name;
+        writerPicture.mv('../server/public/images/' + filename, function (err) {
+            if (err) {
+                console.log(err)
+                res.send(' error accurd');
+            } else {
+                console.log('done');
+            }
+        });
+    }
+
     const callBack = (data) => {
         res.redirect('/')
     }
