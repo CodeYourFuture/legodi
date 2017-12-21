@@ -9,7 +9,7 @@ const schema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'category'
     },
-    writerPicture:{
+    articleImage:{
         type: String
     },
     visible: {

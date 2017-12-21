@@ -26,12 +26,11 @@ router.get('/add', (req, res, next) => {
 });
 
 router.post('/add', function (req, res, next) {
-    console.log(req.body);
     const query = req.body;
     if (req.files) {
-        let writerPicture = req.files.writerPicture,
-            filename = writerPicture.name;
-        writerPicture.mv('../server/public/images/' + filename, function (err) {
+        let articleImage = req.files.articleImage,
+            filename = articleImage.name;
+        articleImage.mv('../server/public/images/' + filename, function (err) {
             if (err) {
                 console.log(err)
                 res.send(' error accurd');
@@ -95,7 +94,18 @@ router.post('/delete/:articleId', (req, res) => {
 router.post('/edit/:articleId', function (req, res, next) {
     const { articleId } = req.params;
     const query = req.body;
-    console.log(query)
+    if (req.files) {
+        let articleImage = req.files.articleImage,
+            filename = articleImage.name;
+        articleImage.mv('../server/public/images/' + filename, function (err) {
+            if (err) {
+                console.log(err)
+                res.send(' error accurd');
+            } else {
+                console.log('done');
+            }
+        });
+    }
     const callback = (error, article) => {
         res.redirect('/')
     }
