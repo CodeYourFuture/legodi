@@ -124,7 +124,7 @@ export default class Question extends React.Component {
       );
     } else {      
        return (
-        <div class="">
+        <div class="weegie-result">
           <h1 class="text-center "> Correct &#x2714;:{this.state.rightanswer}</h1>
           <h1 class="text-center ">Wrong &#x2716;:{this.state.wronganswer}</h1>
           { this.state.wrongAnswersList.map((question,i)=>{
