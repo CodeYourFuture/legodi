@@ -113,7 +113,7 @@ export default class Question extends React.Component {
               </FormGroup>
              
           
-              <Button onClick={this.changeQuestion} className="btn btn-lg bg-primary float-right">{this.state.questionNumber===9? "Submit" :"Next"}</Button>
+              <Button onClick={this.changeQuestion} className="btn btn-lg bg-weegie float-right">{this.state.questionNumber===9? "Submit" :"Next"}</Button>
               
 
             </Col>
