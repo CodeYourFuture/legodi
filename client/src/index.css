@@ -3,6 +3,10 @@ body{
     
 }
 
+
+.weegie-result{
+    padding-bottom:55px;
+}
 @media (min-width: 700px){
    
  #root #web-container{
