@@ -25,8 +25,21 @@ router.get('/add', (req, res, next) => {
     categoryClient.findCategories(callback);
 });
 
-router.post('/add', (req, res) => {
+router.post('/add', function (req, res, next) {
     const query = req.body;
+    if (req.files) {
+        let articleImage = req.files.articleImage,
+            filename = articleImage.name;
+        articleImage.mv('../server/public/images/' + filename, function (err) {
+            if (err) {
+                console.log(err)
+                res.send(' error accurd');
+            } else {
+                console.log('done');
+            }
+        });
+    }
+
     const callBack = (data) => {
         res.redirect('/')
     }
@@ -81,7 +94,18 @@ router.post('/delete/:articleId', (req, res) => {
 router.post('/edit/:articleId', function (req, res, next) {
     const { articleId } = req.params;
     const query = req.body;
-    console.log(query)
+    if (req.files) {
+        let articleImage = req.files.articleImage,
+            filename = articleImage.name;
+        articleImage.mv('../server/public/images/' + filename, function (err) {
+            if (err) {
+                console.log(err)
+                res.send(' error accurd');
+            } else {
+                console.log('done');
+            }
+        });
+    }
     const callback = (error, article) => {
         res.redirect('/')
     }
