@@ -90,25 +90,25 @@ export default class Question extends React.Component {
               <FormGroup  >
                 <Label check>
                   <Input checked={this.state.selectedOption === 'a'} onChange={this.changeSelectOption} type="radio" value="a" name="radio1" />{' '}
-                  a-{chooiseOne}
+                  {chooiseOne}
                 </Label>
               </FormGroup>
               <FormGroup  >
                 <Label check>
                   <Input checked={this.state.selectedOption === 'b'} onChange={this.changeSelectOption} type="radio" value="b" name="radio1" />{' '}
-                  b-{chooiseTwo}
+                  {chooiseTwo}
                 </Label>
               </FormGroup>
               <FormGroup  >
                 <Label check>
                   <Input checked={this.state.selectedOption === 'c'} onChange={this.changeSelectOption} type="radio" value="c" name="radio1" />{' '}
-                  c-{chooiseThree}
+                  {chooiseThree}
                 </Label>
               </FormGroup>
               <FormGroup  >
                 <Label check>
                   <Input checked={this.state.selectedOption === 'd'} onChange={this.changeSelectOption} type="radio" value="d" name="radio1" />{' '}
-                  d-{chooiseFour}
+                  {chooiseFour}
                 </Label>
               </FormGroup>
              
