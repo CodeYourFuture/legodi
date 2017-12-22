@@ -14,16 +14,16 @@ class CategoriesOverview extends Component {
         let language = localStorage.getItem("language");
         apiClient.getCategories()
             .then(({ data }) => {
-                data.map((category) => {
+                this.setState({
+                    categoriesList: data
+                })
+                this.state.categoriesList.map((category) => {
                     if (language === "en") {
                         category.title = category.title;
                     } else {
                         category.title = category.titleTranslation[language]
                     }
                 });
-                this.setState({
-                    categoriesList: data
-                })
             })
     }
     render() {
