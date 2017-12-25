@@ -11,7 +11,7 @@ class CategoriesOverview extends Component {
         }
     }
     componentDidMount() {
-        let language = localStorage.getItem("language");
+        let language = localStorage.getItem("language") || 'en';
         apiClient.getCategories()
             .then(({ data }) => {
                 data.map((category) => {
