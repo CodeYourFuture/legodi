@@ -18,11 +18,11 @@ const adminArticles = require('./routes/admin/articles/articles');
 const adminCategories = require('./routes/admin/categories/categories');
 const autentication = require('./routes/admin/authentication/login');
 const weegie = require('./routes/admin/weegie/weegie');
-//const fileUpload = require('express-fileupload');
+const fileUpload = require('express-fileupload');
 
 const app = express();
 app.use(cors());
-//app.use(fileUpload());
+app.use(fileUpload());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
