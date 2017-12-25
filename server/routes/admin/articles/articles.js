@@ -24,28 +24,46 @@ router.get('/add', (req, res, next) => {
     }
     categoryClient.findCategories(callback);
 });
-
+//////////////////////////////////////////////
+/////////////////////////////////////////////
 router.post('/add', function (req, res, next) {
-    const query = req.body;
-    if (req.files) {
-        let articleImage = req.files.articleImage,
-            filename = articleImage.name;
-        articleImage.mv('../server/public/images/' + filename, function (err) {
-            if (err) {
-                console.log(err)
-                res.send(' error accurd');
-            } else {
-                console.log('done');
-            }
-        });
-    }
+    let query = {}
+    if (Object.keys(req.files).length > 0 && (req.files).constructor === Object) 
+         query = {
+            title: req.body.title,
+            category: req.body.category,
+            language: req.body.language,
+            fullContent: req.body.fullContent,
+            articleImage: req.files.articleImage.name
+        }
+    if (Object.keys(req.files).length === 0 && (req.files).constructor === Object)
+         query = {
+            title: req.body.title,
+            category: req.body.category,
+            language: req.body.language,
+            fullContent: req.body.fullContent,
+            articleImage: "null"
+        }
+        if (Object.keys(req.files).length > 0 && (req.files).constructor === Object) {
+            let articleImage = req.files.articleImage,
+                filename = articleImage.name;
+            articleImage.mv('../server/public/images/' + filename, function (err) {
+                if (err) {
+                    console.log(err)
+                    res.send(' error accurd');
+                } else {
+                    console.log('done');
+                }
+            });
+        }
 
-    const callBack = (data) => {
-        res.redirect('/')
-    }
-    articleClient.addArticle(query, callBack)
-});
-
+        const callBack = (data) => {
+            res.redirect('/')
+        }
+        articleClient.addArticle(query, callBack)
+    });
+////////////////////////////////////////////////////
+///////////////////////////////////////////////////
 router.get('/edit/:articleId', ensureAuthenticated, (req, res) => {
 
     const { articleId } = req.params;
@@ -93,8 +111,24 @@ router.post('/delete/:articleId', (req, res) => {
 
 router.post('/edit/:articleId', function (req, res, next) {
     const { articleId } = req.params;
-    const query = req.body;
-    if (req.files) {
+    let query = {}
+    if (Object.keys(req.files).length > 0 && (req.files).constructor === Object)
+        query = {
+            title: req.body.title,
+            category: req.body.category,
+            language: req.body.language,
+            fullContent: req.body.fullContent,
+            articleImage: req.files.articleImage.name
+        }
+    if (Object.keys(req.files).length === 0 && (req.files).constructor === Object)
+        query = {
+            title: req.body.title,
+            category: req.body.category,
+            language: req.body.language,
+            fullContent: req.body.fullContent,
+            articleImage: "null"
+        }
+    if (Object.keys(req.files).length > 0 && (req.files).constructor === Object) {
         let articleImage = req.files.articleImage,
             filename = articleImage.name;
         articleImage.mv('../server/public/images/' + filename, function (err) {
