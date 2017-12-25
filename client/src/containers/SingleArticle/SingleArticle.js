@@ -21,9 +21,10 @@ class SingleArticle extends Component {
       })
   }
   showArticleImage() {
+    const imageUrl = process.env.REACT_APP_API_URI || 'http://localhost:3001/images/';
     if (this.state.article.articleImage) {
       return (<div className="writer-picutre">
-        <img src={`http://localhost:3001/images/${this.state.article.articleImage}`} alt={this.state.article.articleImage} />
+        <img src={`${imageUrl}${this.state.article.articleImage}`} alt={this.state.article.articleImage} />
       </div>)
     }
   }

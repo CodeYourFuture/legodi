@@ -9,7 +9,6 @@ router.get('/', (req, res, next) => {
             articles: articles,
             addArticle: 'true',
             articlehome: 'homeNav'
-
         })
     }
     articleClient.findArticles({}, callback);
@@ -26,46 +25,39 @@ router.get('/add', (req, res, next) => {
 });
 
 router.post('/add', function (req, res, next) {
-    let query = req.body;        
+    let query = req.body;
+    if (Object.keys(req.files).length > 0) {
+        query.articleImage = req.files.articleImage.name;
 
-        if (Object.keys(req.files).length > 0) {
-            query = {
-                title: req.body.title,
-                category: req.body.category,
-                language: req.body.language,
-                fullContent: req.body.fullContent,
-                articleImage: req.files.articleImage.name
+        const articleImage = req.files.articleImage,
+            filename = articleImage.name;
+        articleImage.mv('../server/public/images/' + filename, function (err) {
+            if (err) {
+                console.log(err)
+                res.send(' error accurd');
+            } else {
+                console.log('done');
             }
-            let articleImage = req.files.articleImage,
-                filename = articleImage.name;
-            articleImage.mv('../server/public/images/' + filename, function (err) {
-                if (err) {
-                    console.log(err)
-                    res.send(' error accurd');
-                } else {
-                    console.log('done');
-                }
-            });
-        }
+        });
+    }
 
-        const callBack = (data) => {
-            res.redirect('/')
-        }
-        articleClient.addArticle(query, callBack)
+    const callBack = (data) => {
+        res.redirect('/')
+    }
+    articleClient.addArticle(query, callBack)
 });
-    
-router.get('/edit/:articleId', ensureAuthenticated, (req, res) => {
 
+router.get('/edit/:articleId', ensureAuthenticated, (req, res) => {
     const { articleId } = req.params;
     const categoriesCallback = (error, categories) => {
         articleCallback = (error, article) => {
             let CategorySelected = "";
-            let categoriesList=[];
+            let categoriesList = [];
 
             categories.map((category) => {
                 if (article.category.equals(category._id)) {
                     CategorySelected = category.title;
-                }else{
+                } else {
                     categoriesList.push(category);
                 }
             })
@@ -83,7 +75,6 @@ router.get('/edit/:articleId', ensureAuthenticated, (req, res) => {
 
 router.post('/delete/:articleId', (req, res) => {
     const { articleId } = req.params;
-
     callBack = (error, data) => {
         if (data.title === req.body.validationTitle) {
             deleteCallBack = () => {
@@ -96,32 +87,26 @@ router.post('/delete/:articleId', (req, res) => {
             res.render("delete-title-wrong");
         }
     }
-     articleClient.findArticleById(articleId, callBack)
+    articleClient.findArticleById(articleId, callBack)
 })
 
 router.post('/edit/:articleId', function (req, res, next) {
     const { articleId } = req.params;
-     let query = req.body;        
-
-        if (Object.keys(req.files).length > 0) {
-            query = {
-                title: req.body.title,
-                category: req.body.category,
-                language: req.body.language,
-                fullContent: req.body.fullContent,
-                articleImage: req.files.articleImage.name
+    let query = req.body;
+    if (Object.keys(req.files).length > 0) {
+        query.articleImage = req.files.articleImage.name;
+        
+        const articleImage = req.files.articleImage,
+            filename = articleImage.name;
+        articleImage.mv('../server/public/images/' + filename, function (err) {
+            if (err) {
+                console.log(err)
+                res.send(' error accurd');
+            } else {
+                console.log('done');
             }
-            let articleImage = req.files.articleImage,
-                filename = articleImage.name;
-            articleImage.mv('../server/public/images/' + filename, function (err) {
-                if (err) {
-                    console.log(err)
-                    res.send(' error accurd');
-                } else {
-                    console.log('done');
-                }
-            });
-        }
+        });
+    }
     const callback = (error, article) => {
         res.redirect('/')
     }
