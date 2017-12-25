@@ -21,9 +21,9 @@ class SingleArticle extends Component {
       })
   }
   showArticleImage() {
-    if (this.state.article.articleImage) {
+    if (this.state.article.articleImage != "null") {
       return (<div className="writer-picutre">
-        <img src={`http://localhost:3001/images/${this.state.article.articleImage}.jpg`} alt={this.state.article.articleImage} />
+        <img src={`http://localhost:3001/images/${this.state.article.articleImage}`} alt={this.state.article.articleImage} />
       </div>)
     }
   }
