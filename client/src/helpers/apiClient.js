@@ -27,6 +27,9 @@ const apiClient = {
     },
     postWeegie: (answer) => {
         return axios.post(`${apiUrl}/api/weegie/user/answer`,answer);
+    },
+    postArticle: (article) => {
+        return axios.post(`${apiUrl}/api/admin/articles/add`, article);
     }
 }
 
