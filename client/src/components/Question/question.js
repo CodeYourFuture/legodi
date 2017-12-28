@@ -85,7 +85,7 @@ export default class Question extends React.Component {
 
         <Form className="container" >
            <FormGroup tag="fieldset" row>
-            <legend className="col-form-legend col-sm-4 "><h3>{this.state.questionNumber + 1} - <span class="">{questionTitle}</span></h3></legend>
+            <legend className="col-form-legend col-sm-12 "><h3>{this.state.questionNumber + 1} - <span class="">{questionTitle}</span></h3></legend>
             <Col sm={10}>
               <FormGroup  >
                 <Label check>
