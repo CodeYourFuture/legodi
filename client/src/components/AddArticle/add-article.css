@@ -2,6 +2,22 @@
     padding-bottom: 5em;
 }
 
+.article-header{
+    font-size: 2em;
+}
+.add-article input,
+.add-article select{
+    margin-bottom: 1em;
+}
+
 .add-article .btn-sm{
     margin-top: 1em;
+}
+
+.error{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 8em;
+    color: #f00;
 }

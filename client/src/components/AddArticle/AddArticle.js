@@ -2,35 +2,129 @@ import React, { Component } from 'react';
 import apiClient from '../../helpers/apiClient';
 import './add-article.css';
 class AddArticle extends Component {
+    constructor(props) {
+        super();
+        this.state = {
+            title: "",
+            articleImage: "",
+            category: [],
+            language: "",
+            fullContent: "",
+            error: undefined,
+            isLoading: false,
+        };
+    }
+
+    componentDidMount() {
+        apiClient.getCategories()
+            .then(({ data }) => {
+                const { category = {} } = data[0];
+                this.setState({
+                    category: data
+                })
+            })
+    }
+
+    _handleSubmit = (event) => {
+        const article = {
+            title: this.state.title,
+            articleImage: this.state.articleImage,
+            category: this.state.selectCategory,
+            language: this.state.language,
+            fullContent: this.state.fullContent
+        }
+        event.preventDefault();
+        this.setState({
+            isLoading: true
+        })
+        apiClient.postArticle(article, this.state.file)
+            .then((response) => {
+                setTimeout(() => { this.setState({ isLoading: false }) }, 2000)
+                this.setState({
+                    title: "",
+                    file: null,
+                    articleImage: "",
+                    category: "",
+                    language: "",
+                    fullContent: "",
+                    error: undefined,
+                })
+                this.props.history.push("/")
+            }
+            )
+            .catch((errorMessage) => {
+                this.setState({
+                    error: errorMessage
+                })
+            })
+    }
+
+    _handleChange = (event, field) => {
+        const value = event.target.value;
+        this.setState({
+            [field]: value
+        })
+    }
+
+    onFileChange = (e) => {
+        console.log()
+        this.setState({
+            file: e.target.files[0],
+            articleImage: e.target.files[0].name
+        })
+    }
+
+    showError = () => {
+        if (this.state.error !== undefined) {
+            return (
+                <div>
+                    <h3>Error</h3>
+                    <p>
+                        error.message
+					 </p>
+                </div>
+            )
+        }
+    }
 
     render() {
-        return (
-            <div className="add-article">
-                <form>
-                    <div className="container">
-                        <label><strong>Title:</strong></label>
-                        <input className="form-control form-control-sm" type="text" name="title" />
-                        <label><strong>Picture:</strong></label>
-                        <input class="form-control form-control-sm" type="text" name="articleImage"/>
-                        <label><strong>Categories:</strong></label>
-                        <select name="category" class="form-control form-control-sm">
-                            <option value="null" selected>Choose a Category</option>
-                            <option value="test">Test</option>
-                        </select>
-                        <label><strong>Language</strong></label>
-                        <select name="language" class="form-control form-control-sm">
-                            <option>Select language</option>
-                            <option value="en">English</option>
-                            <option value="ar">Arabic</option>
-                            <option value="am">Amharic</option>
-                        </select>
-                        <label><strong>Full Content:</strong></label>
-                        <textarea rows="6" className="form-control form-control-sm" name="fullContent"></textarea>
-                        <button class="btn-sm btn-success btn-lg" onClick={this.onClickChange} type="submit">Submit</button>
-                    </div>
-                </form>
+        if (this.state.isLoading) {
+            return (<div className="error">
+                    <h1>Please wait</h1>
             </div>
-        )
+            );
+        } else {
+            return (
+                <div className="add-article">
+                    {this.showError}
+                    <form>
+                        <div className="container">
+                            <h1 className="article-header">Add article</h1>    
+                            <input value={this.state.title} onChange={(event) => this._handleChange(event, "title")} placeholder="Title" className="form-control" type="text" name="title" />
+                            <input onChange={this.onFileChange} className="form-control" type="file" name="articleImage" />
+                            <select value={this.state.selectCategory} onChange={(event) => this._handleChange(event, "selectCategory")} name="category" className="form-control">
+                                <option value="null" >Choose a Category</option>
+                                {
+                                    this.state.category.map((categoryData) => {
+                                        return (
+                                            <option key={categoryData._id} value={categoryData._id}>{categoryData.title}</option>   
+                                        )
+                                    })
+                                }
+                            </select>
+                            <select value={this.state.language} onChange={(event) => this._handleChange(event, "language")} name="language" className="form-control">
+                                <option value="Select language">Select language</option>
+                                <option value="en">English</option>
+                                <option value="ar">Arabic</option>
+                                <option value="am">Amharic</option>
+                            </select>
+                            <textarea value={this.state.fullContent} placeholder="Add your content" onChange={(event) => this._handleChange(event, "fullContent")} rows="4" className="form-control" name="fullContent"></textarea>
+                            <button className="btn-sm btn-success btn-lg" onClick={this._handleSubmit} type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            )
+        }
     }
 }
 

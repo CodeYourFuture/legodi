@@ -20,6 +20,10 @@ const schema = new Schema({
         type:String,
         default:'en'
     },
+    Status: {
+        type: String,
+        default: "Approved"
+    },
     order:{
        type: Number,
        unique:false}

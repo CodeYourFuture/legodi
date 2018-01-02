@@ -4,6 +4,8 @@ const categoryClient = require("../dbClients/categoriesDB");
 const articleClient = require('../dbClients/articlesDB')
 const ObjectId = require('mongodb').ObjectID;
 const WeegieDB = require('./../dbClients/weegieQuestionDB')
+const path = require('path');
+const imagesDir = path.dirname(require.main.filename) + '/../public/images';
  
 /* GET Articles page. */
 
@@ -21,6 +23,28 @@ router.get('/articles', function (req, res, next) {
     articleClient.findArticles({ visible: true, language: language }, callBack)
 
 
+});
+
+router.post('/addArticle', function (req, res) {
+    const article = JSON.parse(req.body.article);
+
+    const callback = (article) => {
+        if (req.files) {
+            const image = req.files.image;
+
+            image.mv(`${imagesDir}/${article._id}.png`, (err) => {
+                if (err) {
+                    console.error(err);
+                } else console.log('image has uploades')
+            })
+        }
+        return res.send(200);
+    }
+    const onError = (e) => {
+        res.status(500)
+        res.json({ error: "An error has been occurred" })
+    }
+    articleClient.addArticle(article, callback).catch(onError)
 });
 
 router.post('/weegie/user/answer', (req, res) => {
