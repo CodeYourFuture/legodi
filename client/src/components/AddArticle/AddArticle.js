@@ -6,7 +6,9 @@ class AddArticle extends Component {
         super();
         this.state = {
             title: "",
+            status: "Pending",
             articleImage: "",
+            order: null,
             category: [],
             language: "",
             fullContent: "",
@@ -28,11 +30,14 @@ class AddArticle extends Component {
     _handleSubmit = (event) => {
         const article = {
             title: this.state.title,
+            status: this.state.status,
             articleImage: this.state.articleImage,
+            order: this.state.order,
             category: this.state.selectCategory,
             language: this.state.language,
             fullContent: this.state.fullContent
         }
+        console.log(article)
         event.preventDefault();
         this.setState({
             isLoading: true
@@ -102,6 +107,7 @@ class AddArticle extends Component {
                             <h1 className="article-header">Add article</h1>    
                             <input value={this.state.title} onChange={(event) => this._handleChange(event, "title")} placeholder="Title" className="form-control" type="text" name="title" />
                             <input onChange={this.onFileChange} className="form-control" type="file" name="articleImage" />
+                            <input value={this.state.order} onChange={(event) => this._handleChange(event, "order")} placeholder="Order" className="form-control" type="number" name="order" />
                             <select value={this.state.selectCategory} onChange={(event) => this._handleChange(event, "selectCategory")} name="category" className="form-control">
                                 <option value="null" >Choose a Category</option>
                                 {

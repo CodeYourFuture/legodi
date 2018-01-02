@@ -20,7 +20,7 @@ const schema = new Schema({
         type:String,
         default:'en'
     },
-    Status: {
+    status: {
         type: String,
         default: "Approved"
     },
