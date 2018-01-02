@@ -26,7 +26,7 @@ router.get('/add', (req, res, next) => {
 
 router.post('/add', function (req, res, next) {
     let query = req.body;
-    if (Object.keys(req.files).length > 0) 
+    if (Object.keys(req.files).length > 0)
         query.articleImage = req.files.articleImage.name;
     const callBack = (articleData) => {
         if (Object.keys(req.files).length > 0) {
@@ -94,7 +94,7 @@ router.post('/edit/:articleId', function (req, res, next) {
     const { articleId } = req.params;
     let query = req.body;
     if (Object.keys(req.files).length > 0)
-    query.articleImage = req.files.articleImage.name;
+        query.articleImage = req.files.articleImage.name;
     console.log(query)
     const callBack = (articleData) => {
         if (Object.keys(req.files).length > 0) {
