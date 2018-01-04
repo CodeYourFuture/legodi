@@ -27,23 +27,32 @@ class CategoriesOverview extends Component {
             })
     }
     render() {
-        return (
-            <div className="category-container">
-                {
-                    this.state.categoriesList.map((category) => {
-                        var icon = `/icons/${category.icon}.png`;
-                        if (!category.icon) {
-                            icon = '/icons/default-icon.png'
-                        }
-                        return (
-                            <div className="category-item" key={category._id}>
-                                <CategoryCard title={category.title} alt={category.icon} src={icon} href={`/categories/${category._id}`} />
-                            </div>
-                        )
-                    })
-                }
+        if (this.state.categoriesList.length === 0) {
+            return <div class="spinner-container">
+                <div class="item item-1"></div>
+                <div class="item item-2"></div>
+                <div class="item item-3"></div>
+                <div class="item item-4"></div>
             </div>
-        )
+        } else {
+            return (
+                <div className="category-container">
+                    {
+                        this.state.categoriesList.map((category) => {
+                            var icon = `/icons/${category.icon}.png`;
+                            if (!category.icon) {
+                                icon = '/icons/default-icon.png'
+                            }
+                            return (
+                                <div className="category-item" key={category._id}>
+                                    <CategoryCard title={category.title} alt={category.icon} src={icon} href={`/categories/${category._id}`} />
+                                </div>
+                            )
+                        })
+                    }
+                </div>
+            )
+        }
     }
 }
 export default CategoriesOverview
