@@ -2,10 +2,6 @@
     text-decoration: none;
     list-style: none
 }
-.menu ul :hover{
-    background:#205f55;
-}
-
 
 .menu ul{
     display: flex;
@@ -17,7 +13,6 @@
 } 
 
 .menu li:first-child{
-    background: #205f55;
     padding-top: 1px;
 }
 
