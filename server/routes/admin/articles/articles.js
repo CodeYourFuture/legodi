@@ -26,22 +26,22 @@ router.get('/add', (req, res, next) => {
 
 router.post('/add', function (req, res, next) {
     let query = req.body;
-    if (Object.keys(req.files).length > 0) {
+    if (Object.keys(req.files).length > 0)
         query.articleImage = req.files.articleImage.name;
-
-        const articleImage = req.files.articleImage,
-            filename = articleImage.name;
-        articleImage.mv('../server/public/images/' + filename, function (err) {
-            if (err) {
-                console.log(err)
-                res.send(' error accurd');
-            } else {
-                console.log('done');
-            }
-        });
-    }
-
-    const callBack = (data) => {
+    const callBack = (articleData) => {
+        if (Object.keys(req.files).length > 0) {
+            query.articleImage = req.files.articleImage.name;
+            const articleImage = req.files.articleImage,
+                filename = articleData._id;
+            articleImage.mv(`../server/public/images/${filename}.png`, function (err) {
+                if (err) {
+                    console.log(err)
+                    res.send(' error accurd');
+                } else {
+                    console.log('the image has uloaded');
+                }
+            });
+        }
         res.redirect('/')
     }
     articleClient.addArticle(query, callBack)
@@ -93,24 +93,26 @@ router.post('/delete/:articleId', (req, res) => {
 router.post('/edit/:articleId', function (req, res, next) {
     const { articleId } = req.params;
     let query = req.body;
-    if (Object.keys(req.files).length > 0) {
+    if (Object.keys(req.files).length > 0)
         query.articleImage = req.files.articleImage.name;
-        
-        const articleImage = req.files.articleImage,
-            filename = articleImage.name;
-        articleImage.mv('../server/public/images/' + filename, function (err) {
-            if (err) {
-                console.log(err)
-                res.send(' error accurd');
-            } else {
-                console.log('done');
-            }
-        });
-    }
-    const callback = (error, article) => {
+    console.log(query)
+    const callBack = (articleData) => {
+        if (Object.keys(req.files).length > 0) {
+            const articleImage = req.files.articleImage,
+                filename = articleId;
+            articleImage.mv(`../server/public/images/${filename}.png`, function (err) {
+                if (err) {
+                    console.log(err)
+                    res.send(' error accurd');
+                } else {
+                    console.log('the image has uloaded');
+                }
+            });
+        }
         res.redirect('/')
     }
-    articleClient.editArticle(articleId, query, true, callback);
+
+    articleClient.editArticle(articleId, query, true, callBack);
 });
 
 module.exports = router;
