@@ -8,7 +8,15 @@ const CategorySchema = new Schema({
     }, 
     titleTranslation:{
         ar:{type:String,default:'amharic translation'},
-        am:{type:String,default:'arabic translation'}
+        am: { type: String, default: 'arabic translation' },
+    },
+    arabicDescription: {
+        type: String,
+        default: 'arabic translation'
+    },
+    amharngaDescription: {
+        type: String,
+        default: 'arabic translation'
     },
     description: {
         type: String
