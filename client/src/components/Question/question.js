@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
-import { Link } from "react-router-dom";
 import apiClient from '../../helpers/apiClient';
+import '../../index.css';
 
 let answerValue = "";
 
@@ -85,7 +85,7 @@ export default class Question extends React.Component {
 
         <Form className="container" >
            <FormGroup tag="fieldset" row>
-            <legend className="col-form-legend col-sm-12 "><h3>{this.state.questionNumber + 1} - <span class="">{questionTitle}</span></h3></legend>
+            <legend className="col-form-legend col-sm-12 "><h3>{this.state.questionNumber + 1} - <span className="">{questionTitle}</span></h3></legend>
             <Col sm={10}>
               <FormGroup  >
                 <Label check>
@@ -128,22 +128,17 @@ export default class Question extends React.Component {
           <h1 class="text-center "> Correct &#x2714;:{this.state.rightanswer}</h1>
           <h1 class="text-center ">Wrong &#x2716;:{this.state.wronganswer}</h1>
           { this.state.wrongAnswersList.map((question,i)=>{
-            return (
-              <ul class="pb-2" key={question._id}>
-               <h2> {question.title}</h2> 
-             
-            <li>a:{question.choices.a}</li>
-           
-            <li>b:{question.choices.b}</li>
-            
-            <li>c:{question.choices.c}</li>
-            
-            <li>d;{question.choices.d}</li>
-
-            <h3 class="">Answer: {question.answer} </h3>
-
-
-            </ul>
+             return (
+               <div className="container" key={question._id}>
+                <h2> {question.title}</h2>
+                <ul className="answer-list"> 
+                  <li>a:{question.choices.a}</li>
+                  <li>b:{question.choices.b}</li>
+                  <li>c:{question.choices.c}</li>
+                  <li>d;{question.choices.d}</li>
+                  <h3><span className="question-answer">Answer</span>: {question.answer} </h3>
+                </ul>
+            </div>     
           )
           })}
         </div>

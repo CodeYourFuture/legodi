@@ -16,9 +16,9 @@ class CategoriesOverview extends Component {
             .then(({ data }) => {
                 data.map((category) => {
                     if (language === "en") {
-                        category.title = category.title;
+                        return category.title = category.title;
                     } else {
-                        category.title = category.titleTranslation[language]
+                       return category.title = category.titleTranslation[language]
                     }
                 });
                 this.setState({
@@ -28,11 +28,11 @@ class CategoriesOverview extends Component {
     }
     render() {
         if (this.state.categoriesList.length === 0) {
-            return <div class="spinner-container">
-                <div class="item item-1"></div>
-                <div class="item item-2"></div>
-                <div class="item item-3"></div>
-                <div class="item item-4"></div>
+            return <div className="spinner-container">
+                <div className="item item-1"></div>
+                <div className="item item-2"></div>
+                <div className="item item-3"></div>
+                <div className="item item-4"></div>
             </div>
         } else {
             return (
