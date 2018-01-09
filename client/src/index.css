@@ -1,11 +1,18 @@
 body{
     background: #e6bb44;
-    
 }
 
 
 .weegie-result{
     padding-bottom:55px;
+}
+
+.weegie-result .answer-list{
+    line-height: 1.8em;
+}
+
+.question-answer{
+    color: green;
 }
 .bg-weegie{
     background-color: #0e352f;
