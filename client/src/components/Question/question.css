@@ -82,11 +82,11 @@
     line-height: 1.8em;
 }
 .question-title{
-  font-size: 2em;
+  font-size: 1.2em;
 }
 .question-answer{
     color: green;
-    font-size: 2em;
+    font-size: .9em;
 }
 .bg-weegie{
     background-color: #0e352f;
