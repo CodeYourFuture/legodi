@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import apiClient from '../../helpers/apiClient';
-import '../../index.css';
+import './question.css';
 
 let answerValue = "";
 
@@ -78,13 +78,19 @@ export default class Question extends React.Component {
       answerValue = question[this.state.questionNumber].answer
 
     }
-
-    if (this.state.questionNumber < 10) {
+    if (this.state.gameQuestion.length === 0) {
+      return <div class="spinner-container question">
+        <div class="item item-1"></div>
+        <div class="item item-2"></div>
+        <div class="item item-3"></div>
+        <div class="item item-4"></div>
+      </div>
+    }else if (this.state.questionNumber < 10) {
        return (
 
         <Form className="container" >
            <FormGroup tag="fieldset" row>
-            <legend className="col-form-legend col-sm-12 "><h3>{this.state.questionNumber + 1} - <span className="">{questionTitle}</span></h3></legend>
+            <legend className="col-form-legend col-sm-12 "><h3>{this.state.questionNumber + 1} - <span className="question-title">{questionTitle}</span></h3></legend>
             <Col sm={10}>
               <FormGroup  >
                 <Label check>
