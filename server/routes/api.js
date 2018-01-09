@@ -5,7 +5,7 @@ const articleClient = require('../dbClients/articlesDB')
 const ObjectId = require('mongodb').ObjectID;
 const WeegieDB = require('./../dbClients/weegieQuestionDB')
 const path = require('path');
-const imagesDir = path.dirname(require.main.filename) + '/../public/images';
+const imagesDir = path.dirname(require.main.filename)+'/../public/images';
  
 /* GET Articles page. */
 

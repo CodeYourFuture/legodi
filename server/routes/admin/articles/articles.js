@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 const categoryClient = require('../../../dbClients/categoriesDB');
 const articleClient = require('../../../dbClients/articlesDB');
+const path = require('path');
+const imagesDir = path.dirname(require.main.filename) + '/../public/images';
 
 router.get('/', (req, res, next) => {
     const callback = (error, articles) => {
@@ -33,7 +35,7 @@ router.post('/add', function (req, res, next) {
             query.articleImage = req.files.articleImage.name;
             const articleImage = req.files.articleImage,
                 filename = articleData._id;
-            articleImage.mv(`../server/public/images/${filename}.png`, function (err) {
+            articleImage.mv(`${imagesDir}/${articleData._id}.png`, function (err) {
                 if (err) {
                     console.log(err)
                     res.send(' error accurd');
@@ -100,7 +102,7 @@ router.post('/edit/:articleId', function (req, res, next) {
         if (Object.keys(req.files).length > 0) {
             const articleImage = req.files.articleImage,
                 filename = articleId;
-            articleImage.mv(`../server/public/images/${filename}.png`, function (err) {
+            articleImage.mv(`${imagesDir}/${filename}.png`, function (err) {
                 if (err) {
                     console.log(err)
                     res.send(' error accurd');
