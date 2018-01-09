@@ -1,8 +1,8 @@
 import React from 'react';
 import { Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import apiClient from '../../helpers/apiClient';
-import './question.css';
-
+import Spinner from '../Spinner/Spinner';
+import './question.css'
 let answerValue = "";
 
 export default class Question extends React.Component {
@@ -79,12 +79,7 @@ export default class Question extends React.Component {
 
     }
     if (this.state.gameQuestion.length === 0) {
-      return <div class="spinner-container question">
-        <div class="item item-1"></div>
-        <div class="item item-2"></div>
-        <div class="item item-3"></div>
-        <div class="item item-4"></div>
-      </div>
+      return <Spinner />
     }else if (this.state.questionNumber < 10) {
        return (
 

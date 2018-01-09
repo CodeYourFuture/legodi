@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import apiClient from '../../helpers/apiClient';
 import './add-article.css';
+import Spinner from '../Spinner/Spinner'
 class AddArticle extends Component {
     constructor(props) {
         super();
@@ -93,10 +94,7 @@ class AddArticle extends Component {
 
     render() {
         if (this.state.isLoading) {
-            return (<div className="error">
-                    <h1>Please wait</h1>
-            </div>
-            );
+            return <Spinner />
         } else {
             return (
                 <div className="add-article">
