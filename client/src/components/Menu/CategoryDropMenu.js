@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import apiClient from '../../../src/helpers/apiClient';
-import { Route } from 'react-router-dom';
 import './menu.css';
 
 class CategoryDropMenu extends Component {

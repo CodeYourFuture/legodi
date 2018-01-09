@@ -2,6 +2,15 @@ import React, { Component } from 'react';
 import apiClient from '../../helpers/apiClient';
 import './single-article.css'
 
+const styles = ({
+  defualtText: {
+    textAlign: 'left'
+  },
+  arabicText: {
+    textAlign: 'right'
+  }
+});
+
 class SingleArticle extends Component {
   
   constructor() {
@@ -30,7 +39,7 @@ class SingleArticle extends Component {
   }
   render() {
     return (
-      <div className="Single-article">
+      <div className="Single-article" style={this.state.article.language === 'ar' ? styles.arabicText : styles.defualtText}>
         {this.showArticleImage()}
         <h1>{this.state.article.title}</h1>
         <p>{this.state.article.fullContent}</p>

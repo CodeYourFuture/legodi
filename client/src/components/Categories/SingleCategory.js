@@ -3,6 +3,14 @@ import apiClient from '../../helpers/apiClient';
 import './CategoriesOverview/category.css'
 import { Link } from 'react-router-dom';
 
+const styles = ({
+    defualtText: {
+        textAlign: 'left'
+    },
+    arabicText: {
+        textAlign: 'right'
+    }
+});
 
 class SingleCategory extends Component {
 
@@ -12,7 +20,9 @@ class SingleCategory extends Component {
         this.state = {
             articles: [],
             defaultData: "",
-            category: {}
+            categoryTitle: '',
+            categoryDesc: '',
+            lang: ''
         }
     }
     componentDidMount() {
@@ -21,16 +31,32 @@ class SingleCategory extends Component {
         const { categoryId } = this.props.match.params;
         apiClient.getArticlesByCategoryId(categoryId,language)
             .then(({ data }) => {
-                if (data.length ===0 ) {
+                if (data.length === 0 ) {
                     this.setState({
                         defaultData: "This category does not have any articles"
                     })
                 } else {
                     const { category = {} } = data[0];
-                     this.setState({
-                        articles: data,
-                         category
-                    })
+                    if (language === 'ar') {
+                         this.setState({
+                             articles: data,
+                             categoryTitle: category.titleTranslation[language],
+                             categoryDesc: category.arabicDescription,
+                             lang: data[0].language
+                         })
+                    } else if (language === 'am') {
+                        this.setState({
+                            articles: data,
+                            categoryTitle: category.titleTranslation[language],
+                            categoryDesc: category.amharngaDescription
+                        })
+                    } else {
+                        this.setState({
+                            articles: data,
+                            categoryTitle: category.title,
+                            categoryDesc: category.description
+                        })
+                    }
                 }
             })
     }
@@ -39,16 +65,14 @@ class SingleCategory extends Component {
        
         
         return (
-            
+            <div className="container" style={this.state.lang === 'ar'  ? styles.arabicText : styles.defualtText}>
             <div className="single-category">
-                <h1 className="category-header">{this.state.category.title}</h1> 
-               
-   
-                <p className="category-description">{this.state.category.description}</p>
+                    <h1 className="category-header">{this.state.categoryTitle}</h1> 
+                <p className="category-description">{this.state.categoryDesc}</p>
                 {this.state.articles.map(article => {
                      const articleLink="/articles/"+article._id;
-                    return <Link to={articleLink}> 
-                    <div key={article._id} className="article-content">  
+                        return <Link to={articleLink} key={article._id}> 
+                        <div  className="article-content" style={article.language === 'ar' ? styles.arabicText : styles.defualtText}>  
                        
                         <div className="article-logo">    
                        
@@ -66,7 +90,7 @@ class SingleCategory extends Component {
                 <h1>{this.state.defaultData}</h1>
                 
             </div>
-           
+           </div>
         )
     }
 }
