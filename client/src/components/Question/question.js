@@ -2,6 +2,7 @@ import React from 'react';
 import { Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import { Link } from "react-router-dom";
 import apiClient from '../../helpers/apiClient';
+import './question.css'
 
 let answerValue = "";
 
@@ -79,8 +80,14 @@ export default class Question extends React.Component {
       answerValue = question[this.state.questionNumber].answer
 
     }
-
-    if (this.state.questionNumber < 10) {
+    if (this.state.gameQuestion.length === 0) {
+      return <div class="spinner-container question">
+        <div class="item item-1"></div>
+        <div class="item item-2"></div>
+        <div class="item item-3"></div>
+        <div class="item item-4"></div>
+      </div>
+    }else if (this.state.questionNumber < 10) {
        return (
 
         <Form className="container" >
