@@ -38,7 +38,6 @@ export default class Question extends React.Component {
     if(questionNumber === 9){
        apiClient.postWeegie(this.state.userAnswers)
        .then((response)=>{
-         console.log(response.data)
          this.setState({
           rightanswer:response.data.correctAnswers,
           wronganswer:response.data.wrongAnswers,
@@ -124,9 +123,9 @@ export default class Question extends React.Component {
       );
     } else {      
        return (
-        <div class="weegie-result">
-          <h1 class="text-center "> Correct &#x2714;:{this.state.rightanswer}</h1>
-          <h1 class="text-center ">Wrong &#x2716;:{this.state.wronganswer}</h1>
+        <div className="weegie-result">
+          <h1 className="text-center "> Correct &#x2714;:{this.state.rightanswer}</h1>
+          <h1 className="text-center ">Wrong &#x2716;:{this.state.wronganswer}</h1>
           { this.state.wrongAnswersList.map((question,i)=>{
              return (
                <div className="container" key={question._id}>
