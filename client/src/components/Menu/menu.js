@@ -68,7 +68,7 @@ class Menu extends Component {
             })
           }}
             style={this.state.weegie === false ? styles.active : styles.defualt}>
-          <Link to="/weegie"><img width="35" src="weegie.png" /></Link></li>
+            <Link to="/weegie"><img width="35" src="weegie.png" alt="weegie" /></Link></li>
           <li onClick={() => {
             this.setState({
               weegie: false,

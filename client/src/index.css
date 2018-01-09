@@ -1,22 +1,7 @@
 body{
     background: #e6bb44;
-    
 }
 
-
-.weegie-result{
-    padding-bottom:55px;
-}
-.bg-weegie{
-    background-color: #0e352f;
-    color: #e7bb44;
-    font-size: 1.6em;
-}
-.bg-weegie:hover{
-    background-color: #144940;
-    color: #e9c25e;
-    
-}
 @media (min-width: 700px){
    
  #root #web-container{

@@ -74,3 +74,27 @@
   50% {transform: translate(100px, -100px)} 
   75% {transform: translate(0, -100px)} 
 }
+/**************************/
+.weegie-result{
+    padding-bottom:55px;
+}
+.weegie-result .answer-list{
+    line-height: 1.8em;
+}
+.question-title{
+  font-size: 2em;
+}
+.question-answer{
+    color: green;
+    font-size: 2em;
+}
+.bg-weegie{
+    background-color: #0e352f;
+    color: #e7bb44;
+    font-size: 1.6em;
+}
+.bg-weegie:hover{
+    background-color: #144940;
+    color: #e9c25e;
+    
+}

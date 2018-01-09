@@ -20,7 +20,6 @@ class AddArticle extends Component {
     componentDidMount() {
         apiClient.getCategories()
             .then(({ data }) => {
-                const { category = {} } = data[0];
                 this.setState({
                     category: data
                 })

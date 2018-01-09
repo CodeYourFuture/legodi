@@ -10,7 +10,6 @@ class Setting extends Component {
     }
 
     render() {
-        var localLang = localStorage.getItem("language");
         return (
             <div className="row select-language">
                 <div className="col">    
