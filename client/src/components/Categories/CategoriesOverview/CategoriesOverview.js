@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import CategoryCard from "../CategoryCard";
 import apiClient from '../../../helpers/apiClient';
 import './category.css';
+import Spinner from '../../Spinner/Spinner';
 
 class CategoriesOverview extends Component {
     constructor() {
@@ -28,12 +29,7 @@ class CategoriesOverview extends Component {
     }
     render() {
         if (this.state.categoriesList.length === 0) {
-            return <div className="spinner-container">
-                <div className="item item-1"></div>
-                <div className="item item-2"></div>
-                <div className="item item-3"></div>
-                <div className="item item-4"></div>
-            </div>
+            return <Spinner />
         } else {
             return (
                 <div className="category-container">
