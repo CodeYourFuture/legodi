@@ -84,9 +84,9 @@ export default class Question extends React.Component {
     } else if (this.state.questionNumber < 10) {
       return (
 
-        <Form className="container" >
-          <FormGroup tag="fieldset" row>
-            <legend className="col-form-legend col-sm-12 "><h3>{this.state.questionNumber + 1} - <span className="question-title">{questionTitle}</span></h3></legend>
+        <Form className="container question-list" >
+          <FormGroup tag="fieldset" row className="question-options">
+            <legend className="col-form-legend col-sm-12 "><h3 className="question-title">{this.state.questionNumber + 1} - <span>{questionTitle}</span></h3></legend>
             <Col sm={10}>
               <FormGroup  >
                 <Label check>
@@ -131,12 +131,12 @@ export default class Question extends React.Component {
           {this.state.wrongAnswersList.map((question, i) => {
             return (
               <div className="container" key={question._id}>
-                <h2> {question.title}</h2>
+                <h2 className="ansewer-title"> {question.title}</h2>
                 <ul className="answer-list">
-                  <li>a:{question.choices.a}</li>
-                  <li>b:{question.choices.b}</li>
-                  <li>c:{question.choices.c}</li>
-                  <li>d;{question.choices.d}</li>
+                  <li><span className="answer-a">A :</span>{question.choices.a}</li>
+                  <li><span className="answer-b">B :</span>{question.choices.b}</li>
+                  <li><span className="answer-c">C :</span>{question.choices.c}</li>
+                  <li><span className="answer-d">D :</span>{question.choices.d}</li>
                   <h3><span className="question-answer">Answer</span>: {question.answer} </h3>
                 </ul>
               </div>
