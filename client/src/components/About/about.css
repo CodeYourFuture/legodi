@@ -7,13 +7,12 @@
     padding-bottom: 4em;
 }
  .about-text{
-padding: 10px;
 text-align: left;
 }
 
 .about-page .refuweege-logo,
 .about-page .cyf-logo{
-    width: 83%;
+    width: 100%;
     display: flex;
     margin: auto;
  }
