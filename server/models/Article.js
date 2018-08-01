@@ -12,6 +12,7 @@ const schema = new Schema({
     articleImage:{
         type: String
     },
+    city:String,
     visible: {
         type: Boolean,
         default: true,
