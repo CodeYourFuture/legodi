@@ -18,6 +18,7 @@ const CategorySchema = new Schema({
         type: String,
         default: 'arabic translation'
     },
+    city:String,
     description: {
         type: String
     },
